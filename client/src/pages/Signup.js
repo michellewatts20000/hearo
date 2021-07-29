@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/layout';
-import { Heading } from '@chakra-ui/react';
+import { Heading, Flex } from '@chakra-ui/react';
 
 const Signup = () => {
 
