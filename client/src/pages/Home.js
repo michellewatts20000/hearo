@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex, Heading, Button, Link, Box, Stack, Center} from '@chakra-ui/react';
-import { FaFileAudio } from 'react-icons/fa';
+import { Flex, Heading, Button, Link, Box, Stack, Center, Text} from '@chakra-ui/react';
+import { FaWaveSquare } from 'react-icons/fa';
 
 const Home = () => {
 
@@ -20,15 +20,13 @@ const Home = () => {
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
-          as="h1"
-          size={"3xl"}
-          fontWeight="bold"
+          size={"4xl"}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
         </Heading>
        
-        <Heading
+        <Text
           as="h2"
           size="md"
           opacity="0.8"
@@ -37,10 +35,11 @@ const Home = () => {
           textAlign={["center", "center", "left", "left"]}
         >
       Find quiet restaurants, bars and pubs in Sydney. 
-        </Heading>
+        </Text>
         <Center>
           <Link href="/search">
               <Button
+              colorScheme="teal"
                 borderRadius="8px"
                 py="4"
                 px="4"
@@ -56,8 +55,8 @@ const Home = () => {
         </Center>
       </Stack>
 
-      <Box w={{ base: "30%", sm: "30%", md: "30%" }} mb={{ base: 12, md: 0 }}>
-       <FaFileAudio  size="sm"/>
+      <Box w={{ base: "30%", sm: "30%", md: "30%" }}  mb={{ base: 12, md: 0 }}>
+       <FaWaveSquare size={300}/>
 
       </Box>
     </Flex>

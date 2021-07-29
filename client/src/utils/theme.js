@@ -6,6 +6,12 @@ const config = {
   useSystemColorMode: false,
 }
 
-const customTheme = extendTheme({ config });
+
+ const fonts = {
+    // heading: "Zen Tokyo Zoo",
+
+  }
+
+const customTheme = extendTheme({ config, fonts });
 
 export default customTheme;

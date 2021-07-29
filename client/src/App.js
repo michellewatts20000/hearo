@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Search from "./pages/Search";
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
   <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
     <Footer />
