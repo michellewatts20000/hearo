@@ -39,7 +39,7 @@ const Home = () => {
       Find quiet restaurants, bars and pubs in Sydney. 
         </Heading>
         <Center>
-          <Link>
+          <Link href="/search">
               <Button
                 borderRadius="8px"
                 py="4"

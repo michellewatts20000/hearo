@@ -32,16 +32,18 @@ export default function Header() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>HEARO</Box>
+           <Link href="/"><Box>HEARO</Box></Link> 
            
           </HStack>
           <Flex alignItems={'center'}>
                 <Link
+                href="/login"
               variant={'solid'}
               colorScheme={'teal'}
               size={'sm'}
               mr={4}>
-              Signin</Link>
+              Login</Link>
+              <Link href="/signup">
             <Button
               variant={'solid'}
               colorScheme={'teal'}
@@ -49,7 +51,7 @@ export default function Header() {
               mr={4}>
               Signup
             </Button>
-           
+           </Link>
             <Menu>
             
               <MenuList>
