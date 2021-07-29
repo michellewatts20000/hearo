@@ -1,5 +1,6 @@
 import React from 'react';
-import { Flex, Heading, Button, Link, Box, Stack, Center, FormControl, FormLabel, Input, Select } from '@chakra-ui/react';
+import { Flex, Heading, Button, Link, Box, Stack, Center} from '@chakra-ui/react';
+import { FaFileAudio } from 'react-icons/fa';
 
 const Home = () => {
 
@@ -15,7 +16,7 @@ const Home = () => {
     >
       <Stack
         spacing={4}
-        w={{ base: "80%", md: "70%" }}
+        w={{ base: "60%", sm: "60%", md: "60%" }}
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
@@ -47,38 +48,17 @@ const Home = () => {
                 size="md"
                 mr="3"
               >
-        Signup
+        Search
               </Button>
 
           </Link>
-          <Link>
-              <Button
-                borderRadius="8px"
-                py="4"
-                px="4"
-                lineHeight="1"
-                size="md"
-              >
-          Signin
-              </Button>
-
-          </Link>
+    
         </Center>
       </Stack>
 
-      <Box w={{ base: "70%", sm: "50%", md: "40%" }} mb={{ base: 12, md: 0 }}>
-       <FormControl id="first-name" isRequired>
-  <FormLabel>Sydney postcode</FormLabel>
-  <Input placeholder="postcode" />
-</FormControl>
-<FormControl id="place">
-  <FormLabel>Type of place</FormLabel>
-  <Select placeholder="Select type of place">
-    <option>Restaurant</option>
-    <option>Bar</option>
-    <option>Pub</option>
-  </Select>
-</FormControl>
+      <Box w={{ base: "30%", sm: "30%", md: "30%" }} mb={{ base: 12, md: 0 }}>
+       <FaFileAudio  size="sm"/>
+
       </Box>
     </Flex>
   );

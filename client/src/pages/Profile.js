@@ -8,7 +8,7 @@ const Profile = () => {
 
 <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
 
-<Heading>HEARO Profile</Heading>
+<Heading>Welcome X, to your account.</Heading>
 
 </Flex>
 

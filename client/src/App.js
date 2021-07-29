@@ -7,6 +7,7 @@ import { Flex } from '@chakra-ui/layout';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Search from "./pages/Search";
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
 
@@ -20,6 +21,7 @@ function App() {
     >
   <Header />
         <Route exact path="/" component={Home} />
+        <Route exact path="/search" component={Search} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
     <Footer />
