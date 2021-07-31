@@ -1,42 +1,85 @@
-import React from 'react';
-import { Heading, Flex, Input, FormControl, FormLabel, Button } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Heading, Flex, Input, FormControl, FormLabel, Button, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
     return (
 <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
 
-<Heading mb={10}>Create an account</Heading>
+
+ {data ? (
+              <Text>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </Text>
+            ) : (
+<form onSubmit={handleFormSubmit}>
+  <Heading mb={10}>Create an account</Heading>
        <FormControl id="name" isRequired>
   <FormLabel>Name</FormLabel>
-  <Input placeholder="name" />
+  <Input placeholder="name"  className="form-input" name="username" type="text" onChange={handleChange} value={formState.name} />
 </FormControl>
-
        <FormControl mt={5} id="email" isRequired>
   <FormLabel>Email</FormLabel>
-  <Input placeholder="email" />
+  <Input placeholder="email"  className="form-input" name="email" type="email" onChange={handleChange} value={formState.email} />
 </FormControl>
      <FormControl mt={5} id="password" isRequired>
   <FormLabel>Password</FormLabel>
-  <Input placeholder="password" />
-</FormControl>
-
-
+  <Input placeholder="****" className="form-input" name="password" type="password" onChange={handleChange} value={formState.password} />
+  </FormControl>
  <Button
               variant={'solid'}
               colorScheme={'teal'}
               size={'md'}
-              mt={5}>
+              mt={5}
+              type="submit">
               Signup
             </Button>
+            </form>
+            )}
+               {error && (
+            <Text>{error.message}</Text>
+            )}
 
 </Flex>
 
 
-    );
-
+  );
 };
-
 
 
 
