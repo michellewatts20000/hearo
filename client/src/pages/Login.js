@@ -25,7 +25,7 @@ const Login = () => {
               colorScheme={'teal'}
               size={'md'}
               mt={5}>
-              Submit
+              Login
             </Button>
 
 </Flex>

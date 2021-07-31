@@ -23,7 +23,7 @@ const Home = () => {
           size={"4xl"}
           textAlign={["center", "center", "left", "left"]}
         >
-          HEARO
+          HearO
         </Heading>
        
         <Text

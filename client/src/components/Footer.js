@@ -9,7 +9,7 @@ const Footer = () => {
 <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
 
  <Text fontSize="sm" fontWeight="bold">
-                HEARO
+                HEARO 2021
             </Text>
 
 </Flex>

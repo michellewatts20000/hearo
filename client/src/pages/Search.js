@@ -7,10 +7,10 @@ const Search = () => {
 
 <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
 
-       <Heading mb={10}>Search for a place</Heading>
+<Heading mb={10}>Search for a place</Heading>
        <FormControl id="postcode" isRequired>
-  <FormLabel>Sydney postcode</FormLabel>
-  <Input placeholder="postcode" />
+  <FormLabel>Suburb</FormLabel>
+  <Input placeholder="suburb" />
 </FormControl>
 <FormControl id="place" mt={5}>
   <FormLabel>Type of place</FormLabel>
