@@ -6,39 +6,43 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
+      places {
+          _id
+      placeAuthor
+      placeName
+      placeLocation
+      placeRating
+      placeComment
+      createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_PLACES = gql`
+  query getPlaces {
+    places {
       _id
-      thoughtText
-      thoughtAuthor
+      placeAuthor
+      placeName
+      placeLocation
+      placeRating
+      placeComment
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
-      _id
-      thoughtText
-      thoughtAuthor
+export const QUERY_SINGLE_PLACE = gql`
+  query getSinglePlace($placeId: ID!) {
+    place(placeId: $placeId) {
+       _id
+      placeAuthor
+      placeName
+      placeLocation
+      placeRating
+      placeComment
       createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
     }
   }
 `;
@@ -49,11 +53,14 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+      places {
+         _id
+      placeAuthor
+      placeName
+      placeLocation
+      placeRating
+      placeComment
+      createdAt
       }
     }
   }
