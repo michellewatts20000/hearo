@@ -1,15 +1,15 @@
-const { Schema, model } = require('mongoose');
+const {
+  Schema,
+  model
+} = require('mongoose');
 const bcrypt = require('bcrypt');
 
-
-// const bookSchema = require('./Book');
-
-const userSchema = new Schema(
-  {
+const userSchema = new Schema({
     username: {
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
     email: {
       type: String,
@@ -21,10 +21,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // set savedBooks to be an array of data that adheres to the bookSchema
-    // savedBooks: [bookSchema],
+    // places: [{
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Place',
+    // }, ],
   },
-  // set this to use virtual below
+
   {
     toJSON: {
       virtuals: true,
