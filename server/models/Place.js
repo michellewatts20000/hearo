@@ -25,11 +25,13 @@ const placeSchema = new Schema({
     trim: true,
   },
    placeRating: {
-    type: Number,
+    type: String,
+    required: true,
+    trim: true,
   },
    placeComment: {
     type: String,
-    required: false,
+    // required: false,
     trim: true,
   },
   createdAt: {

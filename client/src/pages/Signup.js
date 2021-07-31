@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
   Heading,
-  Flex,
+  Box,
   Input,
   FormControl,
   FormLabel,
@@ -46,12 +46,14 @@ const Signup = () => {
   };
 
   return (
-    <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
+   <Box p={4}>
       {data ? (
         <Text>
           Success! You may now head <Link to="/">back to the homepage.</Link>
         </Text>
+     
       ) : (
+      // <Stack align="center" p={4}>
         <form onSubmit={handleFormSubmit}>
           <Heading mb={10}>Create an account</Heading>
           <FormControl id="name" isRequired>
@@ -79,7 +81,7 @@ const Signup = () => {
           <FormControl mt={5} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
-              placeholder="****"
+              placeholder="*****"
               className="form-input"
               name="password"
               type="password"
@@ -97,9 +99,11 @@ const Signup = () => {
             Signup
           </Button>
         </form>
+        // </Stack>
       )}
       {error && <Text>{error.message}</Text>}
-    </Flex>
+      
+    </Box>
   );
 };
 

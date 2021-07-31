@@ -7,6 +7,7 @@ import {
   Select,
   Button,
   Text,
+  Textarea,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -40,16 +41,20 @@ const Profile = () => {
   }
 
   return (
-    
-   <>
-     <Text mb={10}>Welcome {Auth.getProfile().data.username}, to your account.</Text>
+    <>
+      <Text mb={10}>
+        Welcome {Auth.getProfile().data.username}, to your account.
+      </Text>
       <Heading mb={10}>Rate a place based on how loud it was</Heading>
-     
-      <FormControl id="suburb" isRequired>
-        <FormLabel>Suburb</FormLabel>
-        <Input placeholder="suburb" />
+      <FormControl id="name" isRequired>
+        <FormLabel>Name</FormLabel>
+        <Input placeholder="Name" />
       </FormControl>
-      <FormControl id="place" mt={5}>
+      <FormControl mt={5} id="suburb" isRequired>
+        <FormLabel>Suburb</FormLabel>
+        <Input placeholder="Suburb" />
+      </FormControl>
+      <FormControl isRequired id="place" mt={5}>
         <FormLabel>Type of place</FormLabel>
         <Select placeholder="Select type of place">
           <option>Restaurant</option>
@@ -57,13 +62,32 @@ const Profile = () => {
           <option>Pub</option>
         </Select>
       </FormControl>
-      <FormControl id="rating" isRequired>
+      <FormControl isRequired id="rating" mt={5}>
         <FormLabel>Rating</FormLabel>
-        <Input type="number" placeholder="rating" />
+        <Select placeholder="How loud is it?">
+          <option>Quiet</option>
+          <option>Average</option>
+          <option>Bit Loud</option>
+          <option>Loud</option>
+          <option>Very Loud</option>
+          <option>Very Very Loud</option>
+        </Select>
       </FormControl>
-      <Button variant={"solid"} colorScheme={"teal"} size={"md"} mt={5}>
+      <FormControl mt={5} id="comment">
+        <FormLabel>Comment</FormLabel>
+        <Textarea placeholder="Comment" />
+      </FormControl>
+      <Button
+        variant={"solid"}
+        colorScheme={"teal"}
+        size={"md"}
+        mt={5}
+        type="submit"
+      >
         Submit
       </Button>
+
+      <Heading mb={10}>Your entries</Heading>
     </>
   );
 };

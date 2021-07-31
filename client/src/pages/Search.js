@@ -11,8 +11,9 @@ import {
 
 const Search = () => {
   return (
+    <form>
     <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
-      <Heading mb={10}>Search for a place</Heading>
+      <Heading mb={10}>SEARCH FOR a quiet place IN SYDNEY</Heading>
       <FormControl id="postcode" isRequired>
         <FormLabel>Suburb</FormLabel>
         <Input placeholder="suburb" />
@@ -25,10 +26,22 @@ const Search = () => {
           <option>Pub</option>
         </Select>
       </FormControl>
+      <FormControl isRequired id="rating" mt={5}>
+        <FormLabel>Rating</FormLabel>
+        <Select placeholder="How loud?">
+          <option>Quiet</option>
+          <option>Average</option>
+          <option>Bit Loud</option>
+          <option>Loud</option>
+          <option>Very Loud</option>
+          <option>Very Very Loud</option>
+        </Select>
+      </FormControl>
       <Button variant={"solid"} colorScheme={"teal"} size={"md"} mt={5}>
         Submit
       </Button>
     </Flex>
+    </form>
   );
 };
 

@@ -12,7 +12,7 @@ const typeDefs = gql`
   type Place {
     _id: ID
     placeAuthor: String
-    placeName: String!
+    placeName: String
     placeType: String
     placeLocation: String
     placeRating: String
@@ -36,8 +36,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPlace(placeName: String!): Place
-    removePlace(placeId: ID!): Place
+    addPlace(placeName: String!, placeLocation: String!, placeRating: String!, placeType: String!, placeComment: String ): Place
   }
 `;
 

@@ -48,29 +48,25 @@ const resolvers = {
 
       return { token, user };
     },
-    addPlace: async (parent, { placeName }, context) => {
+    addPlace: async (parent, { placeName, placeLocation, placeRating, placeType, placeComment }, context) => {
       if (context.user) {
         const place = await Place.create({
-          placeAuthor: context.user.username,
           placeName,
-          // placeType,
-          
           placeLocation,
-          // placeRating,
-          // placeComment
+          placeRating,
+          placeType,
+          placeComment,
+          placeAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { places: place._id } }
         );
-
         return place;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-   
-    
   },
 };
 

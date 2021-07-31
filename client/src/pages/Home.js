@@ -28,7 +28,7 @@ const Home = () => {
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading size={"4xl"} textAlign={["center", "center", "left", "left"]}>
-          HearO
+          HEARO
         </Heading>
 
         <Text
@@ -44,13 +44,11 @@ const Home = () => {
         <Center>
           <Link href="/search">
             <Button
-              colorScheme="teal"
-              borderRadius="8px"
-              py="4"
-              px="4"
-              lineHeight="1"
-              size="md"
-              mr="3"
+            variant={"solid"}
+            colorScheme={"teal"}
+            size={"md"}
+            mt={5}
+            type="submit"
             >
               Search
             </Button>

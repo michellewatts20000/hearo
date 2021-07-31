@@ -4,7 +4,7 @@
     "placeType": "Bar",
     "placeName": "Trendy Bar",
     "placeLocation": "Chatswood",
-    "placeRating": 3,
+    "placeRating": "Very Loud",
     "placeComment": "Too loud, will never visit again!"
   },
   {
@@ -12,7 +12,7 @@
     "placeType": "Restaurant",
     "placeName": "Time for Thai",
     "placeLocation": "Botany Bay",
-    "placeRating": 8,
+    "placeRating": "Quiet",
     "placeComment": "Enjoyed hearing my friend!"
   },
   {
@@ -20,7 +20,7 @@
     "placeType": "Restaurant",
     "placeName": "Truck Stop",
     "placeLocation": "Earlwood",
-    "placeRating": 10,
+    "placeRating": "Average",
     "placeComment": "Was good!"
   },
   {
@@ -28,7 +28,7 @@
     "placeType": "Pub",
     "placeName": "Dive and drink",
     "placeLocation": "Arncliffe",
-    "placeRating": 6,
+    "placeRating": "Very Loud",
     "placeComment": "A BIT SHOUTY!"
   },
   {
@@ -36,7 +36,7 @@
     "placeType": "Restaurant",
     "placeName": "Pasta bowl",
     "placeLocation": "Marrickville",
-    "placeRating": 2,
+    "placeRating": "Very Very Loud",
     "placeComment": "Not writing home about it."
   }
 ]
