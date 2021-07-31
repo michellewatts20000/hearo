@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Flex,
@@ -11,77 +11,80 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import Auth from '../../utils/auth';
-
-
-
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Auth from "../../utils/auth";
 
 export default function Header() {
-   const logout = (event) => {
+  const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-    return (
+  return (
     <>
       <Box px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={'md'}
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-           <Link href="/"><Box>HEARO</Box></Link> 
-           
+          <HStack spacing={8} alignItems={"center"}>
+            <Link href="/">
+              <Box>HEARO</Box>
+            </Link>
           </HStack>
-          <Flex alignItems={'center'}>
+          <Flex alignItems={"center"}>
             {Auth.loggedIn() ? (
-            <>
-               <Link
-                href="/login"
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}>
-                Your Dashboard
-              </Link>
-              <Link onClick={logout}>
-              <Button  variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}>
-                Logout
-              </Button>
-              </Link>
-            </>
-          ) : (
-            <>
+              <>
                 <Link
-                href="/login"
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}>
-              Login</Link>
-              <Link href="/signup">
-            <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}>
-              Signup
-            </Button>
-           </Link>
-           </>
-           )}
+                  href="/login"
+                  variant={"solid"}
+                  colorScheme={"teal"}
+                  size={"sm"}
+                  mr={4}
+                >
+                  Your Dashboard
+                </Link>
+                <Link onClick={logout}>
+                  <Button
+                    variant={"solid"}
+                    colorScheme={"teal"}
+                    size={"sm"}
+                    mr={4}
+                  >
+                    Logout
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  variant={"solid"}
+                  colorScheme={"teal"}
+                  size={"sm"}
+                  mr={4}
+                >
+                  Login
+                </Link>
+                <Link href="/signup">
+                  <Button
+                    variant={"solid"}
+                    colorScheme={"teal"}
+                    size={"sm"}
+                    mr={4}
+                  >
+                    Signup
+                  </Button>
+                </Link>
+              </>
+            )}
             <Menu>
-            
               <MenuList>
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
@@ -92,15 +95,8 @@ export default function Header() {
           </Flex>
         </Flex>
 
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            
-          </Box>
-        ) : null}
+        {isOpen ? <Box pb={4} display={{ md: "none" }}></Box> : null}
       </Box>
     </>
   );
 }
-
-
-
