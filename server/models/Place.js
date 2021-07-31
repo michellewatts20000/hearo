@@ -16,17 +16,17 @@ const placeSchema = new Schema({
   },
     placeType: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
   placeLocation: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
    placeRating: {
     type: String,
-    required: true,
+    // required: true,
     trim: true,
   },
    placeComment: {

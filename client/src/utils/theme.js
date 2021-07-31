@@ -1,17 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
 
-
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
 }
 
-
  const fonts = {
     // heading: "Zen Tokyo Zoo",
-
   }
 
-const customTheme = extendTheme({ config, fonts });
+const theme = extendTheme({ config, fonts });
 
-export default customTheme;
+export default theme;
