@@ -11,56 +11,50 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
-import { QUERY_PLACES, QUERY_ME } from "../utils/queries";
+// import { QUERY_PLACES, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
 
 const PlaceForm = () => {
-  const [placeName, setPlaceName] = useState("");
-
-  const [addPlace, { error }] = useMutation(ADD_PLACE, {
-    update(cache, { data: { addPlace } }) {
-      try {
-        const { places } = cache.readQuery({ query: QUERY_PLACES });
-
-        cache.writeQuery({
-          query: QUERY_PLACES,
-          data: { places: [addPlace, ...places] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, places: [...me.places, addPlace] } },
-      });
-    },
+  const [formState, setFormState] = useState({
+    placeName: "",
+    placeRating: "",
+    placeLocation: "",
+    placeType: "",
+    placeComment: "",
   });
+
+  const [addPlace, { error, data }] = useMutation(ADD_PLACE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(formState);
     try {
       const { data } = await addPlace({
-        variables: {
-          placeName,
-          placeAuthor: Auth.getProfile().data.username,
-        },
+        variables: { ...formState },
       });
-      console.log("data", data);
-      setPlaceName("");
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
-  const handleChange = (event) => {
-    const { value } = event.target;
-    console.log("value", value);
-    setPlaceName(value);
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      placeRating: "",
+      placeLocation: "",
+      placeType: "",
+      placeComment: "",
+    });
   };
 
   return (
@@ -72,16 +66,26 @@ const PlaceForm = () => {
           onChange={handleChange}
           placeholder="Name"
           name="placeName"
-          value={placeName}
+          value={formState.placeName}
         />
       </FormControl>
       <FormControl mt={5} id="suburb">
         <FormLabel>Suburb</FormLabel>
-        <Input placeholder="Suburb" />
+        <Input
+          onChange={handleChange}
+          value={formState.placeLocation}
+          name="placeLocation"
+          placeholder="Suburb"
+        />
       </FormControl>
       <FormControl id="place" mt={5}>
         <FormLabel>Type of place</FormLabel>
-        <Select placeholder="Select type of place">
+        <Select
+          onChange={handleChange}
+          name="placeType"
+          value={formState.placeType}
+          placeholder="Select type of place"
+        >
           <option>Restaurant</option>
           <option>Bar</option>
           <option>Pub</option>
@@ -89,7 +93,12 @@ const PlaceForm = () => {
       </FormControl>
       <FormControl id="rating" mt={5}>
         <FormLabel>Rating</FormLabel>
-        <Select placeholder="How loud is it?">
+        <Select
+          onChange={handleChange}
+          placeholder="Rating"
+          name="placeRating"
+          value={formState.placeRating}
+        >
           <option>Quiet</option>
           <option>Average</option>
           <option>Bit Loud</option>
@@ -100,7 +109,12 @@ const PlaceForm = () => {
       </FormControl>
       <FormControl mt={5} id="comment">
         <FormLabel>Comment</FormLabel>
-        <Textarea placeholder="Comment" />
+        <Textarea
+          onChange={handleChange}
+          placeholder="Comment"
+          name="placeComment"
+          value={formState.placeComment}
+        />
       </FormControl>
       <Button
         variant={"solid"}

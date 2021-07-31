@@ -40,10 +40,12 @@ export const ADD_USER = gql`
 // `;
 
 export const ADD_PLACE = gql`
- mutation addPlace($placeName:String!) {
-    addPlace(placeName: $placeName) {
+ mutation addPlace($placeName:String!, $placeLocation:String!, $placeComment:String!, $placeRating:String!, $placeType:String!) {
+    addPlace(placeName: $placeName, placeLocation: $placeLocation, placeComment: $placeComment, placeRating: $placeRating, placeType: $placeType ) {
 
       placeName
+      placeLocation
+     placeComment
  
    
     }
