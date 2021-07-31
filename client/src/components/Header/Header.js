@@ -13,11 +13,16 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import Auth from '../../utils/auth';
 
 
 
 
 export default function Header() {
+   const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -36,6 +41,27 @@ export default function Header() {
            
           </HStack>
           <Flex alignItems={'center'}>
+            {Auth.loggedIn() ? (
+            <>
+               <Link
+                href="/login"
+              variant={'solid'}
+              colorScheme={'teal'}
+              size={'sm'}
+              mr={4}>
+                Your Dashboard
+              </Link>
+              <Link onClick={logout}>
+              <Button  variant={'solid'}
+              colorScheme={'teal'}
+              size={'sm'}
+              mr={4}>
+                Logout
+              </Button>
+              </Link>
+            </>
+          ) : (
+            <>
                 <Link
                 href="/login"
               variant={'solid'}
@@ -52,6 +78,8 @@ export default function Header() {
               Signup
             </Button>
            </Link>
+           </>
+           )}
             <Menu>
             
               <MenuList>
