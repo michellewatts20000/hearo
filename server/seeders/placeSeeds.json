@@ -1,0 +1,37 @@
+[
+  {
+    "placeAuthor": "Alanis Morriset",
+    "placeName": "Trendy Bar",
+    "placeLocation": "Chatswood",
+    "placeRating": 3,
+    "placeComment": "Too loud, will never visit again!"
+  },
+  {
+    "placeAuthor": "Alanis Morriset",
+    "placeName": "Time for Thai",
+    "placeLocation": "Botany Bay",
+    "placeRating": 8,
+    "placeComment": "Enjoyed hearing my friend!"
+  },
+  {
+    "placeAuthor": "Madonna",
+    "placeName": "Truck Stop",
+    "placeLocation": "Earlwood",
+    "placeRating": 10,
+    "placeComment": "Was good!"
+  },
+  {
+    "placeAuthor": "Tori Amos",
+    "placeName": "Dive and drink",
+    "placeLocation": "Arncliffe",
+    "placeRating": 6,
+    "placeComment": "A BIT SHOUTY!"
+  },
+  {
+    "placeAuthor": "Amy Mann",
+    "placeName": "Pasta bowl",
+    "placeLocation": "Marrickville",
+    "placeRating": 2,
+    "placeComment": "Not writing home about it."
+  }
+]

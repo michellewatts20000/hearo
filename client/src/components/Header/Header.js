@@ -42,7 +42,7 @@ export default function Header() {
             {Auth.loggedIn() ? (
               <>
                 <Link
-                  href="/login"
+                  href="/me"
                   variant={"solid"}
                   colorScheme={"teal"}
                   size={"sm"}

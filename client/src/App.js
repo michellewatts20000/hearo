@@ -55,6 +55,7 @@ function App() {
   <Header />
         <Route exact path="/" component={Home} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/profile/me" component={Profile} />
         <Route exact path="/profile/:username" component={Profile} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
