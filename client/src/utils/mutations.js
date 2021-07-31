@@ -24,17 +24,29 @@ export const ADD_USER = gql`
   }
 `;
 
+// export const ADD_PLACE = gql`
+//  mutation addPlace($placeName:String!, $placeLocation:String!, $placeComment:String!, $placeRating:String!, $placeType:String!) {
+//     addPlace(placeName: $placeName, placeLocation: $placeLocation, placeComment: $placeComment ,placeRating: $placeRating, placeType: $placeType) {
+//       _id
+//       placeName
+//       placeAuthor
+//     placeLocation
+//     placeType
+//     placeRating
+//     placeComment
+//       createdAt,
+//     }
+//   }
+// `;
+
 export const ADD_PLACE = gql`
- mutation addPlace($placeName:String!, $placeLocation:String!, $placeComment:String!, $placeRating:String!, $placeType:String!) {
-    addPlace(placeName: $placeName, placeLocation: $placeLocation, placeComment: $placeComment ,placeRating: $placeRating, placeType: $placeType) {
-      _id
+ mutation addPlace($placeName:String!) {
+    addPlace(placeName: $placeName) {
+
       placeName
-      placeAuthor
-    placeLocation
-    placeType
-    placeRating
-    placeComment
-      createdAt,
+ 
+   
     }
   }
 `;
+
