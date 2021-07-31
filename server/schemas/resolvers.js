@@ -48,10 +48,9 @@ const resolvers = {
 
       return { token, user };
     },
-    addPlace: async (parent, { placeName }, context) => {
+    addPlace: async (parent, { placeName, placeLocation, placeRating }, context) => {
       if (context.user) {
         const place = await Place.create({
-          placeAuthor,
           placeName,
           placeLocation,
           placeRating,
