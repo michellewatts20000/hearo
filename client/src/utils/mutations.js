@@ -30,6 +30,7 @@ export const ADD_PLACE = gql`
       _id
       placeAuthor
       placeName
+      placeType
       placeLocation
       placeRating
       placeComment

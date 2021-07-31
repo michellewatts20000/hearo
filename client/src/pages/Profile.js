@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Heading,
-  Flex,
   FormLabel,
   FormControl,
   Input,
@@ -41,11 +40,12 @@ const Profile = () => {
   }
 
   return (
-    <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
-      <Text>Welcome X, to your account.</Text>
-
+    
+   <>
+     <Text mb={10}>Welcome {Auth.getProfile().data.username}, to your account.</Text>
       <Heading mb={10}>Rate a place based on how loud it was</Heading>
-      <FormControl id="postcode" isRequired>
+     
+      <FormControl id="suburb" isRequired>
         <FormLabel>Suburb</FormLabel>
         <Input placeholder="suburb" />
       </FormControl>
@@ -57,10 +57,14 @@ const Profile = () => {
           <option>Pub</option>
         </Select>
       </FormControl>
+      <FormControl id="rating" isRequired>
+        <FormLabel>Rating</FormLabel>
+        <Input type="number" placeholder="rating" />
+      </FormControl>
       <Button variant={"solid"} colorScheme={"teal"} size={"md"} mt={5}>
         Submit
       </Button>
-    </Flex>
+    </>
   );
 };
 

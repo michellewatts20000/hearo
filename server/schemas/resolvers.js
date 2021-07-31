@@ -48,13 +48,16 @@ const resolvers = {
 
       return { token, user };
     },
-    addPlace: async (parent, { placeName, placeLocation, placeRating }, context) => {
+    addPlace: async (parent, { placeName }, context) => {
       if (context.user) {
         const place = await Place.create({
+          placeAuthor: context.user.username,
           placeName,
+          // placeType,
+          
           placeLocation,
-          placeRating,
-          placeComment: context.user.username,
+          // placeRating,
+          // placeComment
         });
 
         await User.findOneAndUpdate(
@@ -67,23 +70,6 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
    
-
-    removePlace: async (parent, { placeId }, context) => {
-      if (context.user) {
-        const place = await Place.findOneAndDelete({
-          _id: placeId,
-          thoughtAuthor: context.user.username,
-        });
-
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { places: place._id } }
-        );
-
-        return place;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
     
   },
 };
