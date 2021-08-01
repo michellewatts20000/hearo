@@ -61,7 +61,7 @@ const Home = () => {
       </Stack>
 
       <Box w={{ base: "40%", sm: "40%", md: "40%" }} mb={{ base: 12, md: 0 }}>
-        <FaWaveSquare color={"#81E6D9"} size={{ base: 200 }} />
+        <FaWaveSquare color={"teal"} size={{ base: 200 }} />
       </Box>
     </Flex>
   );
