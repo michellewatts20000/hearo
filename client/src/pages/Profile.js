@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Text,
+  Heading,
   Alert,
   AlertIcon,
   AlertTitle,
@@ -11,6 +11,7 @@ import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import PlaceForm from "../components/PlaceForm";
+import PlaceList from "../components/PlaceList";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -43,9 +44,16 @@ const Profile = () => {
 
   return (
     <>
-      <Text mb={10}>
+      <Heading mb={10}>
         Welcome {Auth.getProfile().data.username}, to your account.
-      </Text>
+      </Heading>
+
+      <PlaceList
+        places={user.places}
+        title={`${user.username}'s places...`}
+        showTitle={false}
+        showUsername={false}
+      />
 
       <PlaceForm />
     </>
