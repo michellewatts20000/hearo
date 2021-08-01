@@ -11,6 +11,7 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
+  Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Auth from "../../utils/auth";
@@ -24,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <Box px={4}>
+      <Box>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -35,7 +36,9 @@ export default function Header() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Link href="/">
-              <Box>HEARO</Box>
+              <Text fontSize="sm" fontWeight="bold">
+                HEARO
+              </Text>
             </Link>
           </HStack>
           <Flex alignItems={"center"}>

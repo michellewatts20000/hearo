@@ -50,18 +50,14 @@ const Signup = () => {
   };
 
   return (
-   <Box p={4}>
+    <Box p={4}>
       {data ? (
-         <Alert status="success">
-        <AlertIcon />
-        <AlertTitle mr={2}>Success!</AlertTitle>
-        <AlertDescription>
-          You are logged in!
-        </AlertDescription>
-      </Alert>
-     
+        <Alert status="success">
+          <AlertIcon />
+          <AlertTitle mr={2}>Success!</AlertTitle>
+          <AlertDescription>You have created an account!</AlertDescription>
+        </Alert>
       ) : (
-     
         <form onSubmit={handleFormSubmit}>
           <Heading mb={10}>Create an account</Heading>
           <FormControl id="name" isRequired>
@@ -107,10 +103,8 @@ const Signup = () => {
             Signup
           </Button>
         </form>
-  
       )}
       {error && <Text>{error.message}</Text>}
-      
     </Box>
   );
 };

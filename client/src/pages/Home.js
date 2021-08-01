@@ -27,28 +27,32 @@ const Home = () => {
         w={{ base: "60%", sm: "60%", md: "60%" }}
         align={["center", "center", "flex-start", "flex-start"]}
       >
-        <Heading size={"4xl"} textAlign={["center", "center", "left", "left"]}>
+        <Heading
+          size={"4xl"}
+          fontSize="100"
+          textAlign={["center", "center", "left", "left"]}
+        >
           HEARO
         </Heading>
 
         <Text
-          as="h2"
-          size="md"
+          size={"lg"}
+          fontSize="25"
           opacity="0.8"
           fontWeight="normal"
           lineHeight={1.5}
           textAlign={["center", "center", "left", "left"]}
         >
-          Find quiet restaurants, bars and pubs in Sydney.
+          Find quiet places to socialise in Sydney.
         </Text>
         <Center>
           <Link href="/search">
             <Button
-            variant={"solid"}
-            colorScheme={"teal"}
-            size={"md"}
-            mt={5}
-            type="submit"
+              variant={"solid"}
+              colorScheme={"teal"}
+              size={"md"}
+              mt={5}
+              type="submit"
             >
               Search
             </Button>
@@ -56,8 +60,8 @@ const Home = () => {
         </Center>
       </Stack>
 
-      <Box w={{ base: "30%", sm: "30%", md: "30%" }} mb={{ base: 12, md: 0 }}>
-        <FaWaveSquare size={300} />
+      <Box w={{ base: "40%", sm: "40%", md: "40%" }} mb={{ base: 12, md: 0 }}>
+        <FaWaveSquare color="teal" size={{ base: 200 }} />
       </Box>
     </Flex>
   );

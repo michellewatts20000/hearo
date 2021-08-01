@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import {
   Heading,
   Box,
+  Input,
   FormControl,
   FormLabel,
   Button,
-  Input,
-  Text
+  Text,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
+
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
@@ -52,11 +57,12 @@ const Login = (props) => {
   return (
     <Box p={4}>
       {data ? (
-        <Text>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
-        </Text>
+        <Alert status="success">
+          <AlertIcon />
+          <AlertTitle mr={2}>Success!</AlertTitle>
+          <AlertDescription>You have logged in!</AlertDescription>
+        </Alert>
       ) : (
-        // <Stack align="center" p={4}>
         <form onSubmit={handleFormSubmit}>
           <Heading mb={10}>Login</Heading>
           <FormControl id="email" isRequired>
@@ -91,7 +97,6 @@ const Login = (props) => {
             Login
           </Button>
         </form>
-        // </Stack>
       )}
 
       {error && <Text>{error.message}</Text>}

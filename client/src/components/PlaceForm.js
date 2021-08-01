@@ -53,6 +53,7 @@ const PlaceForm = () => {
 
     // clear form values
     setFormState({
+      placeName: "",
       placeRating: "",
       placeLocation: "",
       placeType: "",
@@ -63,9 +64,22 @@ const PlaceForm = () => {
   return (
     <Box>
       <form onSubmit={handleFormSubmit}>
-        <Heading mb={10}>Rate a place based on how loud it was</Heading>
-        <SearchLocationInput onChange={() => null} />
+        <Heading as="h3" color="teal" size="md" mb={5}>
+          Rate a place based on how loud it was
+        </Heading>
+        {/* <SearchLocationInput onChange={() => null} />
+         */}
         <FormControl id="name" mt={5} isRequired>
+          <FormLabel>Name</FormLabel>
+          <Input
+            onChange={handleChange}
+            placeholder="Name"
+            name="placeName"
+            value={formState.placeName}
+          />
+        </FormControl>
+
+        <FormControl id="suburb" mt={5} isRequired>
           <FormLabel>Suburb</FormLabel>
           <Input
             onChange={handleChange}
