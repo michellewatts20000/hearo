@@ -13,6 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
 // import { QUERY_PLACES, QUERY_ME } from "../utils/queries";
+import SearchLocationInput from "../utils/SearchLocationInput";
+// import SearchLocationInput2 from "../utils/SearchLocationInput2";
 
 import Auth from "../utils/auth";
 
@@ -62,22 +64,14 @@ const PlaceForm = () => {
     <Box>
       <form onSubmit={handleFormSubmit}>
         <Heading mb={10}>Rate a place based on how loud it was</Heading>
-        <FormControl id="name" isRequired>
-          <FormLabel>Name</FormLabel>
-          <Input
-            onChange={handleChange}
-            placeholder="Name"
-            name="placeName"
-            value={formState.placeName}
-          />
-        </FormControl>
-        <FormControl mt={5} id="suburb">
+        <SearchLocationInput onChange={() => null} />
+        <FormControl id="name" mt={5} isRequired>
           <FormLabel>Suburb</FormLabel>
           <Input
             onChange={handleChange}
-            value={formState.placeLocation}
-            name="placeLocation"
             placeholder="Suburb"
+            name="placeLocation"
+            value={formState.placeLocation}
           />
         </FormControl>
         <FormControl id="place" mt={5}>

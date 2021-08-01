@@ -16,12 +16,13 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import PlaceDetails from "./pages/PlaceDetails";
+import NotFound from "./pages/NotFound";
+require('dotenv').config();
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
-
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -54,6 +55,7 @@ function App() {
           <Route exact path="/places/:placeId" component={PlaceDetails} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/404" component={NotFound} />
           <Footer />
         </Flex>
       </Router>

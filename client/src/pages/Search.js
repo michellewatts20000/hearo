@@ -9,14 +9,15 @@ import {
   Select,
 } from "@chakra-ui/react";
 
+
 const Search = () => {
   return (
     <form>
     <Flex align="center" justify="space-between" wrap="wrap" w="100%" p={4}>
-      <Heading mb={10}>SEARCH FOR a quiet place IN SYDNEY</Heading>
+      <Heading mb={10}>Search for a quiet place in Sydney</Heading>
       <FormControl id="postcode" isRequired>
         <FormLabel>Suburb</FormLabel>
-        <Input placeholder="suburb" />
+        <Input id="autocomplete" placeholder="suburb" />
       </FormControl>
       <FormControl id="place" mt={5}>
         <FormLabel>Type of place</FormLabel>
@@ -37,7 +38,7 @@ const Search = () => {
           <option>Very Very Loud</option>
         </Select>
       </FormControl>
-      <Button variant={"solid"} colorScheme={"teal"} size={"md"} mt={5}>
+      <Button  type="submit" variant={"solid"} colorScheme={"teal"} size={"md"} mt={5}>
         Submit
       </Button>
     </Flex>

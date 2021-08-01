@@ -7,6 +7,10 @@ import {
   FormLabel,
   Button,
   Text,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -48,12 +52,16 @@ const Signup = () => {
   return (
    <Box p={4}>
       {data ? (
-        <Text>
-          Success! You may now head <Link to="/">back to the homepage.</Link>
-        </Text>
+         <Alert status="success">
+        <AlertIcon />
+        <AlertTitle mr={2}>Success!</AlertTitle>
+        <AlertDescription>
+          You are logged in!
+        </AlertDescription>
+      </Alert>
      
       ) : (
-      // <Stack align="center" p={4}>
+     
         <form onSubmit={handleFormSubmit}>
           <Heading mb={10}>Create an account</Heading>
           <FormControl id="name" isRequired>
@@ -99,7 +107,7 @@ const Signup = () => {
             Signup
           </Button>
         </form>
-        // </Stack>
+  
       )}
       {error && <Text>{error.message}</Text>}
       

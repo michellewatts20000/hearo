@@ -16,22 +16,22 @@ const placeSchema = new Schema({
   },
     placeType: {
     type: String,
-    // required: true,
+    required: true,
     trim: true,
   },
   placeLocation: {
     type: String,
-    // required: true,
+    required: true,
     trim: true,
   },
    placeRating: {
     type: String,
-    // required: true,
+    required: true,
     trim: true,
   },
    placeComment: {
     type: String,
-    // required: false,
+    required: false,
     trim: true,
   },
   createdAt: {
@@ -39,6 +39,12 @@ const placeSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  users: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 const Place = model('Place', placeSchema);

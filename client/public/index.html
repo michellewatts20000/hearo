@@ -10,6 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -39,5 +40,44 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script>
+      let autocomplete;
+
+      function initAutocomplete() {
+        const center = { lat: -33.865143, lng: 151.2099 };
+        const defaultBounds = {
+          north: center.lat + 0.1,
+          south: center.lat - 0.1,
+          east: center.lng + 0.1,
+          west: center.lng - 0.1,
+        };
+
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("autocomplete"),
+          {
+            bounds: defaultBounds,
+            types: ["establishment"],
+            componentRestrictions: { country: ["au"] },
+            fields: ["name"],
+          }
+        );
+        autocomplete.addListener("place_changed", onPlaceChanged);
+      }
+      function onPlaceChanged() {
+        var place = autocomplete.getPlace();
+
+        if (!place.geometry) {
+          // User did not select a prediction; reset the input field
+          document.getElementById("autocomplete").placeholder = "Enter a place";
+        } else {
+          // Display details about the valid place
+          document.getElementById("details").innerHTML = place.name;
+        }
+      }
+    </script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC99sh6_tymGWIEoaYGabesG-_I4RFWv-Q&libraries=places&callback=initAutocomplete"
+    ></script> -->
   </body>
 </html>
