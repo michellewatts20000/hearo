@@ -44,11 +44,9 @@ const Profile = () => {
 
   return (
     <>
-      <Heading mb={10}>
-        Welcome {Auth.getProfile().data.username}, to your account.
-      </Heading>
+      <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
       <PlaceForm />
-      <Heading as="h2" mt={10} mb={3}>
+      <Heading as="h3" color="teal" size="md" mb={5} mt={10} mb={3}>
         Places you've added to the app.
       </Heading>
       <PlaceList places={user.places} />

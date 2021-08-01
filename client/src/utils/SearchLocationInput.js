@@ -62,7 +62,7 @@ function SearchLocationInput() {
 
   useEffect(() => {
     loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=AIzaSyC99sh6_tymGWIEoaYGabesG-_I4RFWv-Q&libraries=places`,
+      `https://maps.googleapis.com/maps/api/js?key={APIKeyHERE}&libraries=places`,
       () => handleScriptLoad(setQuery, autoCompleteRef)
     );
   }, []);

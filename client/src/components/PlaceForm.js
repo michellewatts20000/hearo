@@ -88,7 +88,7 @@ const PlaceForm = () => {
             value={formState.placeLocation}
           />
         </FormControl>
-        <FormControl id="place" mt={5}>
+        <FormControl isRequired id="place" mt={5}>
           <FormLabel>Type of place</FormLabel>
           <Select
             onChange={handleChange}
@@ -101,7 +101,7 @@ const PlaceForm = () => {
             <option>Pub</option>
           </Select>
         </FormControl>
-        <FormControl id="rating" mt={5}>
+        <FormControl isRequired id="rating" mt={5}>
           <FormLabel>Rating</FormLabel>
           <Select
             onChange={handleChange}

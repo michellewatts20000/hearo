@@ -7,7 +7,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Flex } from "@chakra-ui/layout";
+import { Flex } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -17,7 +17,6 @@ import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import PlaceDetails from "./pages/PlaceDetails";
 import NotFound from "./pages/NotFound";
-require('dotenv').config();
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -42,11 +41,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+function App({ cookies }) {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Flex direction="column" maxW={{ xl: "1200px" }} m="0 auto">
+        {/* <VStack h="100vh" bg="#2D3748"> */}
+
+        <Flex direction="column" maxW={{ xl: "1200px" }} px={5} m="0 auto">
           <Header />
           <Route exact path="/" component={Home} />
           <Route exact path="/search" component={Search} />
@@ -58,6 +59,7 @@ function App() {
           <Route exact path="/404" component={NotFound} />
           <Footer />
         </Flex>
+        {/* </VStack> */}
       </Router>
     </ApolloProvider>
   );
