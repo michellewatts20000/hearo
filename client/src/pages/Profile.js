@@ -1,5 +1,11 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import {
+  Text,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -25,10 +31,13 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <Text>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </Text>
+      <Alert status="error">
+        <AlertIcon />
+        <AlertTitle mr={2}>You need to be logged in to see this. </AlertTitle>
+        <AlertDescription>
+          Use the navigation links above to sign up or log in!
+        </AlertDescription>
+      </Alert>
     );
   }
 
@@ -38,7 +47,7 @@ const Profile = () => {
         Welcome {Auth.getProfile().data.username}, to your account.
       </Text>
 
-     <PlaceForm />
+      <PlaceForm />
     </>
   );
 };
