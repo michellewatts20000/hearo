@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -44,23 +44,25 @@ const client = new ApolloClient({
 function App({ cookies }) {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        {/* <VStack h="100vh" bg="#2D3748"> */}
+      {/* <VStack h="100vh" bg="#2D3748"> */}
 
-        <Flex direction="column" maxW={{ xl: "1200px" }} px={5} m="0 auto">
-          <Header />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/me" component={Profile} />
-          <Route exact path="/profile/:username" component={Profile} />
-          <Route exact path="/places/:placeId" component={PlaceDetails} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/404" component={NotFound} />
-          <Footer />
-        </Flex>
-        {/* </VStack> */}
-      </Router>
+      <Flex direction="column" maxW={{ xl: "1200px" }} px={5} m="0 auto">
+        <Header />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/me" component={Profile} />
+            <Route exact path="/profile/:username" component={Profile} />
+            <Route exact path="/places/:placeId" component={PlaceDetails} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/404" component={NotFound} />
+          </Switch>
+        </Router>
+        <Footer />
+      </Flex>
+      {/* </VStack> */}
     </ApolloProvider>
   );
 }

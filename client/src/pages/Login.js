@@ -55,7 +55,7 @@ const Login = (props) => {
   };
 
   return (
-    <Box p={4}>
+    <Box>
       {data ? (
         <Alert status="success">
           <AlertIcon />

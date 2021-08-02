@@ -19,7 +19,6 @@ const Home = () => {
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
       minH="65vh"
-      px={6}
       mb={16}
     >
       <Stack
@@ -61,7 +60,7 @@ const Home = () => {
       </Stack>
 
       <Box w={{ base: "40%", sm: "40%", md: "40%" }} mb={{ base: 12, md: 0 }}>
-        <FaWaveSquare color={"teal"} size={{ base: 200 }} />
+        <FaWaveSquare color={"#81e6d9"} size={{ base: 200 }} />
       </Box>
     </Flex>
   );

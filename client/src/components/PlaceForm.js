@@ -64,7 +64,7 @@ const PlaceForm = () => {
   return (
     <Box>
       <form onSubmit={handleFormSubmit}>
-        <Heading as="h3" color="teal" size="md" mb={5}>
+        <Heading as="h3" color="#7FE6D1" size="md" mb={5}>
           Rate a place based on how loud it was
         </Heading>
         {/* <SearchLocationInput onChange={() => null} />
