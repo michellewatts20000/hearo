@@ -13,7 +13,14 @@ db.once('open', async () => {
     await Review.create(reviewSeeds);
     // await Place.create(placeSeeds);
 
+
+  var collection = User.find({});
+
+console.log(collection)
+
+
 for (let i = 0; i < placeSeeds.length; i++) {
+
       const { _id, placeAuthor } = await Place.create(placeSeeds[i]);
       const user = await User.findOneAndUpdate(
         { username: placeAuthor },
@@ -22,7 +29,9 @@ for (let i = 0; i < placeSeeds.length; i++) {
             places: _id,
           },
         }
+       
       );
+       console.log("user", user)
     }
   } catch (err) {
     console.error(err);

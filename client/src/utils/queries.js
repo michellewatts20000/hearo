@@ -27,6 +27,17 @@ export const QUERY_PLACES = gql`
   }
 `;
 
+export const QUERY_REVIEWS = gql`
+  query getReviews {
+    reviews {
+      _id
+      rating
+      comment
+      createdAt
+    }
+  }
+`;
+
 export const QUERY_SINGLE_PLACE = gql`
   query getSinglePlace($placeId: ID!) {
     place(placeId: $placeId) {

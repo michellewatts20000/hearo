@@ -24,7 +24,7 @@ const typeDefs = gql`
   comment: String
   createdAt: String
   place: Place
-  user: User!
+  user: User
   }
 
   type Auth {
@@ -38,6 +38,7 @@ const typeDefs = gql`
     places(username: String): [Place]
     place(placeId: ID!): Place
     me: User
+  
   }
 
   type Mutation {

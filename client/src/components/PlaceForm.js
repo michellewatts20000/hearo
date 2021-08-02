@@ -20,7 +20,6 @@ import { ADD_PLACE } from "../utils/mutations";
 // import { QUERY_PLACES, QUERY_ME } from "../utils/queries";
 // import SearchLocationInput from "../utils/SearchLocationInput";
 // import SearchLocationInput2 from "../utils/SearchLocationInput2";
-
 // import Auth from "../utils/auth";
 
 const PlaceForm = () => {
@@ -58,10 +57,10 @@ const PlaceForm = () => {
     // clear form values
     setFormState({
       placeName: "",
-      placeRating: "",
       placeLocation: "",
       placeType: "",
-      placeComment: "",
+      rating: "",
+      comment: "",
     });
   };
 
@@ -123,9 +122,9 @@ const PlaceForm = () => {
               <FormLabel>Rating</FormLabel>
               <Select
                 onChange={handleChange}
-                placeholder="Rating"
-                name="placeRating"
-                value={formState.placeRating}
+                placeholder="rating"
+                name="rating"
+                value={formState.rating}
               >
                 <option>Quiet</option>
                 <option>Average</option>
@@ -140,8 +139,8 @@ const PlaceForm = () => {
               <Textarea
                 onChange={handleChange}
                 placeholder="Comment"
-                name="placeComment"
-                value={formState.placeComment}
+                name="comment"
+                value={formState.comment}
               />
             </FormControl>
             <Button
@@ -199,8 +198,8 @@ const PlaceForm = () => {
             <Select
               onChange={handleChange}
               placeholder="Rating"
-              name="placeRating"
-              value={formState.placeRating}
+              name="rating"
+              value={formState.rating}
             >
               <option>Quiet</option>
               <option>Average</option>
@@ -215,8 +214,8 @@ const PlaceForm = () => {
             <Textarea
               onChange={handleChange}
               placeholder="Comment"
-              name="placeComment"
-              value={formState.placeComment}
+              name="comment"
+              value={formState.comment}
             />
           </FormControl>
           <Button

@@ -29,18 +29,23 @@ export const ADD_PLACE = gql`
     $placeName: String!
     $placeLocation: String!
     $placeType: String!
-    $placeComment: String!
-    $placeRating: String!
   ) {
     addPlace(
       placeName: $placeName
       placeLocation: $placeLocation
       placeType: $placeType
-      placeComment: $placeComment
-      placeRating: $placeRating
     ) {
       placeName
       placeLocation
+    }
+  }
+`;
+
+export const ADD_REVIEW = gql`
+  mutation addReview($comment: String!, $rating: String!) {
+    addReview(comment: $comment, rating: $rating) {
+      comment
+      rating
     }
   }
 `;
