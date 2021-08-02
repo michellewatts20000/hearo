@@ -18,13 +18,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  },
-  places: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Place',
-    },
-  ],
+  }
 });
 
 userSchema.pre('save', async function (next) {
@@ -32,7 +26,6 @@ userSchema.pre('save', async function (next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
-
   next();
 });
 

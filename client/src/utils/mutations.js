@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -24,31 +24,23 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const ADD_PLACE = gql`
-//  mutation addPlace($placeName:String!, $placeLocation:String!, $placeComment:String!, $placeRating:String!, $placeType:String!) {
-//     addPlace(placeName: $placeName, placeLocation: $placeLocation, placeComment: $placeComment ,placeRating: $placeRating, placeType: $placeType) {
-//       _id
-//       placeName
-//       placeAuthor
-//     placeLocation
-//     placeType
-//     placeRating
-//     placeComment
-//       createdAt,
-//     }
-//   }
-// `;
-
 export const ADD_PLACE = gql`
- mutation addPlace($placeName:String!, $placeLocation:String!, $placeComment:String!, $placeRating:String!, $placeType:String!) {
-    addPlace(placeName: $placeName, placeLocation: $placeLocation, placeComment: $placeComment, placeRating: $placeRating, placeType: $placeType ) {
-
+  mutation addPlace(
+    $placeName: String!
+    $placeLocation: String!
+    $placeType: String!
+    $placeComment: String!
+    $placeRating: String!
+  ) {
+    addPlace(
+      placeName: $placeName
+      placeLocation: $placeLocation
+      placeType: $placeType
+      placeComment: $placeComment
+      placeRating: $placeRating
+    ) {
       placeName
       placeLocation
-     placeComment
- 
-   
     }
   }
 `;
-

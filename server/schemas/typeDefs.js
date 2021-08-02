@@ -6,18 +6,25 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    places: [Place]!
+    places: [Place]
   }
 
   type Place {
     _id: ID
-    placeAuthor: String
     placeName: String
     placeType: String
     placeLocation: String
-    placeRating: String
-    placeComment: String
     createdAt: String
+    user: User!
+  }
+
+  type Review {
+  _id: ID
+  rating: String
+  comment: String
+  createdAt: String
+  place: Place
+  user: User!
   }
 
   type Auth {
@@ -26,7 +33,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User]
+    users(placeName: String): [User]
     user(username: String!): User
     places(username: String): [Place]
     place(placeId: ID!): Place
@@ -36,7 +43,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPlace(placeName: String!, placeLocation: String, placeComment: String, placeRating: String, placeType: String ): Place
+    addPlace(placeName: String!, placeLocation: String, placeType: String ): Place
   }
 `;
 

@@ -6,13 +6,11 @@ import {
   FormControl,
   FormLabel,
   Button,
-  Text,
   Alert,
   AlertIcon,
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
@@ -104,7 +102,11 @@ const Signup = () => {
           </Button>
         </form>
       )}
-      {error && <Text>{error.message}</Text>}
+      {error && (
+        <Alert status="error">
+          <AlertDescription>{error.message}</AlertDescription>
+        </Alert>
+      )}
     </Box>
   );
 };

@@ -1,14 +1,14 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Place } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Place, Review } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('places');
+      return User.find();
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('places');
+      return User.findOne({ username });
     },
     places: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -19,9 +19,9 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('places');
+        return User.findOne({ _id: context.user._id }).populate("places");
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 
@@ -35,39 +35,68 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-    addPlace: async (parent, { placeName, placeLocation, placeRating, placeType, placeComment }, context) => {
+    addPlace: async (
+      parent,
+      { placeName, placeLocation, placeRating, placeType, placeComment },
+      context
+    ) => {
+      console.log("placeComment" , placeComment)
       if (context.user) {
-        const place = await Place.create({
-          placeName,
-          placeLocation,
-          placeRating,
-          placeType,
-          placeComment,
-          placeAuthor: context.user.username,
+        let place = Place.findOne({ placeName });
+// console.log("place", place)
+        if (!place) {
+          place = await Place.create({
+            placeName,
+            placeLocation,
+            placeType,
+            user: context.user._id,
+          });
+        }
+        const review = await Review.create({
+          rating: placeRating,
+          comment: placeComment,
+          user: context.user._id,
+          place: place._id,
         });
-
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { places: place._id } }
-        );
         return place;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
+  // User: {
+  //   places: async (parent) => {
+  //     return await Place.find({ user: parent._id });
+  //   },
+  //   reviews: async (parent) => {
+  //     return await Review.find({ user: parent._id });
+  //   }
+  // },
+  // Place: {
+  //   reviews: async (parent) => {
+  //     return await Review.find({ place: parent._id });
+  //   }
+  // },
+  // Review: {
+  //   user: async (parent) => {
+  //     return await User.findOne({ _id: parent.user });
+  //   },
+  //   place: async (parent) => {
+  //     return await Place.findOne({ _id: parent.place });
+  //   }
+  // }
 };
 
 module.exports = resolvers;

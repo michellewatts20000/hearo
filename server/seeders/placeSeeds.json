@@ -1,42 +1,27 @@
 [
   {
-    "placeAuthor": "Alanis Morriset",
-    "placeType": "Bar",
     "placeName": "Trendy Bar",
-    "placeLocation": "Chatswood",
-    "placeRating": "Very Loud",
-    "placeComment": "Too loud, will never visit again!"
+    "placeType": "Bar",
+    "placeLocation": "Chatswood"
   },
   {
-    "placeAuthor": "Alanis Morriset",
-    "placeType": "Restaurant",
     "placeName": "Time for Thai",
-    "placeLocation": "Botany Bay",
-    "placeRating": "Quiet",
-    "placeComment": "Enjoyed hearing my friend!"
+    "placeType": "Restaurant",
+    "placeLocation": "Botany Bay"
   },
   {
-    "placeAuthor": "Madonna",
-    "placeType": "Restaurant",
     "placeName": "Truck Stop",
-    "placeLocation": "Earlwood",
-    "placeRating": "Average",
-    "placeComment": "Was good!"
-  },
-  {
-    "placeAuthor": "Tori Amos",
-    "placeType": "Pub",
-    "placeName": "Dive and drink",
-    "placeLocation": "Arncliffe",
-    "placeRating": "Very Loud",
-    "placeComment": "A BIT SHOUTY!"
-  },
-  {
-    "placeAuthor": "Amy Mann",
     "placeType": "Restaurant",
+    "placeLocation": "Earlwood"
+  },
+  {
+    "placeName": "Dive and drink",
+    "placeType": "Pub",
+    "placeLocation": "Arncliffe"
+  },
+  {
     "placeName": "Pasta bowl",
-    "placeLocation": "Marrickville",
-    "placeRating": "Very Very Loud",
-    "placeComment": "Not writing home about it."
+    "placeType": "Restaurant",
+    "placeLocation": "Marrickville"
   }
 ]

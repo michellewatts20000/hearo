@@ -3,7 +3,6 @@ import {
   Heading,
   Flex,
   Button,
-  Input,
   FormLabel,
   FormControl,
   Select,
@@ -14,10 +13,10 @@ const Search = () => {
     <form>
       <Flex align="center" justify="space-between" wrap="wrap" w="100%">
         <Heading mb={5}>Search for a quiet place in Sydney</Heading>
-        <FormControl id="postcode" isRequired>
+        {/* <FormControl id="postcode" isRequired>
           <FormLabel>Suburb</FormLabel>
           <Input id="autocomplete" placeholder="suburb" />
-        </FormControl>
+        </FormControl> */}
         <FormControl id="place" mt={5}>
           <FormLabel>Type of place</FormLabel>
           <Select placeholder="Select type of place">

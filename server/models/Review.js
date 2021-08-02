@@ -1,22 +1,15 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const placeSchema = new Schema({
-    placeName: {
-    type: String,
-    required: 'You need to put a place name!',
-    minlength: 1,
-    maxlength: 280,
-    trim: true,
-  },
-    placeType: {
+const reviewSchema = new Schema({
+   rating: {
     type: String,
     required: true,
     trim: true,
   },
-  placeLocation: {
+   comment: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   createdAt: {
@@ -24,13 +17,18 @@ const placeSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  user:
+place:
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Place',
+    },
+user:
     {
       type: Schema.Types.ObjectId,
       ref: 'User',
     },
 });
 
-const Place = model('Place', placeSchema);
+const Review = model('Review', reviewSchema);
 
-module.exports = Place;
+module.exports = Review;

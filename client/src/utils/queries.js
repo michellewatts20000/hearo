@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -7,13 +7,10 @@ export const QUERY_USER = gql`
       username
       email
       places {
-          _id
-      placeAuthor
-      placeName
-      placeLocation
-      placeRating
-      placeComment
-      createdAt
+        _id
+        placeName
+        placeLocation
+        createdAt
       }
     }
   }
@@ -23,11 +20,8 @@ export const QUERY_PLACES = gql`
   query getPlaces {
     places {
       _id
-      placeAuthor
       placeName
       placeLocation
-      placeRating
-      placeComment
       createdAt
     }
   }
@@ -36,12 +30,9 @@ export const QUERY_PLACES = gql`
 export const QUERY_SINGLE_PLACE = gql`
   query getSinglePlace($placeId: ID!) {
     place(placeId: $placeId) {
-       _id
-      placeAuthor
+      _id
       placeName
       placeLocation
-      placeRating
-      placeComment
       createdAt
     }
   }
@@ -54,13 +45,10 @@ export const QUERY_ME = gql`
       username
       email
       places {
-         _id
-      placeAuthor
-      placeName
-      placeLocation
-      placeRating
-      placeComment
-      createdAt
+        _id
+        placeName
+        placeLocation
+        createdAt
       }
     }
   }
