@@ -2,12 +2,12 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const reviewSchema = new Schema({
-   rating: {
+  rating: {
     type: String,
     required: true,
     trim: true,
   },
-   comment: {
+  comment: {
     type: String,
     required: false,
     trim: true,
@@ -17,16 +17,16 @@ const reviewSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-place:
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Place',
-    },
-user:
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-    },
+  place:
+  {
+    type: Schema.Types.ObjectId,
+    ref: 'Place',
+  },
+  user:
+  {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
 });
 
 const Review = model('Review', reviewSchema);

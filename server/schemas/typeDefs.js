@@ -6,7 +6,6 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    places: [Place]
   }
 
   type Place {
@@ -38,13 +37,12 @@ const typeDefs = gql`
     places(username: String): [Place]
     place(placeId: ID!): Place
     me: User
-  
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPlace(placeName: String!, placeLocation: String, placeType: String, placeComment:String, placeRating:String, placeType:String! ): Place
+    addPlace(placeName: String!, placeLocation: String, placeType: String, comment:String, rating:String ): Place
   }
 `;
 

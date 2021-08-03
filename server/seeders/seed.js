@@ -9,30 +9,47 @@ db.once('open', async () => {
     await User.deleteMany({});
     await Place.deleteMany({});
     await Review.deleteMany({});
+
     await User.create(userSeeds);
-    await Review.create(reviewSeeds);
-    // await Place.create(placeSeeds);
+    const userData = await User.find({})
+    console.log(userData[0].username)
 
-
-  var collection = User.find({});
-
-console.log(collection)
-
-
-for (let i = 0; i < placeSeeds.length; i++) {
-
-      const { _id, placeAuthor } = await Place.create(placeSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: placeAuthor },
+    for (let i = 0; i < placeSeeds.length; i++) {
+      const { _id } = await Place.create(placeSeeds[i]);
+      const addExtratoPlace = await Place.updateOne(
+        { _id: _id },
         {
           $addToSet: {
-            places: _id,
+            user: userData[i]._id,
           },
         }
-       
+
       );
-       console.log("user", user)
+      console.log("addExtratoPlace", addExtratoPlace)
     }
+
+    const placeData = await Place.find({})
+
+    for (let i = 0; i < reviewSeeds.length; i++) {
+
+      const { _id } = await Review.create(reviewSeeds[i]);
+
+      const addExtratoPlace2 = await Review.updateOne(
+        { _id: _id },
+        {
+          $addToSet: {
+            user: userData[i]._id,
+            place: placeData[i]._id,
+          },
+        }
+
+      );
+
+      console.log("addExtratoPlace", addExtratoPlace2)
+
+    }
+
+
   } catch (err) {
     console.error(err);
     process.exit(1);
