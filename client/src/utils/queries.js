@@ -6,6 +6,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      
     }
   }
 `;
@@ -17,6 +18,9 @@ export const QUERY_PLACES = gql`
       placeName
       placeLocation
       createdAt
+      user {
+        _id
+      }
     }
   }
 `;
