@@ -7,6 +7,9 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
+    reviews: async () => {
+      return Review.find();
+    },
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },
@@ -50,13 +53,13 @@ const resolvers = {
     },
     addPlace: async (
       parent,
-      { placeName, placeLocation, placeRating, placeType, placeComment },
+      { placeName, placeLocation, placeType, placeRating, placeComment },
       context
     ) => {
-      console.log("placeComment" , placeComment)
+      console.log("placeComment", placeComment)
       if (context.user) {
         let place = Place.findOne({ placeName });
-// console.log("place", place)
+        // console.log("place", place)
         if (!place) {
           place = await Place.create({
             placeName,

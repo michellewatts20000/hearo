@@ -17,7 +17,7 @@ const typeDefs = gql`
     user: User!
   }
 
-  type Review {
+  type Reviews {
   _id: ID
   rating: String
   comment: String
@@ -36,6 +36,7 @@ const typeDefs = gql`
     user(username: String!): User
     places(username: String): [Place]
     place(placeId: ID!): Place
+    reviews(rating: String): Reviews
     me: User
   }
 
