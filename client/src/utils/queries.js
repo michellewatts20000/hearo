@@ -6,7 +6,6 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      
     }
   }
 `;
@@ -36,6 +35,17 @@ export const QUERY_REVIEWS = gql`
   }
 `;
 
+export const QUERY_SINGLE_REVIEW = gql`
+  query getSingleReview($reviewId: ID!) {
+    review(reviewId: $reviewId) {
+      _id
+      rating
+      comment
+      createdAt
+    }
+  }
+`;
+
 export const QUERY_SINGLE_PLACE = gql`
   query getSinglePlace($placeId: ID!) {
     place(placeId: $placeId) {
@@ -53,12 +63,6 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      places {
-        _id
-        placeName
-        placeLocation
-        createdAt
-      }
     }
   }
 `;

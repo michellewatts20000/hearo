@@ -29,14 +29,26 @@ export const ADD_PLACE = gql`
     $placeName: String!
     $placeLocation: String!
     $placeType: String!
+    $rating: String!
+    $comment: String!
   ) {
     addPlace(
       placeName: $placeName
       placeLocation: $placeLocation
       placeType: $placeType
+      rating: $rating
+      comment: $comment
     ) {
-      placeName
-      placeLocation
+      rating
+      comment
+      place {
+        placeName
+        placeLocation
+        placeType
+      }
+      user {
+        _id
+      }
     }
   }
 `;

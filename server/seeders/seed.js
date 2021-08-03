@@ -19,7 +19,7 @@ db.once('open', async () => {
       const addExtratoPlace = await Place.updateOne(
         { _id: _id },
         {
-          $addToSet: {
+          $set: {
             user: userData[i]._id,
           },
         }
@@ -37,7 +37,7 @@ db.once('open', async () => {
       const addExtratoPlace2 = await Review.updateOne(
         { _id: _id },
         {
-          $addToSet: {
+          $set: {
             user: userData[i]._id,
             place: placeData[i]._id,
           },

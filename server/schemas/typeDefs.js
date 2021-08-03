@@ -23,7 +23,7 @@ const typeDefs = gql`
   comment: String
   createdAt: String
   place: Place
-  user: User
+  user: User!
   }
 
   type Auth {
@@ -36,14 +36,15 @@ const typeDefs = gql`
     user(username: String!): User
     places(username: String): [Place]
     place(placeId: ID!): Place
-    reviews(rating: String): Reviews
+    reviews: [Reviews]
+    review(reviewId: ID!): Reviews
     me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPlace(placeName: String!, placeLocation: String, placeType: String, comment:String, rating:String ): Place
+    addPlace(placeName: String!, placeLocation: String, placeType: String, rating:String, comment:String ): Reviews
   }
 `;
 
