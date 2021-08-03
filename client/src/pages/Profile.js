@@ -6,7 +6,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { QUERY_USER, QUERY_ME, QUERY_ME_REVIEWS } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -20,7 +20,14 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
+  // const { loading2, data2 } = useQuery(QUERY_ME_REVIEWS, {
+  //   // pass URL parameter
+  //   variables: { reviewId: _id },
+  // });
+
   const user = data?.me || data?.user || {};
+
+  console.log(user);
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/me" />;

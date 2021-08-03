@@ -66,3 +66,19 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+// export const QUERY_ME_REVIEWS = gql`
+//   query myReviews($userId: ID!) {
+//     place(userId: $userId) {
+//       _id
+//       comment
+//       rating
+//       place
+//       {
+// name
+// loction
+//       }
+
+//     }
+//   }
+// `;

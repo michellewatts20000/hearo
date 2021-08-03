@@ -13,6 +13,9 @@ const resolvers = {
      reviews: async () => {
       return Review.find();
     },
+    // myreviews: async (parent, args, context) => {
+    //   return Review.find({user: context.user._id});
+    // },
     review: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
     },
