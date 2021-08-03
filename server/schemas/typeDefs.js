@@ -37,6 +37,7 @@ const typeDefs = gql`
     places(username: String): [Place]
     place(placeId: ID!): Place
     reviews: [Reviews]
+    review(reviewId: ID!): [Reviews]
     myreviews(user: ID!): [Reviews]
     me: User
   }

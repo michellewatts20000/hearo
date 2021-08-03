@@ -9,7 +9,6 @@ db.once('open', async () => {
     await User.deleteMany({});
     await Place.deleteMany({});
     await Review.deleteMany({});
-
     await User.create(userSeeds);
     const userData = await User.find({})
     console.log(userData[0].username)
