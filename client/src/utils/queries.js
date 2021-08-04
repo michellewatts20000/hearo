@@ -58,3 +58,33 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_PLACES = gql`
+  query getPlaces {
+    allPlaces {
+      _id
+      placeName
+      placeType
+      placeLocation
+      createdAt
+    }
+  }
+`;
+
+export const QUERY_SEARCH = gql`
+  query search($placeType: String!) {
+    placeSearch(placeType: $placeType) {
+      placeName
+      placeLocation
+      _id
+    }
+  }
+`;
+
+export const QUERY_PLACE_BY_USER = gql`
+  query search($placeId: ID!) {
+    myPlacebyUser(placeId: $placeId) {
+      username
+    }
+  }
+`;

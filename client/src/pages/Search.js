@@ -13,10 +13,6 @@ const Search = () => {
     <form>
       <Flex align="center" justify="space-between" wrap="wrap" w="100%">
         <Heading mb={5}>Search for a quiet place in Sydney</Heading>
-        {/* <FormControl id="postcode" isRequired>
-          <FormLabel>Suburb</FormLabel>
-          <Input id="autocomplete" placeholder="suburb" />
-        </FormControl> */}
         <FormControl id="place" mt={5}>
           <FormLabel>Type of place</FormLabel>
           <Select placeholder="Select type of place">
@@ -25,7 +21,7 @@ const Search = () => {
             <option>Pub</option>
           </Select>
         </FormControl>
-        <FormControl isRequired id="rating" mt={5}>
+        {/* <FormControl isRequired id="rating" mt={5}>
           <FormLabel>Rating</FormLabel>
           <Select placeholder="How loud?">
             <option>Quiet</option>
@@ -35,7 +31,7 @@ const Search = () => {
             <option>Very Loud</option>
             <option>Very Very Loud</option>
           </Select>
-        </FormControl>
+        </FormControl> */}
         <Button
           type="submit"
           variant={"solid"}

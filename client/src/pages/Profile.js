@@ -19,11 +19,9 @@ const Profile = () => {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
+  console.log("userParam", userParam);
 
-  // const { loading2, data2 } = useQuery(QUERY_ME_REVIEWS, {
-  //   // pass URL parameter
-  //   variables: { reviewId: _id },
-  // });
+  console.log("data", data);
 
   const user = data?.me || data?.user || {};
 
@@ -56,7 +54,8 @@ const Profile = () => {
       <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
         Your reviews.
       </Heading>
-      <MyReviews />
+      <MyReviews user={user._id} />
+      {console.log(user._id)}
     </>
   );
 };

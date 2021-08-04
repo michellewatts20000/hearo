@@ -6,6 +6,8 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    place: Place
+    review: Reviews
   }
 
   type Place {
@@ -15,6 +17,7 @@ const typeDefs = gql`
     placeLocation: String
     createdAt: String
     user: User!
+    review: Reviews
   }
 
   type Reviews {
@@ -34,12 +37,20 @@ const typeDefs = gql`
   type Query {
     allUsers(placeName: String): [User]
     user(username: String!): User
+    
     allPlaces(username: String): [Place]
     singlePlace(placeId: ID!): Place
+    
     allReviews: [Reviews]
     singleReview(reviewId: ID!): Reviews
     myreviews(userId: ID!): [Reviews]
+
+    myPlacebyUser(placeId: ID!): [User]
+    
     placeReviews(placeId: ID!): [Reviews]
+    placeSearch(placeType: String): [Place]
+
+
     me: User
   }
 

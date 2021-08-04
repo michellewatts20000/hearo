@@ -4,25 +4,31 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-      user: async (parent, { username }) => {
+    user: async (parent, { username }) => {
       return User.findOne({ username });
     },
     allUsers: async () => {
       return User.find();
-    },  
-     allReviews: async () => {
+    },
+    allReviews: async () => {
       return Review.find();
     },
     myreviews: async (parent, { userId }) => {
-  return Review.find({user: userId });
-},
+      return Review.find({ user: userId });
+    },
+    myPlacebyUser: async (parent, { placeId }) => {
+      return Review.find({ place: placeId });
+    },
     placeReviews: async (parent, { placeId }) => {
-  return Review.find({place: placeId });
-},
+      return Review.find({ place: placeId });
+    },
+    placeSearch: async (parent, { placeType }) => {
+      return Place.find({ placeType: placeType });
+    },
     singleReview: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
     },
-     singlePlace: async (parent, { placeId }) => {
+    singlePlace: async (parent, { placeId }) => {
       return Place.findOne({ _id: placeId });
     },
     allPlaces: async (parent, { username }) => {
@@ -35,8 +41,6 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-
-  
   },
 
   Mutation: {
@@ -65,12 +69,12 @@ const resolvers = {
       { placeName, placeLocation, placeType, rating, comment },
       context
     ) => {
-      console.log("placeName", placeName)
-      console.log("rating", rating)
-      console.log("comment", comment)
+      console.log("placeName", placeName);
+      console.log("rating", rating);
+      console.log("comment", comment);
       if (context.user) {
         let place = await Place.findOne({ placeName });
-        console.log("place", place)
+        console.log("place", place);
         if (!place) {
           place = await Place.create({
             placeName,
@@ -90,27 +94,27 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
   },
-  // User: {
-  //   places: async (parent) => {
-  //     return await Place.find({ user: parent._id });
-  //   },
-  //   reviews: async (parent) => {
-  //     return await Review.find({ user: parent._id });
-  //   }
-  // },
-  // Place: {
-  //   reviews: async (parent) => {
-  //     return await Review.find({ place: parent._id });
-  //   }
-  // },
+  User: {
+    place: async (parent) => {
+      return await Place.find({ user: parent._id });
+    },
+    review: async (parent) => {
+      return await Review.find({ user: parent._id });
+    },
+  },
+  Place: {
+    review: async (parent) => {
+      return await Review.find({ place: parent._id });
+    },
+  },
   Reviews: {
     user: async (parent) => {
       return await User.findOne({ _id: parent.user });
     },
     place: async (parent) => {
       return await Place.findOne({ _id: parent.place });
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;
