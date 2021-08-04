@@ -41,6 +41,10 @@ export const QUERY_MY_REVIEWS = gql`
         placeName
         placeLocation
       }
+      user {
+        _id
+        username
+      }
     }
   }
 `;

@@ -6,12 +6,12 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
-import { QUERY_USER, QUERY_ME, QUERY_ME_REVIEWS } from "../utils/queries";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import PlaceForm from "../components/PlaceForm";
-// import PlaceList from "../components/PlaceList";
+import MyReviews from "../components/MyReviews";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -56,7 +56,7 @@ const Profile = () => {
       <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
         Your reviews.
       </Heading>
-      {/* <PlaceList places={user.places} /> */}
+      <MyReviews />
     </>
   );
 };
