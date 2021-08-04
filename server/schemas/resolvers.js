@@ -22,8 +22,8 @@ const resolvers = {
     placeReviews: async (parent, { placeId }) => {
       return Review.find({ place: placeId });
     },
-    placeSearch: async (parent, { placeType }) => {
-      return Place.find({ placeType: placeType });
+    placeSearch: async (parent, { placeType, rating }) => {
+      return Place.find({ placeType: placeType, rating: rating });
     },
     singleReview: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
@@ -96,10 +96,14 @@ const resolvers = {
   },
   User: {
     place: async (parent) => {
+      console.log("place", parent._id)
       return await Place.find({ user: parent._id });
+      
     },
     review: async (parent) => {
+      console.log("review", parent._id)
       return await Review.find({ user: parent._id });
+      
     },
   },
   Place: {

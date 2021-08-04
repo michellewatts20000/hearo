@@ -72,8 +72,8 @@ export const QUERY_PLACES = gql`
 `;
 
 export const QUERY_SEARCH = gql`
-  query search($placeType: String!) {
-    placeSearch(placeType: $placeType) {
+  query search($placeType: String!, $rating: String!) {
+    placeSearch(placeType: $placeType, rating: $rating) {
       placeName
       placeLocation
       _id
