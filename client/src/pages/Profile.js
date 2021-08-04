@@ -5,6 +5,8 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Grid,
+  Box,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -49,13 +51,19 @@ const Profile = () => {
 
   return (
     <>
-      <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
-      <PlaceForm />
-      <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
-        Your reviews.
-      </Heading>
-      <MyReviews user={user._id} />
-      {console.log(user._id)}
+      <Grid templateColumns="repeat(2, 1fr)" gap={10}>
+        <Box>
+          <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
+          <PlaceForm />
+        </Box>
+        <Box>
+          <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
+            Your reviews.
+          </Heading>
+          <MyReviews user={user._id} />
+          {console.log(user._id)}
+        </Box>
+      </Grid>
     </>
   );
 };
