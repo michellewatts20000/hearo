@@ -38,7 +38,7 @@ const typeDefs = gql`
     place(placeId: ID!): Place
     reviews: [Reviews]
     review(reviewId: ID!): [Reviews]
-    myreviews(user: ID!): Reviews
+    myreviews(userId: ID!): [Reviews]
     me: User
   }
 
