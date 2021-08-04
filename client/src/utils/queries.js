@@ -10,49 +10,37 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_PLACES = gql`
-  query getPlaces {
-    places {
-      _id
-      placeName
-      placeLocation
-      createdAt
+export const QUERY_PLACE_REVIEWS = gql`
+  query placeReviews($placeId: ID!) {
+    placeReviews(placeId: $placeId) {
+      place {
+        _id
+        placeName
+        placeLocation
+      }
       user {
         _id
+        username
+        email
       }
-    }
-  }
-`;
-
-export const QUERY_REVIEWS = gql`
-  query getReviews {
-    reviews {
       _id
-      rating
       comment
-      createdAt
-    }
-  }
-`;
-
-export const QUERY_SINGLE_REVIEW = gql`
-  query getSingleReview($reviewId: ID!) {
-    review(reviewId: $reviewId) {
-      _id
       rating
-      comment
-      createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_PLACE = gql`
-  query getSinglePlace($placeId: ID!) {
-    place(placeId: $placeId) {
+export const QUERY_MY_REVIEWS = gql`
+  query myReviews($userId: ID!) {
+    myreviews(userId: $userId) {
       _id
-      placeName
-      placeLocation
-      createdAt
+      comment
+      rating
+      place {
+        _id
+        placeName
+        placeLocation
+      }
     }
   }
 `;
@@ -66,19 +54,3 @@ export const QUERY_ME = gql`
     }
   }
 `;
-
-// export const QUERY_ME_REVIEWS = gql`
-//   query myReviews($userId: ID!) {
-//     place(userId: $userId) {
-//       _id
-//       comment
-//       rating
-//       place
-//       {
-// name
-// loction
-//       }
-
-//     }
-//   }
-// `;

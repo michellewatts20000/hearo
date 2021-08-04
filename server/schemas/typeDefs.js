@@ -32,13 +32,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    users(placeName: String): [User]
+    allUsers(placeName: String): [User]
     user(username: String!): User
-    places(username: String): [Place]
-    place(placeId: ID!): Place
-    reviews: [Reviews]
-    review(reviewId: ID!): [Reviews]
+    allPlaces(username: String): [Place]
+    singlePlace(placeId: ID!): Place
+    allReviews: [Reviews]
+    singleReview(reviewId: ID!): Reviews
     myreviews(userId: ID!): [Reviews]
+    placeReviews(placeId: ID!): [Reviews]
     me: User
   }
 

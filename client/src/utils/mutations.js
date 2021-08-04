@@ -52,12 +52,3 @@ export const ADD_PLACE = gql`
     }
   }
 `;
-
-export const ADD_REVIEW = gql`
-  mutation addReview($comment: String!, $rating: String!) {
-    addReview(comment: $comment, rating: $rating) {
-      comment
-      rating
-    }
-  }
-`;

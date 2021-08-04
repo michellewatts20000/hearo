@@ -7,22 +7,25 @@ const resolvers = {
       user: async (parent, { username }) => {
       return User.findOne({ username });
     },
-    users: async () => {
+    allUsers: async () => {
       return User.find();
     },  
-     reviews: async () => {
+     allReviews: async () => {
       return Review.find();
     },
     myreviews: async (parent, { userId }) => {
   return Review.find({user: userId });
 },
-    review: async (parent, { reviewId }) => {
+    placeReviews: async (parent, { placeId }) => {
+  return Review.find({place: placeId });
+},
+    singleReview: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
     },
-     place: async (parent, { placeId }) => {
+     singlePlace: async (parent, { placeId }) => {
       return Place.findOne({ _id: placeId });
     },
-    places: async (parent, { username }) => {
+    allPlaces: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Place.find(params).sort({ createdAt: -1 });
     },
