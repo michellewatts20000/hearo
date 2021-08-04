@@ -13,6 +13,9 @@ const resolvers = {
     allReviews: async () => {
       return Review.find();
     },
+     allPlaces2: async () => {
+      return Place.find();
+    },
     myreviews: async (parent, { userId }) => {
       return Review.find({ user: userId });
     },

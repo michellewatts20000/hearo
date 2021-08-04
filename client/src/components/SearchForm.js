@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import {
   Heading,
@@ -8,14 +8,11 @@ import {
   FormControl,
   Select,
 } from "@chakra-ui/react";
-import { QUERY_SEARCH } from "../utils/queries";
 
-const Search = () => {
+const SearchForm = () => {
   const [formState, setFormState] = useState({
     placeType: "",
   });
-
-  const { error, data } = useQuery(QUERY_SEARCH);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,12 +30,16 @@ const Search = () => {
       await {
         variables: { ...formState },
       };
-      console.log(data);
+      // console.log(data);
     } catch (e) {
       console.error(e);
     }
     console.log("2nd form", formState);
   };
+
+  // useEffect(() => {
+  //   console.log("data", data);
+  // }, [data]);
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -83,4 +84,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchForm;

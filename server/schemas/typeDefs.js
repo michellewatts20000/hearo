@@ -17,7 +17,7 @@ const typeDefs = gql`
     placeLocation: String
     createdAt: String
     user: User!
-    review: Reviews
+    review: [Reviews]
   }
 
   type Reviews {
@@ -39,6 +39,9 @@ const typeDefs = gql`
     user(username: String!): User
     
     allPlaces(username: String): [Place]
+
+    allPlaces2: [Place]
+
     singlePlace(placeId: ID!): Place
     
     allReviews: [Reviews]

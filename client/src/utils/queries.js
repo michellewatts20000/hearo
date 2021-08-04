@@ -71,12 +71,17 @@ export const QUERY_ME = gql`
 
 export const QUERY_PLACES = gql`
   query getPlaces {
-    allPlaces {
+    allPlaces2 {
       _id
       placeName
       placeType
       placeLocation
       createdAt
+      review {
+        rating
+        comment
+        createdAt
+      }
     }
   }
 `;

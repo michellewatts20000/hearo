@@ -11,7 +11,7 @@ import { Flex } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Search from "./pages/Search";
+import SearchPage from "./pages/SearchPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
@@ -51,7 +51,7 @@ function App({ cookies }) {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/search" component={Search} />
+            <Route exact path="/search" component={SearchPage} />
             <Route exact path="/me" component={Profile} />
             <Route exact path="/profile/:username" component={Profile} />
             <Route exact path="/places/:placeId" component={PlaceDetails} />

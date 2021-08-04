@@ -64,7 +64,7 @@ const PlaceForm = () => {
         </Heading>
         {/* <SearchLocationInput onChange={() => null} />
          */}
-        <FormControl id="name" mt={5}>
+        <FormControl id="autocomplete" mt={5}>
           <FormLabel>Name of place</FormLabel>
           <Input
             onChange={handleChange}
