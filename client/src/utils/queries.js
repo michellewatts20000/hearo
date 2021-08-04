@@ -17,6 +17,7 @@ export const QUERY_PLACE_REVIEWS = gql`
         _id
         placeName
         placeLocation
+        placeType
       }
       user {
         _id

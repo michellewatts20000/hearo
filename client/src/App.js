@@ -15,7 +15,7 @@ import SearchPage from "./pages/SearchPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
-import PlaceDetails from "./pages/PlaceDetails";
+import SinglePlace from "./pages/SinglePlace";
 import NotFound from "./pages/NotFound";
 
 // Construct our main GraphQL API endpoint
@@ -53,8 +53,7 @@ function App({ cookies }) {
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/me" component={Profile} />
-            <Route exact path="/profile/:username" component={Profile} />
-            <Route exact path="/places/:placeId" component={PlaceDetails} />
+            <Route exact path="/places/:placeId" component={SinglePlace} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/404" component={NotFound} />
