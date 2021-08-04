@@ -7,6 +7,7 @@ import {
   AlertDescription,
   Grid,
   Box,
+  Stack,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -48,8 +49,9 @@ const Profile = () => {
 
   return (
     <>
-      <Grid templateColumns="repeat(2, 1fr)" gap={10}>
-        <Box>
+      <Stack direction={["column", "row"]} spacing="24px">
+        {/* <Grid templateColumns="repeat(2, 1fr)" gap={10}> */}
+        <Box w={["100%", "50%"]} mr="20">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
           <PlaceForm />
         </Box>
@@ -59,7 +61,8 @@ const Profile = () => {
           </Heading>
           <MyReviews user={user} />
         </Box>
-      </Grid>
+        {/* </Grid> */}
+      </Stack>
     </>
   );
 };
