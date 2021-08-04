@@ -55,6 +55,16 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      review {
+        comment
+        rating
+        _id
+      }
+      place {
+        placeName
+        placeLocation
+        placeType
+      }
     }
   }
 `;

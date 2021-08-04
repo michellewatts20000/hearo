@@ -1,31 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Text } from "@chakra-ui/react";
-import { useQuery } from "@apollo/client";
-
-import { QUERY_MY_REVIEWS } from "../utils/queries";
 
 const MyReviews = (user) => {
-  const { data, loading } = useQuery(QUERY_MY_REVIEWS, {
-    variables: { userId: user },
-  });
+  const reviews = user.user.review;
+  const fullarray = user.user;
 
-  const myreviews = data?.myreviews || data?.myreviews || {};
+  console.log(reviews);
+  console.log(fullarray);
 
-  useEffect(() => {
-    console.log("data", data);
-    console.log("reviews", myreviews);
-  }, [myreviews]);
-
-  // console.log("user", user);
-  // console.log("data", data);
-  // console.log("reviews", reviews);
-
-  if (loading) {
-    return <div>Loading...</div>;
+  if (!reviews) {
+    return <h3>No Reviews Yet</h3>;
   }
+
   return (
     <Box>
-      <Text>list</Text>
+      {reviews.map((review) => (
+        <>
+          <Text>Comment: {review.comment}</Text>
+          <Text mb={5}>Rating: {review.rating}</Text>
+        </>
+      ))}
     </Box>
   );
 };

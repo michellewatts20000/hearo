@@ -6,8 +6,8 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    place: Place
-    review: Reviews
+    place: [Place]
+    review: [Reviews]
   }
 
   type Place {
@@ -43,6 +43,8 @@ const typeDefs = gql`
     
     allReviews: [Reviews]
     singleReview(reviewId: ID!): Reviews
+    
+    
     myreviews(userId: ID!): [Reviews]
 
     myPlacebyUser(placeId: ID!): [User]
@@ -52,6 +54,7 @@ const typeDefs = gql`
 
 
     me: User
+
   }
 
   type Mutation {

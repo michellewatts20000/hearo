@@ -21,13 +21,10 @@ const Profile = () => {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
-  console.log("userParam", userParam);
-
-  console.log("data", data);
 
   const user = data?.me || data?.user || {};
 
-  console.log(user);
+  console.log("user", user);
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/me" />;
@@ -60,8 +57,7 @@ const Profile = () => {
           <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
             Your reviews.
           </Heading>
-          <MyReviews user={user._id} />
-          {console.log(user._id)}
+          <MyReviews user={user} />
         </Box>
       </Grid>
     </>
