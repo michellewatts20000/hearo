@@ -12,10 +12,6 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
-// import { QUERY_PLACES, QUERY_ME } from "../utils/queries";
-// import SearchLocationInput from "../utils/SearchLocationInput";
-// import SearchLocationInput2 from "../utils/SearchLocationInput2";
-// import Auth from "../utils/auth";
 
 const PlaceForm = () => {
   const [formState, setFormState] = useState({

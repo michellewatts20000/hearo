@@ -81,10 +81,10 @@ export const QUERY_SEARCH = gql`
   }
 `;
 
-export const QUERY_PLACE_BY_USER = gql`
-  query search($placeId: ID!) {
-    myPlacebyUser(placeId: $placeId) {
-      username
-    }
-  }
-`;
+// export const QUERY_PLACE_BY_USER = gql`
+//   query search($placeId: ID!) {
+//     myPlacebyUser(placeId: $placeId) {
+//       username
+//     }
+//   }
+// `;
