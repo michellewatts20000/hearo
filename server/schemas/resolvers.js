@@ -4,11 +4,11 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    placeSearch: async (parent, { rating, placeType }) => {
+      return Review.find({ rating: rating, placeType: placeType });
+    },
     placeReviews: async (parent, { placeId }) => {
       return Review.find({ place: placeId });
-    },
-    placeSearch: async (parent, { placeType, rating }) => {
-      return Place.find({ placeType: placeType, rating: rating });
     },
     me: async (parent, args, context) => {
       if (context.user) {

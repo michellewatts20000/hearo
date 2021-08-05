@@ -8,11 +8,15 @@ import {
   FormControl,
   Select,
 } from "@chakra-ui/react";
+import { QUERY_SEARCH } from "../utils/queries";
 
 const SearchForm = () => {
   const [formState, setFormState] = useState({
     placeType: "",
   });
+
+  const { loading, data } = useQuery(QUERY_SEARCH);
+  const reviews = data?.placeSearch || [];
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,16 +34,11 @@ const SearchForm = () => {
       await {
         variables: { ...formState },
       };
-      // console.log(data);
     } catch (e) {
       console.error(e);
     }
     console.log("2nd form", formState);
   };
-
-  // useEffect(() => {
-  //   console.log("data", data);
-  // }, [data]);
 
   return (
     <form onSubmit={handleFormSubmit}>

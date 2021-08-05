@@ -52,11 +52,15 @@ export const QUERY_PLACE_REVIEWS = gql`
 `;
 
 export const QUERY_SEARCH = gql`
-  query placesearch($placeType: String!, $rating: String!) {
+  query placeSearch($placeType: String!, $rating: String!) {
     placeSearch(placeType: $placeType, rating: $rating) {
       placeName
       placeLocation
       _id
+      review {
+        comment
+        rating
+      }
     }
   }
 `;

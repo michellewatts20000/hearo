@@ -44,7 +44,6 @@ const PlaceForm = () => {
     } catch (e) {
       console.error(e);
     }
-    console.log("2nd form", formState);
 
     // clear form values
     setFormState({
