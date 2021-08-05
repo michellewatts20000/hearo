@@ -35,29 +35,10 @@ const typeDefs = gql`
   }
 
   type Query {
-    allUsers(placeName: String): [User]
-    user(username: String!): User
-    
-    allPlaces(username: String): [Place]
-
-    allPlaces2: [Place]
-
-    singlePlace(placeId: ID!): Place
-    
-    allReviews: [Reviews]
-    singleReview(reviewId: ID!): Reviews
-    
-    
-    myreviews(userId: ID!): [Reviews]
-
-    myPlacebyUser(placeId: ID!): [User]
-    
-    placeReviews(placeId: ID!): [Reviews]
-    placeSearch(placeType: String, rating: String): [Place]
-
-
-    me: User
-
+  me: User
+  user(username: String!): User
+  placeReviews(placeId: ID!): [Reviews]
+  placeSearch(placeType: String, rating: String): [Place]
   }
 
   type Mutation {

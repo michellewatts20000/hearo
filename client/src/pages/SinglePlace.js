@@ -28,13 +28,13 @@ const PlaceDetails = () => {
       <Box>
         <Text>Name: {place[0].place.placeName}</Text>
         <Text>Location: {place[0].place.placeLocation}</Text>
-        <Text>Type: {place[0].place.placeType}</Text>
+        <Text mb={5}>Type: {place[0].place.placeType}</Text>
       </Box>
       <Box>
         {place.map((item, index) => (
           <Box key={index}>
-            <Text>Comment: {item.comment}</Text>
-            <Text mb={5}>Rating: {item.rating}</Text>
+            <Text>Rating: {item.rating}</Text>
+            <Text mb={5}>Comment: {item.comment}</Text>
           </Box>
         ))}
       </Box>

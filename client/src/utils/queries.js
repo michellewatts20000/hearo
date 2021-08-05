@@ -31,40 +31,21 @@ export const QUERY_PLACE_REVIEWS = gql`
   }
 `;
 
-export const QUERY_MY_REVIEWS = gql`
-  query myReviews($userId: ID!) {
-    myreviews(userId: $userId) {
-      _id
-      comment
-      rating
-      place {
-        _id
-        placeName
-        placeLocation
-      }
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-
 export const QUERY_ME = gql`
   query me {
     me {
       _id
       username
       email
-      review {
-        comment
-        rating
-        _id
-      }
       place {
         placeName
         placeLocation
         placeType
+      }
+      review {
+        comment
+        rating
+        _id
       }
     }
   }
@@ -72,7 +53,7 @@ export const QUERY_ME = gql`
 
 export const QUERY_PLACES = gql`
   query getPlaces {
-    allPlaces2 {
+    allPlaces {
       _id
       placeName
       placeType
@@ -96,11 +77,3 @@ export const QUERY_SEARCH = gql`
     }
   }
 `;
-
-// export const QUERY_PLACE_BY_USER = gql`
-//   query search($placeId: ID!) {
-//     myPlacebyUser(placeId: $placeId) {
-//       username
-//     }
-//   }
-// `;

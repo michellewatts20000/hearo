@@ -7,36 +7,11 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },
-    allUsers: async () => {
-      return User.find();
-    },
-    allReviews: async () => {
-      return Review.find();
-    },
-     allPlaces2: async () => {
-      return Place.find();
-    },
-    myreviews: async (parent, { userId }) => {
-      return Review.find({ user: userId });
-    },
-    myPlacebyUser: async (parent, { placeId }) => {
-      return Review.find({ place: placeId });
-    },
     placeReviews: async (parent, { placeId }) => {
       return Review.find({ place: placeId });
     },
     placeSearch: async (parent, { placeType, rating }) => {
       return Place.find({ placeType: placeType, rating: rating });
-    },
-    singleReview: async (parent, { reviewId }) => {
-      return Review.findOne({ _id: reviewId });
-    },
-    singlePlace: async (parent, { placeId }) => {
-      return Place.findOne({ _id: placeId });
-    },
-    allPlaces: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Place.find(params).sort({ createdAt: -1 });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -101,12 +76,10 @@ const resolvers = {
     place: async (parent) => {
       console.log("place", parent._id)
       return await Place.find({ user: parent._id });
-      
     },
     review: async (parent) => {
       console.log("review", parent._id)
       return await Review.find({ user: parent._id });
-      
     },
   },
   Place: {
