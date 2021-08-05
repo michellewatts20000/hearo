@@ -41,7 +41,7 @@ const PlaceForm = () => {
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, reviews: [...me.reviews, addPlace] } },
+        data: { me: { ...me, review: [...me.review, addPlace] } },
       });
     },
   });
@@ -80,7 +80,7 @@ const PlaceForm = () => {
     <Box>
       <form onSubmit={handleFormSubmit}>
         <Heading as="h3" color="#7FE6D1" size="md" mb={5}>
-          Rate a place based on how loud it was
+          Rate a place based on how loud it is:
         </Heading>
         {/* <SearchLocationInput onChange={() => null} />
          */}

@@ -30,6 +30,16 @@ export const QUERY_ME = gql`
   }
 `;
 
+export const QUERY_REVIEWS = gql`
+  query getReviews {
+    reviews {
+      _id
+      comment
+      rating
+    }
+  }
+`;
+
 export const QUERY_PLACE_REVIEWS = gql`
   query placeReviews($placeId: ID!) {
     placeReviews(placeId: $placeId) {
@@ -61,16 +71,6 @@ export const QUERY_SEARCH = gql`
         comment
         rating
       }
-    }
-  }
-`;
-
-export const QUERY_REVIEWS = gql`
-  query getReviews {
-    reviews {
-      _id
-      comment
-      rating
     }
   }
 `;

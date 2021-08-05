@@ -13,6 +13,7 @@ import { QUERY_SEARCH } from "../utils/queries";
 const SearchForm = () => {
   const [formState, setFormState] = useState({
     placeType: "",
+    rating: "",
   });
 
   const [placeSearch, { loading, data }] = useQuery(QUERY_SEARCH);
