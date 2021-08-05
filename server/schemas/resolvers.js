@@ -12,7 +12,7 @@ const resolvers = {
       return Review.find({ place: placeId });
     },
      reviews: async () => {
-      return Review.find();
+      return Review.find().sort({"createdAt": -1});
     },
     me: async (parent, args, context) => {
       if (context.user) {

@@ -49,7 +49,6 @@ const Profile = () => {
   return (
     <>
       <Stack direction={["column", "row"]} spacing="24px">
-        {/* <Grid templateColumns="repeat(2, 1fr)" gap={10}> */}
         <Box w={["100%", "50%"]} mr="20">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
           <PlaceForm2 />
@@ -60,7 +59,6 @@ const Profile = () => {
           </Heading>
           <MyReviews user={user} />
         </Box>
-        {/* </Grid> */}
       </Stack>
     </>
   );

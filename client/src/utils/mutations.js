@@ -41,6 +41,7 @@ export const ADD_PLACE = gql`
     ) {
       rating
       comment
+      createdAt
       place {
         placeName
         placeLocation

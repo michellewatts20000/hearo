@@ -4,7 +4,7 @@ import { Box, Text } from "@chakra-ui/react";
 const MyReviews = (user) => {
   const reviews = user.user.review;
 
-  // console.log(fullarray.review[0]);
+  console.log(reviews);
 
   if (!reviews) {
     return <h3>No Reviews Yet</h3>;
@@ -15,7 +15,8 @@ const MyReviews = (user) => {
       {reviews.map((review, index) => (
         <Box key={index}>
           <Text>Comment: {review.comment}</Text>
-          <Text mb={5}>Rating: {review.rating}</Text>
+          <Text>Rating: {review.rating}</Text>
+          <Text mb={5}>Date: {review.createdAt}</Text>
         </Box>
       ))}
     </Box>

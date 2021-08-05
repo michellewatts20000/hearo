@@ -24,6 +24,7 @@ export const QUERY_ME = gql`
       review {
         comment
         rating
+        createdAt
         _id
       }
     }
