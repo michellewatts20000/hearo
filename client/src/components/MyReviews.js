@@ -14,6 +14,7 @@ const MyReviews = (user) => {
     <Box>
       {reviews.map((review, index) => (
         <Box key={index}>
+          <Text mb={5}>Date: {review.place.placeName}</Text>;
           <Text>Comment: {review.comment}</Text>
           <Text>Rating: {review.rating}</Text>
           <Text mb={5}>Date: {review.createdAt}</Text>

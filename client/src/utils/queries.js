@@ -22,6 +22,10 @@ export const QUERY_ME = gql`
         placeType
       }
       review {
+        place {
+          placeName
+          placeLocation
+        }
         comment
         rating
         createdAt
@@ -63,14 +67,18 @@ export const QUERY_PLACE_REVIEWS = gql`
 `;
 
 export const QUERY_SEARCH = gql`
-  query placeSearch($placeType: String!, $rating: String!) {
+  query placeSearch($placeType: String, $rating: String) {
     placeSearch(placeType: $placeType, rating: $rating) {
-      placeName
-      placeLocation
-      _id
-      review {
-        comment
-        rating
+      rating
+      comment
+      place {
+        placeName
+        placeLocation
+        placeType
+      }
+      user {
+        username
+        email
       }
     }
   }
