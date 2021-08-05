@@ -75,6 +75,7 @@ export const QUERY_SEARCH = gql`
         placeName
         placeLocation
         placeType
+        _id
       }
       user {
         username

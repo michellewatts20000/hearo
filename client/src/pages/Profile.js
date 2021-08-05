@@ -12,7 +12,7 @@ import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
-import PlaceForm2 from "../components/PlaceForm2";
+import PlaceForm from "../components/PlaceForm";
 import MyReviews from "../components/MyReviews";
 
 const Profile = () => {
@@ -51,7 +51,7 @@ const Profile = () => {
       <Stack direction={["column", "row"]} spacing="24px">
         <Box w={["100%", "50%"]} mr="20">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
-          <PlaceForm2 />
+          <PlaceForm />
         </Box>
         <Box>
           <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>

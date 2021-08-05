@@ -9,6 +9,7 @@ import {
   Select,
   Text,
   Box,
+  Link,
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
 
@@ -92,14 +93,20 @@ const SearchForm = () => {
           </Button>
         </Flex>
       </form>
-
+      {/* 
       {
-        reviews.length > 0 && reviews.map
+        reviews.length > 0 && reviews.map */}
 
-        // <Text>{}
-
-        // </Text>
-      }
+      <Box>
+        {reviews.map((review, index) => (
+          <Box key={index}>
+            <Text>Place: {review.place.placeName}</Text>
+            <Text>Location: {review.place.placeLocation}</Text>
+            <Text>Type: {review.place.placeType}</Text>
+            <Link href={`/places/${review.place._id}`}>See Reviews</Link>
+          </Box>
+        ))}
+      </Box>
     </>
   );
 };

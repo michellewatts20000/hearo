@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+
 import {
   Heading,
   FormLabel,
@@ -12,6 +13,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
+import { QUERY_REVIEWS, QUERY_ME } from "../utils/queries";
 
 const PlaceForm = () => {
   const [formState, setFormState] = useState({
@@ -22,7 +24,27 @@ const PlaceForm = () => {
     comment: "",
   });
 
-  const [addPlace, { error, data }] = useMutation(ADD_PLACE);
+  const [addPlace, { error }] = useMutation(ADD_PLACE, {
+    update(cache, { data: { addPlace } }) {
+      try {
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
+        console.log("reviews", reviews);
+        cache.writeQuery({
+          query: QUERY_REVIEWS,
+          data: { reviews: [addPlace, ...reviews] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, review: [...me.review, addPlace] } },
+      });
+    },
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,7 +62,6 @@ const PlaceForm = () => {
       await addPlace({
         variables: { ...formState },
       });
-      // console.log(data);
     } catch (e) {
       console.error(e);
     }
@@ -59,7 +80,7 @@ const PlaceForm = () => {
     <Box>
       <form onSubmit={handleFormSubmit}>
         <Heading as="h3" color="#7FE6D1" size="md" mb={5}>
-          Rate a place based on how loud it was
+          Rate a place based on how loud it is:
         </Heading>
         {/* <SearchLocationInput onChange={() => null} />
          */}
