@@ -38,6 +38,7 @@ const typeDefs = gql`
   me: User
   placeReviews(placeId: ID!): [Reviews]
   placeSearch(placeType: String, rating: String): [Reviews]
+  reviews: [Reviews]
   }
 
   type Mutation {

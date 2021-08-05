@@ -15,11 +15,11 @@ const SearchForm = () => {
     placeType: "",
   });
 
-  // const [placeSearch, { loading, data }] = useQuery(QUERY_SEARCH);
+  const [placeSearch, { loading, data }] = useQuery(QUERY_SEARCH);
 
-  // const reviews = data?.placeSearch || [];
+  const reviews = data?.placeSearch || [];
 
-  // console.log(reviews);
+  console.log(reviews);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

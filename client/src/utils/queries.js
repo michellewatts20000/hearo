@@ -64,3 +64,13 @@ export const QUERY_SEARCH = gql`
     }
   }
 `;
+
+export const QUERY_REVIEWS = gql`
+  query getReviews {
+    reviews {
+      _id
+      comment
+      rating
+    }
+  }
+`;
