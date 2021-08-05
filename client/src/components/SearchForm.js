@@ -15,8 +15,11 @@ const SearchForm = () => {
     placeType: "",
   });
 
-  const { loading, data } = useQuery(QUERY_SEARCH);
-  const reviews = data?.placeSearch || [];
+  // const [placeSearch, { loading, data }] = useQuery(QUERY_SEARCH);
+
+  // const reviews = data?.placeSearch || [];
+
+  // console.log(reviews);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,7 +40,7 @@ const SearchForm = () => {
     } catch (e) {
       console.error(e);
     }
-    console.log("2nd form", formState);
+    console.log(formState);
   };
 
   return (
@@ -58,9 +61,14 @@ const SearchForm = () => {
           </Select>
         </FormControl>
 
-        {/* <FormControl isRequired id="rating" mt={5}>
+        <FormControl isRequired id="rating" mt={5}>
           <FormLabel>Rating</FormLabel>
-          <Select placeholder="How loud?">
+          <Select
+            onChange={handleChange}
+            name="rating"
+            value={formState.rating}
+            placeholder="Loudness rating"
+          >
             <option>Quiet</option>
             <option>Average</option>
             <option>Bit Loud</option>
@@ -68,7 +76,7 @@ const SearchForm = () => {
             <option>Very Loud</option>
             <option>Very Very Loud</option>
           </Select>
-        </FormControl> */}
+        </FormControl>
         <Button
           type="submit"
           variant={"solid"}

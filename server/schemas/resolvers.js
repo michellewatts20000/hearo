@@ -5,7 +5,8 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     placeSearch: async (parent, { rating, placeType }) => {
-      return Review.find({ rating: rating, placeType: placeType });
+      const reviews = await Review.find({ rating: rating }).populate("place");
+      return reviews.filter(r => r.place.placeType === placeType);
     },
     placeReviews: async (parent, { placeId }) => {
       return Review.find({ place: placeId });
