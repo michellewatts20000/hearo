@@ -36,7 +36,6 @@ const typeDefs = gql`
 
   type Query {
   me: User
-  user(username: String!): User
   placeReviews(placeId: ID!): [Reviews]
   placeSearch(placeType: String, rating: String): [Place]
   }
