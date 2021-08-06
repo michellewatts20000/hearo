@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import {
   Heading,
@@ -19,7 +19,7 @@ const SearchForm = () => {
     rating: "",
   });
 
-  const [placeSearch, { error, data }] = useLazyQuery(QUERY_SEARCH);
+  const [placeSearch, { data }] = useLazyQuery(QUERY_SEARCH);
 
   const reviews = data?.placeSearch || [];
   console.log("data", data);
