@@ -39,7 +39,7 @@ function handleScriptLoad(updateQuery, autoCompleteRef) {
       bounds: defaultBounds,
       types: ["establishment"],
       componentRestrictions: { country: "au" },
-      fields: ["name"],
+      fields: ["name", "formatted_address"], 
     }
   );
   autoComplete.setFields(["address_components", "formatted_address"]);
@@ -50,13 +50,15 @@ function handleScriptLoad(updateQuery, autoCompleteRef) {
 
 async function handlePlaceSelect(updateQuery) {
   const addressObject = autoComplete.getPlace();
-  const query = addressObject.formatted_address;
-  updateQuery(query);
-  console.log("addressobject", addressObject);
+  const query = addressObject.address_component;
   console.log("query", query);
+
+  console.log("addressobject", addressObject);
+  updateQuery(addressObject);
 }
 
-function PlacesAutocomplete() {
+function PlacesAutocomplete(props) {
+
   const [query, setQuery] = useState("");
   const autoCompleteRef = useRef(null);
 
@@ -67,6 +69,19 @@ function PlacesAutocomplete() {
     );
   }, []);
 
+    useEffect(() => {
+ props.setFormState((formstate)=>{
+ 
+
+  return {
+...formstate, 
+placeName: query.name,
+placeLocation: query.formatted_address
+  }
+ }) 
+   
+  }, [query]);
+console.log("query", query)
   return (
     <>
       <FormControl isRequired>
@@ -75,17 +90,9 @@ function PlacesAutocomplete() {
           ref={autoCompleteRef}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Enter Place"
-          value={query}
+          value={query.name || ""}
         />
       </FormControl>
-      {/* <FormControl isRequired id="suburb" mt={5}>
-        <FormLabel>Suburb</FormLabel>
-        <Input
-          placeholder="Suburb"
-          name="placeLocation"
-          // value={query.placeLocation}
-        />
-      </FormControl> */}
     </>
   );
 }

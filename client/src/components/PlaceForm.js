@@ -85,7 +85,7 @@ const PlaceForm = () => {
           Rate a place based on how loud it is:
         </Heading>
 
-        <PlacesAutocomplete />
+        <PlacesAutocomplete setFormState = {setFormState} />
 
         {/* <FormControl isRequired mt={5}>
           <FormLabel>Name of place</FormLabel>
@@ -103,7 +103,7 @@ const PlaceForm = () => {
             onChange={handleChange}
             placeholder="Suburb"
             name="placeLocation"
-            value={formState.placeLocation}
+            value={formState.placeLocation || ""} 
           />
         </FormControl>
         <FormControl isRequired id="place" mt={5}>
@@ -111,7 +111,7 @@ const PlaceForm = () => {
           <Select
             onChange={handleChange}
             name="placeType"
-            value={formState.placeType}
+            value={formState.placeType || ""}
             placeholder="Select type of place"
           >
             <option>Restaurant</option>
@@ -126,7 +126,7 @@ const PlaceForm = () => {
             onChange={handleChange}
             placeholder="Rating"
             name="rating"
-            value={formState.rating}
+            value={formState.rating || ""}
           >
             <option>Quiet</option>
             <option>Average</option>
@@ -142,7 +142,7 @@ const PlaceForm = () => {
             onChange={handleChange}
             placeholder="Comment"
             name="comment"
-            value={formState.comment}
+            value={formState.comment || ""}
           />
         </FormControl>
         <Button
