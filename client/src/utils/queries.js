@@ -62,6 +62,7 @@ export const QUERY_PLACE_REVIEWS = gql`
       _id
       comment
       rating
+      createdAt
     }
   }
 `;

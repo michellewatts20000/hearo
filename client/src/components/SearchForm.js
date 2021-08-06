@@ -10,8 +10,10 @@ import {
   Text,
   Box,
   Link,
+  Input,
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
+import PlacesAutocomplete from "../components/PlacesAutocomplete";
 
 const SearchForm = () => {
   const [formState, setFormState] = useState({
@@ -19,10 +21,15 @@ const SearchForm = () => {
     rating: "",
   });
 
-  const [placeSearch, { loading, data }] = useLazyQuery(QUERY_SEARCH);
+  const [formStateSearch, setFormStateSearch] = useState({
+    placeLocation: "",
+  });
+
+  const [loaded, setLoaded] = useState(false);
+
+  const [placeSearch, { error, data }] = useLazyQuery(QUERY_SEARCH);
 
   const reviews = data?.placeSearch || [];
-
   console.log("data", data);
 
   const handleChange = (event) => {
@@ -38,7 +45,7 @@ const SearchForm = () => {
     event.preventDefault();
     console.log(formState);
     try {
-      placeSearch({
+      await placeSearch({
         variables: { ...formState },
       });
     } catch (e) {
@@ -52,7 +59,21 @@ const SearchForm = () => {
       <form onSubmit={handleFormSubmit}>
         <Flex align="center" justify="space-between" wrap="wrap" w="100%">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
-          <FormControl id="place" mt={5}>
+
+          <PlacesAutocomplete />
+
+          {/* <FormControl isRequired mt={5}>
+            <FormLabel>Suburb</FormLabel>
+            <Input
+              id="autocomplete"
+              onChange={handleChange}
+              placeholder="Suburb"
+              name="placeLocation"
+              value={formStateSearch.placeLocation}
+            />
+          </FormControl> */}
+
+          <FormControl isRequired id="place" mt={5}>
             <FormLabel>Type of place</FormLabel>
             <Select
               onChange={handleChange}
@@ -93,13 +114,10 @@ const SearchForm = () => {
           </Button>
         </Flex>
       </form>
-      {/* 
-      {
-        reviews.length > 0 && reviews.map */}
 
       <Box>
         {reviews.map((review, index) => (
-          <Box key={index}>
+          <Box mt={10} key={index}>
             <Text>Place: {review.place.placeName}</Text>
             <Text>Location: {review.place.placeLocation}</Text>
             <Text>Type: {review.place.placeType}</Text>

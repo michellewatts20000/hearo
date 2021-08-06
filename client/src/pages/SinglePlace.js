@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Flex, Text, Box, Stack } from "@chakra-ui/react";
+import { Heading, Text, Box, Stack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
@@ -10,17 +10,13 @@ const PlaceDetails = () => {
   const { placeId } = useParams();
 
   const { loading, data } = useQuery(QUERY_PLACE_REVIEWS, {
-    // pass URL parameter
     variables: { placeId: placeId },
   });
 
   const place = data?.placeReviews || {};
 
-  // console.log("place", place);
-  // console.log("place2", place.comment);
-
   if (loading) {
-    return <div>Loading...</div>;
+    return <Text>Loading...</Text>;
   }
   return (
     <Stack>
@@ -34,11 +30,11 @@ const PlaceDetails = () => {
         {place.map((item, index) => (
           <Box key={index}>
             <Text>Rating: {item.rating}</Text>
-            <Text mb={5}>Comment: {item.comment}</Text>
+            <Text>Comment: {item.comment}</Text>
+            <Text mb={5}>Date: {item.createdAt}</Text>
           </Box>
         ))}
       </Box>
-      ;
     </Stack>
   );
 };

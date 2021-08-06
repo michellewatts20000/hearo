@@ -9,8 +9,10 @@ import {
   Select,
   Button,
   Textarea,
-  Text,
   Box,
+  Alert,
+  AlertIcon,
+  AlertDescription,
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../utils/queries";
@@ -82,9 +84,7 @@ const PlaceForm = () => {
         <Heading as="h3" color="#7FE6D1" size="md" mb={5}>
           Rate a place based on how loud it is:
         </Heading>
-        {/* <SearchLocationInput onChange={() => null} />
-         */}
-        <FormControl id="autocomplete" mt={5}>
+        <FormControl isRequired mt={5}>
           <FormLabel>Name of place</FormLabel>
           <Input
             onChange={handleChange}
@@ -94,7 +94,7 @@ const PlaceForm = () => {
           />
         </FormControl>
 
-        <FormControl id="suburb" mt={5}>
+        <FormControl isRequired id="suburb" mt={5}>
           <FormLabel>Suburb</FormLabel>
           <Input
             onChange={handleChange}
@@ -103,7 +103,7 @@ const PlaceForm = () => {
             value={formState.placeLocation}
           />
         </FormControl>
-        <FormControl id="place" mt={5}>
+        <FormControl isRequired id="place" mt={5}>
           <FormLabel>Type of place</FormLabel>
           <Select
             onChange={handleChange}
@@ -116,7 +116,7 @@ const PlaceForm = () => {
             <option>Pub</option>
           </Select>
         </FormControl>
-        <FormControl id="rating" mt={5}>
+        <FormControl isRequired id="rating" mt={5}>
           <FormLabel>Rating</FormLabel>
           <Select
             onChange={handleChange}
@@ -150,7 +150,12 @@ const PlaceForm = () => {
         >
           Submit
         </Button>
-        {error && <Text>{error.message}</Text>}
+        {error && (
+          <Alert mt={10} status="warning">
+            <AlertIcon />
+            <AlertDescription> {error.message}</AlertDescription>
+          </Alert>
+        )}
       </form>
     </Box>
   );
