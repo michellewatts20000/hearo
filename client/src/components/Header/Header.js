@@ -6,15 +6,8 @@ import {
   IconButton,
   Link,
   Button,
-  Menu,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
-  Text,
   Stack,
-  NavLink,
-  Links
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Auth from "../../utils/auth";
@@ -106,14 +99,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
                 </Link>
               </>
             )}
-            <Menu>
-              <MenuList>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>Search</MenuItem>
-                <MenuDivider />
-                <MenuItem>About</MenuItem>
-              </MenuList>
-            </Menu>
+          
           </Flex>
         </Flex>
 

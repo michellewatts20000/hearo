@@ -48,8 +48,8 @@ const Profile = () => {
 
   return (
     <>
-      <Stack direction={["column", "row"]} spacing="24px">
-        <Box w={["100%", "50%"]} mr="20">
+      <Stack direction={["column","column","column", "row"]} spacing="24px">
+        <Box w={["100%", "100%","100%", "60%"]} mr="20">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
           <PlaceForm />
         </Box>

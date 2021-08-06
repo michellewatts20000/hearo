@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import {
   Heading,
-  Flex,
   Button,
   FormLabel,
   FormControl,
@@ -50,8 +49,8 @@ const SearchForm = () => {
   return (
     <>
       
-       <Stack direction={["column", "row"]} spacing="24px">
-        <Box w={["100%", "50%"]} mr="20">
+       <Stack direction={["column","column","column", "row"]} spacing="24px">
+        <Box w={["100%", "100%","100%", "60%"]} mr="20">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
@@ -99,12 +98,17 @@ const SearchForm = () => {
       </Box>
 
       <Box>
+         {reviews.length === 0 &&
+        <Text mt={15}>
+          There are no reviews, try another search.
+        </Text>
+      }
         {reviews.map((review, index) => (
           <Box mt={10} key={index}>
             <Text>Place: {review.place.placeName}</Text>
             <Text>Location: {review.place.placeLocation}</Text>
             <Text>Type: {review.place.placeType}</Text>
-            <Link href={`/places/${review.place._id}`}>See Reviews</Link>
+            <Link href={`/places/${review.place._id}`}>See Reviews for {review.place.placeName}</Link>
           </Box>
         ))}
       </Box>

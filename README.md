@@ -6,7 +6,7 @@ An app built with graphQL and the apollo server.
 
 ## Links
 
-### Link to deployed app is [here]()
+### Link to deployed app is [here](https://still-bayou-61713.herokuapp.com/)
 
 ### Link to its GitHub repo lives [here](https://github.com/michellewatts20000/hearo)
 
