@@ -53,6 +53,7 @@ async function handlePlaceSelect(updateQuery) {
   const query = addressObject.formatted_address;
   updateQuery(query);
   console.log(addressObject);
+  console.log(query);
 }
 
 function PlacesAutocomplete() {
@@ -67,15 +68,25 @@ function PlacesAutocomplete() {
   }, []);
 
   return (
-    <FormControl>
-      <FormLabel>Suburb</FormLabel>
-      <Input
-        ref={autoCompleteRef}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Enter Place"
-        value={query}
-      />
-    </FormControl>
+    <>
+      <FormControl>
+        <FormLabel>Where are you?</FormLabel>
+        <Input
+          ref={autoCompleteRef}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Enter Place"
+          value={query}
+        />
+      </FormControl>
+      <FormControl isRequired id="suburb" mt={5}>
+        <FormLabel>Suburb</FormLabel>
+        <Input
+          placeholder="Suburb"
+          name="placeLocation"
+          // value={query.placeLocation}
+        />
+      </FormControl>
+    </>
   );
 }
 

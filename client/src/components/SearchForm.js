@@ -10,22 +10,14 @@ import {
   Text,
   Box,
   Link,
-  Input,
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
-import PlacesAutocomplete from "../components/PlacesAutocomplete";
 
 const SearchForm = () => {
   const [formState, setFormState] = useState({
     placeType: "",
     rating: "",
   });
-
-  const [formStateSearch, setFormStateSearch] = useState({
-    placeLocation: "",
-  });
-
-  const [loaded, setLoaded] = useState(false);
 
   const [placeSearch, { error, data }] = useLazyQuery(QUERY_SEARCH);
 
@@ -60,19 +52,6 @@ const SearchForm = () => {
         <Flex align="center" justify="space-between" wrap="wrap" w="100%">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
 
-          <PlacesAutocomplete />
-
-          {/* <FormControl isRequired mt={5}>
-            <FormLabel>Suburb</FormLabel>
-            <Input
-              id="autocomplete"
-              onChange={handleChange}
-              placeholder="Suburb"
-              name="placeLocation"
-              value={formStateSearch.placeLocation}
-            />
-          </FormControl> */}
-
           <FormControl isRequired id="place" mt={5}>
             <FormLabel>Type of place</FormLabel>
             <Select
@@ -84,6 +63,7 @@ const SearchForm = () => {
               <option>Restaurant</option>
               <option>Bar</option>
               <option>Pub</option>
+              <option>Other</option>;
             </Select>
           </FormControl>
 
