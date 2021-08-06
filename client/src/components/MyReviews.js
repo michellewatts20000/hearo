@@ -7,7 +7,7 @@ const MyReviews = (user) => {
   console.log(reviews);
 
   if (!reviews) {
-    return <h3>No Reviews Yet</h3>;
+    return <Text>No reviews yet.</Text>
   }
 
   return (

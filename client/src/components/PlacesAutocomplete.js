@@ -52,8 +52,8 @@ async function handlePlaceSelect(updateQuery) {
   const addressObject = autoComplete.getPlace();
   const query = addressObject.formatted_address;
   updateQuery(query);
-  console.log(addressObject);
-  console.log(query);
+  console.log("addressobject", addressObject);
+  console.log("query", query);
 }
 
 function PlacesAutocomplete() {
