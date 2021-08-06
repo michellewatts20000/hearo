@@ -90,7 +90,7 @@ console.log("query", query)
           ref={autoCompleteRef}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Enter Place"
-          value={query.name || ""}
+          value={query.name}
         />
       </FormControl>
     </>
