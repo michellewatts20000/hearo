@@ -12,6 +12,9 @@ import {
   MenuDivider,
   useDisclosure,
   Text,
+  Stack,
+  NavLink,
+  Links
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Auth from "../../utils/auth";
@@ -23,9 +26,24 @@ export default function Header() {
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const Links = ['Home', 'Search'];
+
+const NavLink = ({ children }: { children: ReactNode }) => (
+  <Link
+   
+    rounded={'md'}
+    _hover={{
+      textDecoration: 'none',
+    }}
+    href={children}>
+    {children}
+  </Link>
+);
+
+
   return (
     <>
-      <Box>
+      <Box mb={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -34,13 +52,14 @@ export default function Header() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
-            <Link href="/">
-              <Text fontSize="sm" fontWeight="bold">
-                HEARO
-              </Text>
-            </Link>
-          </HStack>
+            <HStack spacing={8} alignItems={'center'}
+              as={'nav'}
+              display={{ base: 'none', md: 'flex' }}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </HStack>
+      
           <Flex alignItems={"center"}>
             {Auth.loggedIn() ? (
               <>
@@ -89,16 +108,24 @@ export default function Header() {
             )}
             <Menu>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <MenuItem>Home</MenuItem>
+                <MenuItem>Search</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>About</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
         </Flex>
 
-        {isOpen ? <Box pb={4} display={{ md: "none" }}></Box> : null}
+       {isOpen ? (
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
+              {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
       </Box>
     </>
   );

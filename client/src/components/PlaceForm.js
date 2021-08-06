@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-// import PlacesAutocomplete from "../components/PlacesAutocomplete";
+import PlacesAutocomplete from "../components/PlacesAutocomplete";
 import {
   Heading,
   FormLabel,
@@ -85,9 +85,9 @@ const PlaceForm = () => {
           Rate a place based on how loud it is:
         </Heading>
 
-        {/* <PlacesAutocomplete /> */}
+        <PlacesAutocomplete />
 
-        <FormControl isRequired mt={5}>
+        {/* <FormControl isRequired mt={5}>
           <FormLabel>Name of place</FormLabel>
           <Input
             onChange={handleChange}
@@ -95,7 +95,7 @@ const PlaceForm = () => {
             name="placeName"
             value={formState.placeName}
           />
-        </FormControl>
+        </FormControl> */}
 
         <FormControl isRequired id="suburb" mt={5}>
           <FormLabel>Suburb</FormLabel>

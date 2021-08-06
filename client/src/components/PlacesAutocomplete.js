@@ -69,7 +69,7 @@ function PlacesAutocomplete() {
 
   return (
     <>
-      <FormControl>
+      <FormControl isRequired>
         <FormLabel>Where are you?</FormLabel>
         <Input
           ref={autoCompleteRef}
@@ -78,14 +78,14 @@ function PlacesAutocomplete() {
           value={query}
         />
       </FormControl>
-      <FormControl isRequired id="suburb" mt={5}>
+      {/* <FormControl isRequired id="suburb" mt={5}>
         <FormLabel>Suburb</FormLabel>
         <Input
           placeholder="Suburb"
           name="placeLocation"
           // value={query.placeLocation}
         />
-      </FormControl>
+      </FormControl> */}
     </>
   );
 }

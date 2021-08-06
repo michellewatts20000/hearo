@@ -10,6 +10,7 @@ import {
   Text,
   Box,
   Link,
+  Stack
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
 
@@ -48,10 +49,11 @@ const SearchForm = () => {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <Flex align="center" justify="space-between" wrap="wrap" w="100%">
+      
+       <Stack direction={["column", "row"]} spacing="24px">
+        <Box w={["100%", "50%"]} mr="20">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
-
+<form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
             <FormLabel>Type of place</FormLabel>
             <Select
@@ -92,8 +94,9 @@ const SearchForm = () => {
           >
             Submit
           </Button>
-        </Flex>
+        
       </form>
+      </Box>
 
       <Box>
         {reviews.map((review, index) => (
@@ -105,6 +108,7 @@ const SearchForm = () => {
           </Box>
         ))}
       </Box>
+      </Stack>
     </>
   );
 };
