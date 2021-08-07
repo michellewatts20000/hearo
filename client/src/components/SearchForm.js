@@ -68,7 +68,7 @@ const SearchForm = () => {
             </Select>
           </FormControl>
 
-          <FormControl isRequired id="rating" mt={5}>
+          <FormControl isRequired id="rating" mt={5} mb={5}>
             <FormLabel>Rating</FormLabel>
             <Select
               onChange={handleChange}
@@ -86,10 +86,7 @@ const SearchForm = () => {
           </FormControl>
           <Button
             type="submit"
-            variant={"solid"}
-            colorScheme={"teal"}
-            size={"md"}
-            mt={5}
+          variant="primary"
           >
             Submit
           </Button>

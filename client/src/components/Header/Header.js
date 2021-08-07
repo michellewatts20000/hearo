@@ -23,7 +23,6 @@ export default function Header() {
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
-   
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
@@ -39,10 +38,11 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       <Box mb={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={"md"}
+            size={"sm"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
+            variant={"primary"}
             onClick={isOpen ? onClose : onOpen}
           />
             <HStack spacing={8} alignItems={'center'}
@@ -63,12 +63,11 @@ const NavLink = ({ children }: { children: ReactNode }) => (
                   size={"sm"}
                   mr={4}
                 >
-                  Your Dashboard
+                  Your Profile
                 </Link>
                 <Link onClick={logout}>
                   <Button
-                    variant={"solid"}
-                    colorScheme={"teal"}
+                    variant="primary"
                     size={"sm"}
                     mr={4}
                   >
@@ -89,8 +88,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
                 </Link>
                 <Link href="/signup">
                   <Button
-                    variant={"solid"}
-                    colorScheme={"teal"}
+                   variant="primary"
                     size={"sm"}
                     mr={4}
                   >

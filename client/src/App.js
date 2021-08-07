@@ -46,7 +46,7 @@ function App({ cookies }) {
     <ApolloProvider client={client}>
       {/* <VStack h="100vh" bg="#2D3748"> */}
 
-      <Flex direction="column" maxW={{ xl: "1200px" }} px={5} m="0 auto">
+      <Flex direction="column" maxW={{ xl: "1200px" }} px={20} m="0 auto">
         <Header />
         <Router>
           <Switch>

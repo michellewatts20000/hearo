@@ -88,7 +88,7 @@ const PlaceForm = () => {
         <PlacesAutocomplete setFormState = {setFormState} />
 
         <FormControl isRequired id="suburb" mt={5}>
-          <FormLabel>Suburb</FormLabel>
+          <FormLabel>Location</FormLabel>
           <Input
             onChange={handleChange}
             placeholder="Suburb"
@@ -126,7 +126,7 @@ const PlaceForm = () => {
             <option>Very Very Loud</option>
           </Select>
         </FormControl>
-        <FormControl mt={5} id="comment">
+        <FormControl mt={5} mb={5} id="comment">
           <FormLabel>Comment</FormLabel>
           <Textarea
             onChange={handleChange}
@@ -136,10 +136,7 @@ const PlaceForm = () => {
           />
         </FormControl>
         <Button
-          variant={"solid"}
-          colorScheme={"teal"}
-          size={"md"}
-          mt={5}
+         variant="primary"
           type="submit"
         >
           Submit

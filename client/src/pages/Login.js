@@ -76,7 +76,7 @@ const Login = (props) => {
               onChange={handleChange}
             />
           </FormControl>
-          <FormControl mt={5} id="password" isRequired>
+          <FormControl mt={5} mb={5} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
               placeholder="password"
@@ -88,10 +88,7 @@ const Login = (props) => {
             />
           </FormControl>
           <Button
-            variant={"solid"}
-            colorScheme={"teal"}
-            size={"md"}
-            mt={5}
+             variant="primary"
             type="submit"
           >
             Login

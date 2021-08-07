@@ -45,12 +45,9 @@ const Home = () => {
           Find quiet places to socialise in Sydney.
         </Text>
         <Center>
-          <Link href="/search">
+          <Link textDecoration="none" href="/search">
             <Button
-              variant={"solid"}
-              colorScheme={"teal"}
-              size={"md"}
-              mt={5}
+              variant="primary"
               type="submit"
             >
               Search
