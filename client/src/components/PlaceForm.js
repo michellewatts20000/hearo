@@ -13,6 +13,7 @@ import {
   Alert,
   AlertIcon,
   AlertDescription,
+  Spinner
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../utils/queries";
@@ -26,7 +27,7 @@ const PlaceForm = () => {
     comment: "",
   });
 
-  const [addPlace, { error }] = useMutation(ADD_PLACE, {
+  const [addPlace, { error, data }] = useMutation(ADD_PLACE, {
     update(cache, { data: { addPlace } }) {
       try {
         const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
@@ -135,12 +136,18 @@ const PlaceForm = () => {
             value={formState.comment || ""}
           />
         </FormControl>
+
+ {/* {data ?  (
+<Spinner color="primary"/>
+    ) : ( */}
+
         <Button
          variant="primary"
           type="submit"
         >
           Submit
         </Button>
+    {/* )} */}
         {error && (
           <Alert mt={10} status="warning">
             <AlertIcon />

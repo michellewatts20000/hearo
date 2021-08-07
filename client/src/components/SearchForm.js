@@ -98,7 +98,7 @@ const SearchForm = () => {
         spacing={'5'}
         mx={'auto'}>
         {data && reviews.length === 0 && (
-<Text> There are no entries for this combonation, please try another search.</Text>
+<Text> There are no entries for this combination, please try another search.</Text>
     )}
         {reviews.map((review, index) => (
           <Box mt={0} key={index}>

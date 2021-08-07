@@ -35,7 +35,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <Spinner color="primary" />;
+    return <Spinner color="primary" />
   }
 
   if (!user?.username) {

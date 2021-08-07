@@ -11,6 +11,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Spinner
 } from "@chakra-ui/react";
 
 // import { Link } from "react-router-dom";
@@ -87,12 +88,14 @@ const Login = (props) => {
               onChange={handleChange}
             />
           </FormControl>
+          
           <Button
              variant="primary"
             type="submit"
           >
             Login
           </Button>
+       
         </form>
       )}
 
