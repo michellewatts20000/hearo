@@ -15,9 +15,8 @@ const MyReviews = (user) => {
   return (
    
     <>
-  
       {reviews.map((review, index) => (
-        <GridItem colSpan={2} key={index}>
+        <GridItem colSpan={4} key={index}>
           <Text>Place: {review.place.placeName}</Text>
           <Text>Location: {review.place.placeLocation}</Text>
           <Text>Comment: {review.comment}</Text>

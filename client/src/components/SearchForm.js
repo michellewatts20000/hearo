@@ -90,7 +90,6 @@ const SearchForm = () => {
           >
             Submit
           </Button>
-        
       </form>
       </Box>
 
@@ -98,13 +97,11 @@ const SearchForm = () => {
         columns={{ base: 1, xl: 2 }}
         spacing={'5'}
         mx={'auto'}>
-         {reviews.length === 0 &&
-        <Text mt={15}>
-          There are no reviews, try another search.
-        </Text>
-      }
+        {data && reviews.length === 0 && (
+<Text> There are no entries for this combonation, please try another search.</Text>
+    )}
         {reviews.map((review, index) => (
-          <Box mt={10} key={index}>
+          <Box mt={0} key={index}>
             <Text>Place: {review.place.placeName}</Text>
             <Text>Location: {review.place.placeLocation}</Text>
             <Text>Type: {review.place.placeType}</Text>

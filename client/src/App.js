@@ -49,7 +49,7 @@ function App({ cookies }) {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
+            {/* <Route exact path="/home" component={Home} /> */}
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/me" component={Profile} />
             <Route exact path="/places/:placeId" component={SinglePlace} />

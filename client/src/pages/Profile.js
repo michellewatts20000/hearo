@@ -58,10 +58,9 @@ const Profile = () => {
           <PlaceForm />
         </Box>
         <Grid
-          templateRows="repeat(2, 1fr)"
+          templateRows="repeat(0, 1fr)"
           templateColumns="repeat(4, 1fr)"
           gap={10}
-          h="200px"
         >
           <GridItem colSpan={4}>
             <Heading color="primary">Your reviews.</Heading>
