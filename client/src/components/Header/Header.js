@@ -42,7 +42,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
-            variant={"primary"}
+            variant={"hamburger"}
             onClick={isOpen ? onClose : onOpen}
           />
             <HStack spacing={8} alignItems={'center'}

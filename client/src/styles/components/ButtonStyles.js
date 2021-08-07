@@ -15,6 +15,15 @@ export const ButtonStyles = {
         transform: "scale(1.03)",
       },
   }),
+  hamburger: (props) => ({
+      bg: "transparent",
+      border: "1px solid",
+      borderColor: "white",
+      color: "primary",
+      _hover: {
+       
+      },
+  }),
 },
 
   defaultprops: {},
