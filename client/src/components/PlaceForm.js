@@ -138,7 +138,9 @@ const PlaceForm = () => {
         </FormControl>
 
         {loading ? (
-          <Spinner color="primary" />
+          <Button variant="primary">
+            <Spinner color="gray.800" />
+          </Button>
         ) : (
           <Button variant="primary" type="submit">
             Submit

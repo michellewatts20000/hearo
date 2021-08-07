@@ -85,8 +85,10 @@ const SearchForm = () => {
               <option>Very Very Loud</option>
             </Select>
           </FormControl>
-             {loading ? (
-          <Spinner color="primary" />
+       {loading ? (
+          <Button variant="primary">
+            <Spinner color="gray.800" />
+          </Button>
         ) : (
           <Button variant="primary" type="submit">
             Submit

@@ -18,9 +18,8 @@ const MyReviews = (user) => {
       {reviews.map((review, index) => (
         <GridItem colSpan={4} key={index}>
           <Text>Place: {review.place.placeName}</Text>
-          <Text>Location: {review.place.placeLocation}</Text>
-          <Text>Comment: {review.comment}</Text>
           <Text>Loudness rating: {review.rating}</Text>
+          <Text>Comment: {review.comment}</Text>
           <Text >Date: {review.createdAt}</Text>
           <Link variant={"highlight"} href={`/places/${review.place._id}`}>Link to {review.place.placeName}</Link>
         </GridItem>
