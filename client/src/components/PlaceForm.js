@@ -87,16 +87,6 @@ const PlaceForm = () => {
 
         <PlacesAutocomplete setFormState = {setFormState} />
 
-        {/* <FormControl isRequired mt={5}>
-          <FormLabel>Name of place</FormLabel>
-          <Input
-            onChange={handleChange}
-            placeholder="Name"
-            name="placeName"
-            value={formState.placeName}
-          />
-        </FormControl> */}
-
         <FormControl isRequired id="suburb" mt={5}>
           <FormLabel>Suburb</FormLabel>
           <Input
