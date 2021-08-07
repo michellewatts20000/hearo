@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import SearchPage from "./pages/SearchPage";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import SinglePlace from "./pages/SinglePlace";
@@ -44,8 +44,6 @@ const client = new ApolloClient({
 function App({ cookies }) {
   return (
     <ApolloProvider client={client}>
-      {/* <VStack h="100vh" bg="#2D3748"> */}
-
       <Flex direction="column" maxW={{ xl: "1200px" }} px={{ base: "10", sm: "20", md: "20" }} m="0 auto">
         <Header />
         <Router>
@@ -62,7 +60,6 @@ function App({ cookies }) {
         </Router>
         <Footer />
       </Flex>
-      {/* </VStack> */}
     </ApolloProvider>
   );
 }

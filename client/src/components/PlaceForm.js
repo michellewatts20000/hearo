@@ -111,7 +111,7 @@ const PlaceForm = () => {
           </Select>
         </FormControl>
         <FormControl isRequired id="rating" mt={5}>
-          <FormLabel>Rating</FormLabel>
+          <FormLabel>Loudness rating</FormLabel>
           <Select
             onChange={handleChange}
             placeholder="Rating"
@@ -126,7 +126,7 @@ const PlaceForm = () => {
             <option>Very Very Loud</option>
           </Select>
         </FormControl>
-        <FormControl mt={5} mb={5} id="comment">
+        <FormControl mt={5} mb={7} id="comment">
           <FormLabel>Comment</FormLabel>
           <Textarea
             onChange={handleChange}

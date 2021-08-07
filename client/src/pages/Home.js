@@ -22,12 +22,12 @@ const Home = () => {
       mb={10}
     >
       <Stack
-        w={{ base: "70%", sm: "70%", md: "70%" }}
+        w={{ base: "100%", sm: "100%", md: "70%" }}
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
         variant="hero"   
-        fontSize={{ base: "50px", md: "80px", lg: "125px" }}
+        fontSize={{ base: "70px", md: "80px", lg: "125px" }}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO

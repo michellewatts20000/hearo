@@ -1,17 +1,21 @@
 export const LinkStyles = {
-   baseStyle: {
+  baseStyle: {
     fontWeight: "bold",
     textDecoration: "none",
     _hover: {
-       textDecoration: "none",
-      },
+      textDecoration: "none",
+    },
   },
 
   sizes: {},
-
-  defaultprops: {
- textDecoration: "none"
-
+  variants: {
+    highlight: (props) => ({
+      color: "primary",
+      textDecoration: "none",
+      fontWeight: "bold",
+      lineHeight: "1.5",
+    }),
   },
-};
 
+  defaultprops: {},
+};

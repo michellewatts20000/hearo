@@ -9,7 +9,8 @@ import {
   Text,
   Box,
   Link,
-  Stack
+  Stack,
+  SimpleGrid
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
 
@@ -64,12 +65,11 @@ const SearchForm = () => {
               <option>Restaurant</option>
               <option>Bar</option>
               <option>Pub</option>
-              <option>Other</option>;
             </Select>
           </FormControl>
 
-          <FormControl isRequired id="rating" mt={5} mb={5}>
-            <FormLabel>Rating</FormLabel>
+          <FormControl isRequired id="rating" mt={5} mb={7}>
+            <FormLabel>Loudness rating</FormLabel>
             <Select
               onChange={handleChange}
               name="rating"
@@ -94,7 +94,10 @@ const SearchForm = () => {
       </form>
       </Box>
 
-      <Box>
+      <SimpleGrid
+        columns={{ base: 1, xl: 2 }}
+        spacing={'5'}
+        mx={'auto'}>
          {reviews.length === 0 &&
         <Text mt={15}>
           There are no reviews, try another search.
@@ -105,10 +108,10 @@ const SearchForm = () => {
             <Text>Place: {review.place.placeName}</Text>
             <Text>Location: {review.place.placeLocation}</Text>
             <Text>Type: {review.place.placeType}</Text>
-            <Link href={`/places/${review.place._id}`}>See Reviews for {review.place.placeName}</Link>
+            <Link variant={"highlight"} href={`/places/${review.place._id}`}>See Reviews for {review.place.placeName}</Link>
           </Box>
         ))}
-      </Box>
+      </SimpleGrid>
       </Stack>
     </>
   );

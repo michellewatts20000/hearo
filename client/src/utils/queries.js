@@ -25,6 +25,7 @@ export const QUERY_ME = gql`
         place {
           placeName
           placeLocation
+          _id
         }
         comment
         rating

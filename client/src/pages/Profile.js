@@ -7,7 +7,10 @@ import {
   AlertDescription,
   Box,
   Stack,
-  Spinner
+  Spinner,
+  SimpleGrid,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -32,7 +35,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <Spinner color="primary"/>
+    return <Spinner color="primary" />;
   }
 
   if (!user?.username) {
@@ -49,17 +52,23 @@ const Profile = () => {
 
   return (
     <>
-      <Stack direction={["column","column","column", "row"]} spacing="24px">
-        <Box w={["100%", "100%","100%", "60%"]} mr="20">
+      <Stack direction={["column", "column", "column", "row"]} spacing="24px">
+        <Box w={["100%", "100%", "100%", "100%"]} mr="20">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
           <PlaceForm />
         </Box>
-        <Box>
-          <Heading as="h3" color="#7FE6D1" size="md" mt={10} mb={3}>
-            Your reviews.
-          </Heading>
+        <Grid
+          templateRows="repeat(2, 1fr)"
+          templateColumns="repeat(4, 1fr)"
+          gap={10}
+          h="200px"
+        >
+          <GridItem colSpan={4}>
+            <Heading color="primary">Your reviews.</Heading>
+          </GridItem>
+
           <MyReviews user={user} />
-        </Box>
+        </Grid>
       </Stack>
     </>
   );

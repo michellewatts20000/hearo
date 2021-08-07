@@ -17,9 +17,10 @@ export const myNewTheme = extendTheme({
     Link,
     Heading,
      Alert: {
-        defaultProps: {
-          colorScheme: "primary",
-        },
+        baseStyle: {
+          bg: "primary",
+    color: "gray.800"
+  },
       },
   },
 

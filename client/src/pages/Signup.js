@@ -57,7 +57,7 @@ const Signup = () => {
         </Alert>
       ) : (
         <form onSubmit={handleFormSubmit}>
-          <Heading mb={10}>Create an account</Heading>
+          <Heading mb={5}>Create an account</Heading>
           <FormControl id="name" isRequired>
             <FormLabel>Name</FormLabel>
             <Input
@@ -80,7 +80,7 @@ const Signup = () => {
               value={formState.email}
             />
           </FormControl>
-          <FormControl mt={5} id="password" isRequired>
+          <FormControl mt={5} mb={7} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
               placeholder="*****"
@@ -92,10 +92,7 @@ const Signup = () => {
             />
           </FormControl>
           <Button
-            variant={"solid"}
-            colorScheme={"teal"}
-            size={"md"}
-            mt={5}
+            variant={"primary"}
             type="submit"
           >
             Signup

@@ -64,7 +64,7 @@ const Login = (props) => {
         </Alert>
       ) : (
         <form onSubmit={handleFormSubmit}>
-          <Heading mb={10}>Login</Heading>
+          <Heading mb={5}>Login</Heading>
           <FormControl id="email" isRequired>
             <FormLabel>Email</FormLabel>
             <Input
@@ -76,7 +76,7 @@ const Login = (props) => {
               onChange={handleChange}
             />
           </FormControl>
-          <FormControl mt={5} mb={5} id="password" isRequired>
+          <FormControl mt={5} mb={7} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
               placeholder="password"
