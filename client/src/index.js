@@ -7,8 +7,7 @@ import { myNewTheme } from "./styles/theme.js"
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider resetCSS theme={myNewTheme}>
-      {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
+    <ChakraProvider theme={myNewTheme}>
       <App />
     </ChakraProvider>
   </React.StrictMode>,

@@ -1,7 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
 import { ButtonStyles as Button } from "./components/ButtonStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
-// import { mode } from "@chakra-ui/theme-tools";
+import { HeadingStyles as Heading } from "./components/HeadingStyles";
+
 
 export const myNewTheme = extendTheme({
   colors: {
@@ -14,6 +15,7 @@ export const myNewTheme = extendTheme({
   components: {
     Button,
     Link,
+    Heading,
      Alert: {
         defaultProps: {
           colorScheme: "primary",

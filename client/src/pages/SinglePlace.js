@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Text, Box, Stack } from "@chakra-ui/react";
+import { Heading, Text, Box, Stack, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
@@ -16,13 +16,12 @@ const PlaceDetails = () => {
   const place = data?.placeReviews || {};
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Spinner color="primary"/>
   }
   return (
     <Stack>
-      <Heading mb={10}>Single Place details</Heading>
       <Box>
-        <Text>Name: {place[0].place.placeName}</Text>
+      <Heading mb={5}>{place[0].place.placeName} details</Heading>
         <Text>Location: {place[0].place.placeLocation}</Text>
         <Text mb={5}>Type: {place[0].place.placeType}</Text>
       </Box>

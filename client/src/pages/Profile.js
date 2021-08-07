@@ -7,6 +7,7 @@ import {
   AlertDescription,
   Box,
   Stack,
+  Spinner
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -31,7 +32,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner color="primary"/>
   }
 
   if (!user?.username) {

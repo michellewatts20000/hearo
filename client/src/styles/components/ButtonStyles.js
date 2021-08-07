@@ -1,7 +1,6 @@
 export const ButtonStyles = {
   baseStyle: {
-    fontWeight: "bold",
-    
+    fontWeight: "bold", 
   },
 
   sizes: {},

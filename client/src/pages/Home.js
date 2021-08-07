@@ -19,16 +19,15 @@ const Home = () => {
       direction={{ base: "column-reverse", md: "row" }}
       wrap="no-wrap"
       minH="65vh"
-      mb={16}
+      mb={10}
     >
       <Stack
-        spacing={4}
-        w={{ base: "60%", sm: "60%", md: "60%" }}
+        w={{ base: "70%", sm: "70%", md: "70%" }}
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
-          size={"4xl"}
-          fontSize="100"
+        variant="hero"   
+        fontSize={{ base: "50px", md: "80px", lg: "125px" }}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -36,17 +35,18 @@ const Home = () => {
 
         <Text
           size={"lg"}
-          fontSize="25"
+          fontSize={{ base: "18px", md: "20px", lg: "25px" }}
           opacity="0.8"
           fontWeight="normal"
-          lineHeight={1.5}
+         
           textAlign={["center", "center", "left", "left"]}
         >
           Find quiet places to socialise in Sydney.
         </Text>
         <Center>
-          <Link textDecoration="none" href="/search">
+          <Link href="/search">
             <Button
+            mt={5}
               variant="primary"
               type="submit"
             >

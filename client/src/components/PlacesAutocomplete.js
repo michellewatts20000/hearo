@@ -71,8 +71,6 @@ function PlacesAutocomplete(props) {
 
     useEffect(() => {
  props.setFormState((formstate)=>{
- 
-
   return {
 ...formstate, 
 placeName: query.name,
