@@ -10,7 +10,8 @@ import {
   Box,
   Link,
   Stack,
-  SimpleGrid
+  SimpleGrid,
+  Spinner
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
 
@@ -20,7 +21,7 @@ const SearchForm = () => {
     rating: "",
   });
 
-  const [placeSearch, { data }] = useLazyQuery(QUERY_SEARCH);
+  const [placeSearch, { data, loading }] = useLazyQuery(QUERY_SEARCH);
 
   const reviews = data?.placeSearch || [];
   console.log("data", data);
@@ -84,12 +85,13 @@ const SearchForm = () => {
               <option>Very Very Loud</option>
             </Select>
           </FormControl>
-          <Button
-            type="submit"
-          variant="primary"
-          >
+             {loading ? (
+          <Spinner color="primary" />
+        ) : (
+          <Button variant="primary" type="submit">
             Submit
           </Button>
+        )}
       </form>
       </Box>
 

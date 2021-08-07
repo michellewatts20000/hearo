@@ -13,7 +13,7 @@ import {
   Alert,
   AlertIcon,
   AlertDescription,
-  Spinner
+  Spinner,
 } from "@chakra-ui/react";
 import { ADD_PLACE } from "../utils/mutations";
 import { QUERY_REVIEWS, QUERY_ME } from "../utils/queries";
@@ -27,7 +27,7 @@ const PlaceForm = () => {
     comment: "",
   });
 
-  const [addPlace, { error, data }] = useMutation(ADD_PLACE, {
+  const [addPlace, { error, loading }] = useMutation(ADD_PLACE, {
     update(cache, { data: { addPlace } }) {
       try {
         const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
@@ -86,7 +86,7 @@ const PlaceForm = () => {
           Rate a place based on how loud it is:
         </Heading>
 
-        <PlacesAutocomplete setFormState = {setFormState} />
+        <PlacesAutocomplete setFormState={setFormState} />
 
         <FormControl isRequired id="suburb" mt={5}>
           <FormLabel>Location</FormLabel>
@@ -94,7 +94,7 @@ const PlaceForm = () => {
             onChange={handleChange}
             placeholder="Suburb"
             name="placeLocation"
-            value={formState.placeLocation || ""} 
+            value={formState.placeLocation || ""}
           />
         </FormControl>
         <FormControl isRequired id="place" mt={5}>
@@ -137,17 +137,13 @@ const PlaceForm = () => {
           />
         </FormControl>
 
- {/* {data ?  (
-<Spinner color="primary"/>
-    ) : ( */}
-
-        <Button
-         variant="primary"
-          type="submit"
-        >
-          Submit
-        </Button>
-    {/* )} */}
+        {loading ? (
+          <Spinner color="primary" />
+        ) : (
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        )}
         {error && (
           <Alert mt={10} status="warning">
             <AlertIcon />
