@@ -78,6 +78,9 @@ export const QUERY_SEARCH = gql`
         placeLocation
         placeType
         _id
+        review {
+          rating
+        }
       }
       user {
         username

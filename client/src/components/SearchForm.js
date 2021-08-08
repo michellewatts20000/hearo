@@ -104,9 +104,12 @@ const SearchForm = () => {
         {data && reviews.length === 0 && (
 <Text> There are no entries for this combination, please try another search.</Text>
     )}
+
+    {console.log(reviews)}
         {reviews.map((review, index) => (
           <Box mt={0} key={index}>
             <Text>Place: {review.place.placeName}</Text>
+            <Text>{review.place.review.length} reviews</Text>
             <Text>Location: {review.place.placeLocation}</Text>
             <Text>Type: {review.place.placeType}</Text>
             <Link variant={"highlight"} href={`/places/${review.place._id}`}>See Reviews for {review.place.placeName}</Link>
