@@ -22,7 +22,7 @@ import Auth from "../utils/auth";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data, loading }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -58,9 +58,9 @@ const Login = (props) => {
   return (
     <Box>
       {data ? (
-        <Alert status="success">
+        <Alert color="black" status="success">
           <AlertIcon />
-          <AlertTitle mr={2}>Success!</AlertTitle>
+          <AlertTitle  mr={2}>Success!</AlertTitle>
           <AlertDescription>You have logged in!</AlertDescription>
         </Alert>
       ) : (
@@ -89,12 +89,15 @@ const Login = (props) => {
             />
           </FormControl>
           
-          <Button
-             variant="primary"
-            type="submit"
-          >
+            {loading ? (
+          <Button variant="primary">
+            <Spinner color="gray.800" />
+          </Button>
+        ) : (
+          <Button variant="primary" type="submit">
             Login
           </Button>
+        )}
           
        
         </form>

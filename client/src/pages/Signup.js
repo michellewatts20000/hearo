@@ -50,7 +50,7 @@ const Signup = () => {
   return (
     <Box>
       {data ? (
-        <Alert status="success">
+        <Alert color="black" status="success">
           <AlertIcon />
           <AlertTitle mr={2}>Success!</AlertTitle>
           <AlertDescription>You have created an account!</AlertDescription>

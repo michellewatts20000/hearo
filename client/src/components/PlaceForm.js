@@ -147,9 +147,9 @@ const PlaceForm = () => {
           </Button>
         )}
         {error && (
-          <Alert mt={10} status="warning">
+          <Alert mt={10} status="warning" color="black">
             <AlertIcon />
-            <AlertDescription> {error.message}</AlertDescription>
+            <AlertDescription color="black"> {error.message}</AlertDescription>
           </Alert>
         )}
       </form>

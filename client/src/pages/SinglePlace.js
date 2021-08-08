@@ -22,8 +22,8 @@ const PlaceDetails = () => {
     <Stack>
       <Box>
       <Heading mb={5}>{place[0].place.placeName} details</Heading>
+      <Text mb={5}>Type: {place[0].place.placeType}</Text>
         <Text>Location: {place[0].place.placeLocation}</Text>
-        <Text mb={5}>Type: {place[0].place.placeType}</Text>
       </Box>
       <Box>
         {place.map((item, index) => (

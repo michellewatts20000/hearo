@@ -2,6 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { ButtonStyles as Button } from "./components/ButtonStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
 import { HeadingStyles as Heading } from "./components/HeadingStyles";
+import { AlertStyles as Alert } from "./components/AlertStyles";
 
 
 export const myNewTheme = extendTheme({
@@ -16,12 +17,7 @@ export const myNewTheme = extendTheme({
     Button,
     Link,
     Heading,
-     Alert: {
-        baseStyle: {
-          bg: "primary",
-    color: "gray.800"
-  },
-      },
+    Alert
   },
 
    styles: {
@@ -30,6 +26,7 @@ export const myNewTheme = extendTheme({
       body: {
         bg: "gray.800",
         color: "white",
+        fontFamily: "body",
       },
       // styles for the `a`
       a: {

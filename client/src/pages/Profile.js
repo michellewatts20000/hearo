@@ -40,11 +40,11 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <Alert status="error">
+      <Alert color="black" status="error">
         <AlertIcon />
         <AlertTitle mr={2}>You need to be logged in to see this. </AlertTitle>
         <AlertDescription>
-          Use the navigation links above to sign up or log in!
+          Use the navigation links above to signup or login!
         </AlertDescription>
       </Alert>
     );
