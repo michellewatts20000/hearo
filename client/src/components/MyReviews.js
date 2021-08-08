@@ -12,12 +12,15 @@ const MyReviews = (user) => {
   return (
     <>
       {reviews.map((review, index) => (
-        <Box>
-          <Text>Place: {review.place.placeName}</Text>
-          <Text>Loudness rating: {review.rating}</Text>
-          <Text>Comment: {review.comment}</Text>
-          <Text >Date: {review.createdAt}</Text>
+        <Box p={"15px"} borderColor={"white"} border={"1px solid"}>
+          <Text variant="h4">{review.place.placeName}</Text>
+          <Text>'{review.rating}' loudness rating</Text>
+            {review.comment === "" ? ( <Text></Text>) : (
+<Text>Comment: {review.comment}</Text>
+             )}
+            <Text>{review.createdAt}</Text>
           <Link variant={"highlight"} href={`/places/${review.place._id}`}>Link to {review.place.placeName}</Link>
+         
         </Box>
       ))}
     </>

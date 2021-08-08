@@ -20,18 +20,21 @@ const PlaceDetails = () => {
   }
   return (
     <Stack>
-      <Box>
+      <Box mb={5}>
       <Heading mb={5}>{place[0].place.placeName} reviews</Heading>
-      <Text variant="h3">Type: {place[0].place.placeType}</Text>
-        <Text variant="h3" mb={5}>Location: {place[0].place.placeLocation}</Text>
+      <Text variant="placeDetails">{place[0].place.placeType}: {place[0].place.placeLocation}</Text>
+      
       </Box>
 
       <SimpleGrid columns={{sm: 1, md: 2, lg:4}} spacing={10}>
         {place.map((item, index) => (
-          <Box p="10px"  border="1px solid" borderRadius="20px" borderColor="white" key={index}>
-            <Text>Rating: {item.rating}</Text>
-            <Text>Comment: {item.comment}</Text>
-            <Text mb={5}>Date: {item.createdAt}</Text>
+          <Box p="15px"  border="1px solid" borderColor="white" key={index}>
+            <Text variant="h4">Loudness rating: {item.rating}</Text>
+            {item.comment === "" ? ( <Text></Text>) : (
+<Text>Comment: {item.comment}</Text>
+             )}
+            <Text>{item.createdAt}</Text>
+            <Text>Author: {item.user.username}</Text>
           </Box>
         ))}
       </SimpleGrid>

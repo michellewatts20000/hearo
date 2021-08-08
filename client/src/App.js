@@ -44,7 +44,7 @@ const client = new ApolloClient({
 function App({ cookies }) {
   return (
     <ApolloProvider client={client}>
-      <Flex direction="column" maxW={{ xl: "1200px" }} px={{ base: "10", sm: "20", md: "20" }} m="0 auto">
+      <Flex direction="column" maxW={{ xl: "1400px" }} px={{ base: "10", sm: "20", md: "20" }} m="0 auto">
         <Header />
         <Router>
           <Switch>

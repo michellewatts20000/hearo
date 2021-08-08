@@ -26,8 +26,8 @@ const Home = () => {
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
-        variant="hero"   
-        fontSize={{ base: "70px", md: "80px", lg: "125px" }}
+          variant="hero"
+          fontSize={{ base: "70px", md: "80px", lg: "125px" }}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -38,18 +38,13 @@ const Home = () => {
           fontSize={{ base: "18px", md: "20px", lg: "25px" }}
           opacity="0.8"
           fontWeight="normal"
-         
           textAlign={["center", "center", "left", "left"]}
         >
           Find quiet places to socialise in Sydney.
         </Text>
         <Center>
           <Link href="/search">
-            <Button
-            mt={5}
-              variant="primary"
-              type="submit"
-            >
+            <Button mt={5} variant="primary" type="submit">
               Search
             </Button>
           </Link>

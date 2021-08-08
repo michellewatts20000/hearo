@@ -55,7 +55,7 @@ const Profile = () => {
   return (
     <>
       <Stack direction={["column", "column", "row", "row"]} spacing="24px">
-        <Box w={["100%", "100%", "40%", "40%"]} mr="10">
+        <Box w={["100%", "100%", "30%", "40%"]} mr="10">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
           <Text mb={5} variant="h3">
             Add a loudness review below:
@@ -63,17 +63,15 @@ const Profile = () => {
           <PlaceForm />
         </Box>
 
-        <VStack>
-          <Box>
-            <Text mb={5} variant="h3">
-              Your reviews.
-            </Text>
-          </Box>
-        </VStack>
+        <Box w={["100%", "100%", "70%", "60%"]}>
+          <Text mb={5} variant="h3">
+            Your reviews.
+          </Text>
 
-        <SimpleGrid columns={[2, 2, 2, 4]} spacing="20px">
-          <MyReviews user={user} />
-        </SimpleGrid>
+          <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px">
+            <MyReviews user={user} />
+          </SimpleGrid>
+        </Box>
       </Stack>
     </>
   );

@@ -52,7 +52,7 @@ const SearchForm = () => {
     <>
       
        <Stack direction={["column","column","column", "row"]} spacing="24px">
-        <Box w={["100%", "100%","100%", "60%"]} mr="20">
+         <Box w={["100%", "100%", "30%", "40%"]} mr="10">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
@@ -97,26 +97,28 @@ const SearchForm = () => {
         )}
       </form>
       </Box>
-
-      <SimpleGrid
-        columns={{ base: 1, xl: 2 }}
-        spacing={'5'}
-        mx={'auto'}>
+ <Box w={["100%", "100%", "70%", "60%"]}>
+       <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px">
         {data && reviews.length === 0 && (
 <Text> There are no entries for this combination, please try another search.</Text>
     )}
 
     {console.log(reviews)}
         {reviews.map((review, index) => (
-          <Box mt={0} key={index}>
-            <Text>Place: {review.place.placeName}</Text>
-            <Text>{review.place.review.length} reviews</Text>
-            <Text>Location: {review.place.placeLocation}</Text>
-            <Text>Type: {review.place.placeType}</Text>
-            <Link variant={"highlight"} href={`/places/${review.place._id}`}>See Reviews for {review.place.placeName}</Link>
+           <Box p={"15px"} borderColor={"white"} border={"1px solid"} key={index}>
+            <Text variant="h4">{review.place.placeName}</Text>
+             {review.place.review.length === 1 ? (  <Text variant="h4">{review.place.review.length} review</Text>) : (
+ <Text variant="h4">{review.place.review.length} reviews</Text>
+             )}
+            <Text>{review.place.placeLocation}</Text>
+          
+             {review.place.review.length === 1 ? (   <Link variant={"highlight"} href={`/places/${review.place._id}`}>See {review.place.placeName} review</Link>) : (
+  <Link variant={"highlight"} href={`/places/${review.place._id}`}>See {review.place.placeName} reviews</Link>
+             )}
           </Box>
         ))}
       </SimpleGrid>
+      </Box>
       </Stack>
     </>
   );
