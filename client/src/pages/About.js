@@ -35,13 +35,12 @@ const About = () => {
         when we went out, the places we went to eat or drink were too loud.
       </Text>
 
-      <Text mb={5}>
+      <Text>
         This app will allow you to search for places that are quiet or not too
         loud based on what you feel like. It will also allow you to rate and
-        review the places you go to, for how loud they are.
+        review the places you go to, for how loud they are. It’s like
+        TripAdvisor or Google Review for sound.
       </Text>
-
-      <Text mb={5}>It’s like TripAdvisor or Google Review for sound.</Text>
 
       <SimpleGrid columns={{ base: 2, sm: 3, md: 3, lg: 7 }} spacing={5}>
         <DbLevel title="Fireworks" icon={<GiJetFighter />} db="140db" />
