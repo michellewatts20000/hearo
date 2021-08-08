@@ -19,7 +19,7 @@ export const ButtonStyles = {
       bg: "transparent",
       border: "1px solid",
       borderColor: "white",
-      color: "primary",
+      color: "white",
       _hover: {
        
       },

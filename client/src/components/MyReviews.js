@@ -1,15 +1,12 @@
 import React from "react";
-import { Box, Text, Link, SimpleGrid, Heading, GridItem } from "@chakra-ui/react";
+import {Text, Link, GridItem } from "@chakra-ui/react";
 
 const MyReviews = (user) => {
   const reviews = user.user.review;
-
-
   console.log("reviews", reviews);
-  // console.log("id", reviews._id);
 
-  if (!reviews) {
-    return <Text>No reviews yet.</Text>
+  if (reviews.length === 0) {
+    return  <GridItem colSpan={4}><Text color="white">You have no reviews yet. Please add one by filling out the form.</Text></GridItem>
   }
 
   return (

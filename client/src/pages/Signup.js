@@ -10,6 +10,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Spinner
 } from "@chakra-ui/react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
@@ -21,7 +22,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error, data, loading }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -91,12 +92,16 @@ const Signup = () => {
               value={formState.password}
             />
           </FormControl>
-          <Button
-            variant={"primary"}
-            type="submit"
-          >
-            Signup
+            {loading ? (
+          <Button variant="primary">
+            <Spinner color="gray.800" />
           </Button>
+        ) : (
+          <Button variant="primary" type="submit">
+           Signup
+          </Button>
+        )}
+          
         </form>
       )}
       {error && (
