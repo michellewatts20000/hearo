@@ -19,7 +19,7 @@ export default function Header() {
   };
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const Links = ["Home", "Search"];
+
 
   return (
     <>
@@ -41,6 +41,9 @@ export default function Header() {
           >
             <Link variant="highlight" href="/">
               Home
+            </Link>
+              <Link variant="highlight" href="/about">
+              About
             </Link>
             <Link variant="highlight" href="/search">
               Search
@@ -78,9 +81,13 @@ export default function Header() {
               <Link variant="highlight" href="/">
                 Home
               </Link>
+              <Link variant="highlight" href="/about">
+                About
+              </Link>
               <Link variant="highlight" href="/search">
                 Search
               </Link>
+              
             </Stack>
           </Box>
         ) : null}

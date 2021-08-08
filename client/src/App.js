@@ -14,9 +14,11 @@ import Signup from "./pages/Signup";
 import SearchPage from "./pages/SearchPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DbLevel from "./components/DbLevel";
 import Profile from "./pages/Profile";
 import SinglePlace from "./pages/SinglePlace";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -52,6 +54,7 @@ function App({ cookies }) {
             {/* <Route exact path="/home" component={Home} /> */}
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/me" component={Profile} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/places/:placeId" component={SinglePlace} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
