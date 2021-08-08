@@ -8,9 +8,11 @@ import {
   Box,
   Stack,
   Spinner,
-  SimpleGrid,
+  Text,
   Grid,
+  SimpleGrid,
   GridItem,
+  VStack,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -35,7 +37,7 @@ const Profile = () => {
   }
 
   if (loading) {
-    return <Spinner color="primary" />
+    return <Spinner color="primary" />;
   }
 
   if (!user?.username) {
@@ -52,23 +54,26 @@ const Profile = () => {
 
   return (
     <>
-      <Stack direction={["column", "column", "column", "row"]} spacing="24px">
-        <Box w={["100%", "100%", "100%", "100%"]} mr="20">
-          <Heading mb={5}>Hi {Auth.getProfile().data.username}!</Heading>
+      <Stack direction={["column", "column", "row", "row"]} spacing="24px">
+        <Box w={["100%", "100%", "40%", "40%"]} mr="10">
+          <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
+          <Text mb={5} variant="h3">
+            Add a loudness review below:
+          </Text>
           <PlaceForm />
         </Box>
-        <Grid
-          templateRows="repeat(8, 1fr)"
-          templateColumns="repeat(4, 1fr)"
-          gap={10}
-          align="top"
-        >
-          <GridItem colSpan={4}>
-            <Heading color="primary">Your reviews.</Heading>
-          </GridItem>
 
+        <VStack>
+          <Box>
+            <Text mb={5} variant="h3">
+              Your reviews.
+            </Text>
+          </Box>
+        </VStack>
+
+        <SimpleGrid columns={[2, 2, 2, 4]} spacing="20px">
           <MyReviews user={user} />
-        </Grid>
+        </SimpleGrid>
       </Stack>
     </>
   );

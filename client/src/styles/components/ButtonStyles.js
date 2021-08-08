@@ -10,8 +10,9 @@ export const ButtonStyles = {
       bg: "primary",
       color: "gray.800",
       _hover: {
-        bg: "primary",
+        bg: "secondary",
         boxShadow: "md",
+        color:"white",
         transform: "scale(1.03)",
       },
   }),
