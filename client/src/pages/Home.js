@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaWaveSquare } from "react-icons/fa";
+import { motion } from "framer-motion"
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
       >
         <Heading
           variant="hero"
-          fontSize={{ base: "70px", md: "80px", lg: "125px" }}
+          fontSize={{ base: "70px", md: "80px", lg: "135px" }}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -35,7 +36,7 @@ const Home = () => {
 
         <Text
           size={"lg"}
-          fontSize={{ base: "18px", md: "20px", lg: "25px" }}
+          fontSize={{ base: "24px", md: "24px", lg: "25px" }}
           opacity="0.8"
           fontWeight="normal"
           textAlign={["center", "center", "left", "left"]}
@@ -51,8 +52,18 @@ const Home = () => {
         </Center>
       </Stack>
 
-      <Box w={{ base: "40%", sm: "40%", md: "40%" }} mb={{ base: 12, md: 0 }}>
+      <Box w={{ base: "60%", sm: "40%", md: "40%" }} mb={{ base: 5, md: 0 }}>
+        <motion.div
+  initial={{ scale: 0 }}
+  animate={{ rotate: 180, scale: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 260,
+    damping: 20
+  }}
+>
         <FaWaveSquare color={"#81e6d9"} size={{ base: 200 }} />
+         </motion.div>
       </Box>
     </Flex>
   );
