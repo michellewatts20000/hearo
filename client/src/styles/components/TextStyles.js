@@ -19,7 +19,7 @@ export const TextStyles = {
     placeDetails: (props) => ({
       fontWeight: "bold",
     marginTop: "5px",
-      lineHeight: "1.25",
+      lineHeight: "1.5",
       color: "primary"
   }),
 },
