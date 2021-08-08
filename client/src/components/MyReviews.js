@@ -12,7 +12,7 @@ const MyReviews = (user) => {
   return (
     <>
       {reviews.map((review, index) => (
-        <Box p={"15px"} borderColor={"white"} border={"1px solid"}>
+        <Box p={"15px"} borderColor={"white"} border={"1px solid"} key={index}>
           <Text variant="h4">{review.place.placeName}</Text>
           <Text>'{review.rating}' loudness rating</Text>
             {review.comment === "" ? ( <Text></Text>) : (

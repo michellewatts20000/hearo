@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaWaveSquare } from "react-icons/fa";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -53,17 +53,24 @@ const Home = () => {
       </Stack>
 
       <Box w={{ base: "60%", sm: "40%", md: "40%" }} mb={{ base: 5, md: 0 }}>
-        <motion.div
-  initial={{ scale: 0 }}
-  animate={{ rotate: 180, scale: 1 }}
-  transition={{
-    type: "spring",
-    stiffness: 260,
-    damping: 20
-  }}
->
-        <FaWaveSquare color={"#81e6d9"} size={{ base: 200 }} />
-         </motion.div>
+        <Center>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 180, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
+            <Box
+              fontSize={{ base: "150px", md: "250px", lg: "350px" }}
+              color="primary"
+            >
+              <FaWaveSquare />
+            </Box>
+          </motion.div>
+        </Center>
       </Box>
     </Flex>
   );
