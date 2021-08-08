@@ -66,6 +66,7 @@ const SearchForm = () => {
               <option>Restaurant</option>
               <option>Bar</option>
               <option>Pub</option>
+              <option>Cafe</option>
             </Select>
           </FormControl>
 

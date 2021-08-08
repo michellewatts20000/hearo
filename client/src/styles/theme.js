@@ -3,6 +3,7 @@ import { ButtonStyles as Button } from "./components/ButtonStyles";
 import { LinkStyles as Link } from "./components/LinkStyles";
 import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { AlertStyles as Alert } from "./components/AlertStyles";
+import { TextStyles as Text } from "./components/TextStyles";
 
 
 export const myNewTheme = extendTheme({
@@ -17,7 +18,8 @@ export const myNewTheme = extendTheme({
     Button,
     Link,
     Heading,
-    Alert
+    Alert,
+    Text
   },
 
    styles: {

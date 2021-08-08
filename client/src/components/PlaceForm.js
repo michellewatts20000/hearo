@@ -108,7 +108,7 @@ const PlaceForm = () => {
             <option>Restaurant</option>
             <option>Bar</option>
             <option>Pub</option>
-            <option>Other</option>;
+            <option>Cafe</option>
           </Select>
         </FormControl>
         <FormControl isRequired id="rating" mt={5}>
