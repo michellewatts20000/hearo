@@ -7,14 +7,14 @@ export const ButtonStyles = {
 
   variants: {
     primary: (props) => ({
-      bg: "secondary",
+      bg: "highlight",
         boxShadow: "md",
         color:"white",
         transform: "scale(1.03)",
           borderRadius: "0",
      
       _hover: {
-         bg: "primary",
+         bg: "secondary",
       color: "white.200",
       borderRadius: "0",
       },

@@ -80,7 +80,7 @@ const Profile = () => {
       <Stack direction={["column", "column", "row", "row"]} spacing="24px">
         <Box w={["100%", "100%", "100%", "40%"]} mr="10">
           <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
-          <Text mb={5} variant="h3">
+          <Text mb={5} variant={"lowkey"}>
             Add a loudness review below:
           </Text>
           <PlaceForm />

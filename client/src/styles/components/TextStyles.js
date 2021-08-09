@@ -29,7 +29,7 @@ export const TextStyles = {
       fontWeight: "bold",
       fontSize: "20px",
       lineHeight: "1.5",
-      color: "black",
+      color: "highlight",
     }),
   },
 

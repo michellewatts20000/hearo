@@ -36,6 +36,8 @@ const Home = () => {
             lg: "115px",
             xl: "135px",
           }}
+          bgGradient="linear(to-l, highlight,secondary)"
+              bgClip="text"
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -46,6 +48,7 @@ const Home = () => {
           fontSize={{ base: "24px", md: "24px", lg: "35px" }}
           fontWeight="normal"
           textAlign={["center", "center", "left", "left"]}
+          opacity="0.8"
         >
           Find quiet bars, restaurants and cafes in Sydney.
         </Text>
@@ -80,9 +83,10 @@ const Home = () => {
                 lg: "310px",
                 xl: "400px",
               }}
-              color="secondary"
+              color="warning"
+             
             >
-              <GiSoundWaves />
+              <GiSoundWaves   />
             </Box>
           </motion.div>
         </Center>
