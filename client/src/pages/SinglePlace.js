@@ -22,8 +22,8 @@ const PlaceDetails = () => {
   return (
     <Stack>
       <Box mb={5}>
-      <Heading mb={5}>{place[0].place.placeName} reviews</Heading>
-      <Text variant="placeDetails">{place[0].place.placeType}: {place[0].place.placeLocation}</Text>
+      <Heading mb={5}>{place[0].place.placeName} ({place[0].place.placeType}) reviews</Heading>
+      <Text variant="placeDetails">{place[0].place.placeLocation}</Text>
       
       </Box>
 

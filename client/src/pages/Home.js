@@ -36,8 +36,7 @@ const Home = () => {
             lg: "115px",
             xl: "135px",
           }}
-          bgGradient="linear(to-l, highlight,secondary)"
-              bgClip="text"
+          
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -83,7 +82,7 @@ const Home = () => {
                 lg: "310px",
                 xl: "400px",
               }}
-              color="warning"
+              color="secondary"
              
             >
               <GiSoundWaves   />

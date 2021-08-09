@@ -8,13 +8,14 @@ export const ButtonStyles = {
   variants: {
     primary: (props) => ({
       bg: "highlight",
+      
         boxShadow: "md",
         color:"white",
         transform: "scale(1.03)",
           borderRadius: "0",
      
       _hover: {
-         bg: "secondary",
+         bgGradient: "linear(to-l, highlight,secondary)",
       color: "white.200",
       borderRadius: "0",
       },
@@ -22,8 +23,8 @@ export const ButtonStyles = {
   hamburger: (props) => ({
       bg: "transparent",
       border: "1px solid",
-      borderColor: "warning",
-      color: "warning",
+      borderColor: "gray.800",
+      color: "gray.800",
       _hover: {
        
       },
