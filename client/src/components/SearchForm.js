@@ -54,7 +54,7 @@ const SearchForm = () => {
     <>
        <Stack direction={["column","column","column", "row"]} spacing="24px">
          <Box w={["100%", "100%", "100%", "40%"]} mr="10">
-          <Heading mb={5}>Search for a quiet places</Heading>
+          <Heading mb={5}>Search for a quiet place</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
             <FormLabel>Type of place</FormLabel>
