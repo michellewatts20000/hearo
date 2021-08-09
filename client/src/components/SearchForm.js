@@ -14,7 +14,7 @@ import {
   Spinner
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
-import { GiSoundOn, GiSoundWaves, GiUltrasound } from "react-icons/gi";
+import { GiMagnifyingGlass, GiSoundOn, GiSoundWaves, GiUltrasound } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const SearchForm = () => {
@@ -122,7 +122,7 @@ const SearchForm = () => {
               color="secondary"
               align="center"
             >
-              <GiUltrasound />
+              <GiMagnifyingGlass />
             </Box>
           </motion.div>
     )}
@@ -135,6 +135,15 @@ const SearchForm = () => {
 
     {console.log(reviews)}
         {reviews.map((review, index) => (
+           <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 0, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 30,
+              damping: 10,
+            }}
+          >
            <Box p={"15px"} borderColor={"white"} border={"1px solid"} key={index}>
             <Text variant="h4">{review.place.placeName}</Text>
              {review.place.review.length === 1 ? (  <Text variant="h4">{review.place.review.length} review</Text>) : (
@@ -146,6 +155,7 @@ const SearchForm = () => {
   <Link variant={"highlight"} href={`/places/${review.place._id}`}>See {review.place.placeName} reviews</Link>
              )}
           </Box>
+          </motion.div>
         ))}
       </SimpleGrid>
       </Box>

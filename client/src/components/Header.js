@@ -64,7 +64,7 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link variant={"black"} href="/login">Login</Link>
+                <Link variant={"highlight"} href="/login">Login</Link>
                 <Link href="/signup">
                   <Button variant="primary" size={"md"} ml={4}>
                     Signup
