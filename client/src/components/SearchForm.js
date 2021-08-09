@@ -14,6 +14,8 @@ import {
   Spinner
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
+import { GiSoundOn, GiSoundWaves, GiUltrasound } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 const SearchForm = () => {
   const [formState, setFormState] = useState({
@@ -50,14 +52,14 @@ const SearchForm = () => {
 
   return (
     <>
-      
        <Stack direction={["column","column","column", "row"]} spacing="24px">
          <Box w={["100%", "100%", "100%", "40%"]} mr="10">
-          <Heading mb={5}>Search for a quiet place in Sydney</Heading>
+          <Heading mb={5}>Search for a quiet places</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
             <FormLabel>Type of place</FormLabel>
             <Select
+            variant="regular"
               onChange={handleChange}
               name="placeType"
               value={formState.placeType}
@@ -76,6 +78,7 @@ const SearchForm = () => {
               onChange={handleChange}
               name="rating"
               value={formState.rating}
+              variant="regular"
               placeholder="Loudness rating"
             >
               <option>Quiet</option>
@@ -98,10 +101,37 @@ const SearchForm = () => {
       </form>
       </Box>
  <Box w={["100%", "100%", "100%", "60%"]}>
-       <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
-        {data && reviews.length === 0 && (
-<Text> There are no entries for this combination, please try another search.</Text>
+{!data && (
+    <motion.div
+            initial={{ scale: 0 }}
+            animate={{ rotate: 0, scale: 0.8 }}
+            transition={{
+              type: "spring",
+              stiffness: 30,
+              damping: 10,
+            }}
+          >
+            <Box
+              mt={{ base: "0px", md: "20px", lg: "20px", xl: "20px" }}
+              fontSize={{
+                base: "150px",
+                md: "250px",
+                lg: "310px",
+                xl: "400px",
+              }}
+              color="secondary"
+              align="center"
+            >
+              <GiUltrasound />
+            </Box>
+          </motion.div>
     )}
+
+           {data && reviews.length === 0 && (
+<Text variant="lowkey"> There are no entries for this combination, please try another search.</Text>
+    )}
+       <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
+
 
     {console.log(reviews)}
         {reviews.map((review, index) => (

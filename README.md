@@ -2,7 +2,7 @@
 
 ## What?
 
-Find quiet places to socialise in Sydney. An app that let's you search for quiet places and review places for their loudness.
+Find quiet places to socialise in Sydney. An app that lets you search for quiet places and review places for their loudness.
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ Link to deployed app is [here](https://still-bayou-61713.herokuapp.com/)
 
 ## Tech
 
-MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API.
+MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. Built using the Chakra UI framework, GraphQL and Google Places Autocomplete API.
 
 ## User Story
 

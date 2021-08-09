@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AudioAnalyser from "react-audio-analyser";
-import { Button, Box, Text } from "@chakra-ui/react";
+import { Button, Box } from "@chakra-ui/react";
 
 export default class demo extends Component {
   constructor(props) {

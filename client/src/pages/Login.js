@@ -11,7 +11,9 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-  Spinner
+  Spinner,
+  Stack,
+  Link,
 } from "@chakra-ui/react";
 
 // import { Link } from "react-router-dom";
@@ -56,55 +58,57 @@ const Login = (props) => {
   };
 
   return (
-    <Box>
-      {data ? (
-        <Alert color="black" status="success">
-          <AlertIcon />
-          <AlertTitle  mr={2}>Success!</AlertTitle>
-          <AlertDescription>You have logged in!</AlertDescription>
-        </Alert>
-      ) : (
-        <form onSubmit={handleFormSubmit}>
-          <Heading mb={5}>Login</Heading>
-          <FormControl id="email" isRequired>
-            <FormLabel>Email</FormLabel>
-            <Input
-              placeholder="Email"
-              name="email"
-              className="form-input"
-              type="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-          </FormControl>
-          <FormControl mt={5} mb={7} id="password" isRequired>
-            <FormLabel>Password</FormLabel>
-            <Input
-              placeholder="Password"
-              className="form-input"
-              name="password"
-              type="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-          </FormControl>
-          
-            {loading ? (
-          <Button variant="primary">
-            <Spinner color="gray.800" />
-          </Button>
-        ) : (
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
-        )}
-          
-       
-        </form>
-      )}
+    <>
+      <Stack spacing={8} mx={"auto"} p={{ base: "0", md: "10" }} maxW={"lg"}>
+        <Box boxShadow={{ base: "sm", md: "lg" }} p={8} bg={"gray.200"}>
+          {data ? (
+            <Alert status="success">
+              <AlertIcon />
+              <AlertTitle mr={2}>Success!</AlertTitle>
+              <AlertDescription>You have logged in!</AlertDescription>
+            </Alert>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <Heading mb={5}>Sign in to your account</Heading>
+              <FormControl id="email" isRequired>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  variant="regular"
+                />
+              </FormControl>
+              <FormControl mt={5} mb={7} id="password" isRequired>
+                <FormLabel>Password</FormLabel>
+                <Input
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                  variant="regular"
+                />
+              </FormControl>
 
-      {error && <Text>{error.message}</Text>}
-    </Box>
+              {loading ? (
+                <Button variant="primary">
+                  <Spinner color="gray.800" />
+                </Button>
+              ) : (
+                <Button variant="primary" type="submit">
+                  Login
+                </Button>
+              )}
+            </form>
+          )}
+
+          {error && <Text>{error.message}</Text>}
+        </Box>
+      </Stack>
+    </>
   );
 };
 

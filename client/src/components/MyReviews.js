@@ -7,8 +7,8 @@ const MyReviews = (user) => {
 
   if (reviews.length === 0) {
     return (
-      <Box>
-        <Text color="white">
+      <Box w="100%">
+        <Text variant="lowkey">
           You have no reviews yet. Please add one by filling out the form.
         </Text>
       </Box>

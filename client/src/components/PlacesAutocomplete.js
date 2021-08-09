@@ -87,6 +87,8 @@ console.log("query", query)
       <FormControl isRequired>
         <FormLabel>Where are you?</FormLabel>
         <Input
+       
+        variant="regular"
           ref={autoCompleteRef}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Enter Place"

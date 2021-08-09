@@ -28,7 +28,7 @@ const PlaceDetails = () => {
 
       <SimpleGrid columns={{sm: 1, md: 2, lg:4}} spacing={10}>
         {place.map((item, index) => (
-          <Box p="15px"  border="1px solid" borderColor="white" key={index}>
+          <Box p="15px"  border="1px solid" borderColor="black" key={index}>
             <Text variant="h4">Loudness rating: {item.rating}</Text>
             {item.comment === "" ? ( <Text></Text>) : (
 <Text>Comment: {item.comment}</Text>

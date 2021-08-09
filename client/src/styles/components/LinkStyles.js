@@ -10,7 +10,13 @@ export const LinkStyles = {
   sizes: {},
   variants: {
     highlight: (props) => ({
-      color: "primary",
+      color: "warning",
+      textDecoration: "none",
+      fontWeight: "bold",
+      lineHeight: "1.5",
+    }),
+      black: (props) => ({
+      color: "black",
       textDecoration: "none",
       fontWeight: "bold",
       lineHeight: "1.5",

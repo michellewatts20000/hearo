@@ -21,18 +21,18 @@ import DbLevel from "../components/DbLevel";
 const About = () => {
   return (
     <>
-      <Heading mb={10}>About HEARO</Heading>
+      <Heading mb={7}>About HEARO</Heading>
 
-      <Text variant={"h3"} mb={5}>
+      <Text variant={"lowkey"} mb={5}>
         Ever wanted to go out with friends and not have to shout at them?
       </Text>
 
-      <Text mb={5}>
+      <Text mb={5} fontFamily="Roboto">
         A long, long time ago … before COVID, we could go out, and sometimes
         when we went out, the places we went to eat or drink were too loud.
       </Text>
 
-      <Text>
+      <Text fontFamily="Roboto">
         This app will allow you to search for places that are quiet or not too
         loud based on what you feel like. It will also allow you to rate and
         review the places you go to, for how loud they are. It’s like

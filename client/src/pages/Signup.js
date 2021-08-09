@@ -10,7 +10,9 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-  Spinner
+  Spinner,
+  Stack,
+
 } from "@chakra-ui/react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
@@ -49,7 +51,8 @@ const Signup = () => {
   };
 
   return (
-    <Box>
+    <Stack spacing={8} mx={"auto"} p={{ base: "0", md: "10" }} maxW={"lg"}>
+        <Box boxShadow={{ base: "sm", md: "lg" }} p={8} bg={"gray.200"}>
       {data ? (
         <Alert color="black" status="success">
           <AlertIcon />
@@ -63,6 +66,8 @@ const Signup = () => {
             <FormLabel>Name</FormLabel>
             <Input
               placeholder="Name"
+              variant="regular"
+              colorScheme="telegram"
               className="form-input"
               name="username"
               type="text"
@@ -75,6 +80,7 @@ const Signup = () => {
             <Input
               placeholder="Email"
               className="form-input"
+              variant="regular"
               name="email"
               type="email"
               onChange={handleChange}
@@ -84,6 +90,7 @@ const Signup = () => {
           <FormControl mt={5} mb={7} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
+            variant="regular"
               placeholder="*****"
               className="form-input"
               name="password"
@@ -110,6 +117,7 @@ const Signup = () => {
         </Alert>
       )}
     </Box>
+    </Stack>
   );
 };
 

@@ -26,7 +26,7 @@ export default function Header() {
       <Box mb={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={"sm"}
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
             display={{ md: "none" }}
@@ -39,13 +39,13 @@ export default function Header() {
             as={"nav"}
             display={{ base: "none", md: "flex" }}
           >
-            <Link variant="highlight" href="/">
+            <Link variant={"highlight"} href="/">
               Home
             </Link>
-              <Link variant="highlight" href="/about">
+              <Link variant={"highlight"} href="/about">
               About
             </Link>
-            <Link variant="highlight" href="/search">
+            <Link variant={"highlight"} href="/search">
               Search
             </Link>
           </HStack>
@@ -53,20 +53,20 @@ export default function Header() {
           <Flex alignItems={"center"}>
             {Auth.loggedIn() ? (
               <>
-                <Link href="/me" variant={"solid"} mr={4}>
+                <Link href="/me" variant={"highlight"} mr={4}>
                   Your Profile
                 </Link>
                 <Link onClick={logout}>
-                  <Button variant="primary" size={"sm"}>
+                  <Button variant="primary" size={"md"}>
                     Logout
                   </Button>
                 </Link>
               </>
             ) : (
               <>
-                <Link href="/login">Login</Link>
+                <Link variant={"black"} href="/login">Login</Link>
                 <Link href="/signup">
-                  <Button variant="primary" size={"sm"} ml={4}>
+                  <Button variant="primary" size={"md"} ml={4}>
                     Signup
                   </Button>
                 </Link>

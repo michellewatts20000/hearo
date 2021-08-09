@@ -65,7 +65,7 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <Alert color="black" status="error">
+      <Alert status="error">
         <AlertIcon />
         <AlertTitle mr={2}>You need to be logged in to see this. </AlertTitle>
         <AlertDescription>

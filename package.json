@@ -20,14 +20,11 @@
     "@chakra-ui/react": "^1.6.5",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@fontsource/roboto": "^4.5.0",
     "chakra-ui-flashless": "^0.0.8",
     "decibel-meter": "^2.0.0",
     "framer-motion": "^4.1.17",
-    "level": "^7.0.0",
     "react-audio-analyser": "^0.3.1",
-    "react-icons": "^4.2.0",
-    "react-meter-bar": "^1.0.2",
-    "react-native-sound-level": "^1.1.5",
-    "universal-cookie": "^4.0.4"
+    "react-icons": "^4.2.0"
   }
 }

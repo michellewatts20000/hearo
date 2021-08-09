@@ -82,10 +82,10 @@ const PlaceForm = () => {
     <Box>
       <form onSubmit={handleFormSubmit}>
         <PlacesAutocomplete setFormState={setFormState} />
-
         <FormControl isRequired id="suburb" mt={5}>
           <FormLabel>Location</FormLabel>
           <Input
+          variant="regular"
             onChange={handleChange}
             placeholder="Suburb"
             name="placeLocation"
@@ -96,6 +96,7 @@ const PlaceForm = () => {
           <FormLabel>Type of place</FormLabel>
           <Select
             onChange={handleChange}
+            variant="regular"
             name="placeType"
             value={formState.placeType || ""}
             placeholder="Select type of place"
@@ -109,6 +110,7 @@ const PlaceForm = () => {
         <FormControl isRequired id="rating" mt={5}>
           <FormLabel>Loudness rating</FormLabel>
           <Select
+          variant="regular"
             onChange={handleChange}
             placeholder="Rating"
             name="rating"
@@ -124,6 +126,7 @@ const PlaceForm = () => {
         <FormControl mt={5} mb={7} id="comment">
           <FormLabel>Comment</FormLabel>
           <Textarea
+          variant="regular"
             onChange={handleChange}
             placeholder="Comment"
             name="comment"
@@ -141,9 +144,9 @@ const PlaceForm = () => {
           </Button>
         )}
         {error && (
-          <Alert mt={10} status="warning" color="black">
+          <Alert mt={10} status="warning">
             <AlertIcon />
-            <AlertDescription color="black"> {error.message}</AlertDescription>
+            <AlertDescription> {error.message}</AlertDescription>
           </Alert>
         )}
       </form>

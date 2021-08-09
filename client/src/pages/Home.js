@@ -9,7 +9,7 @@ import {
   Center,
   Text,
 } from "@chakra-ui/react";
-import { FaWaveSquare, FaWave } from "react-icons/fa";
+// import { FaWaveSquare, FaWave } from "react-icons/fa";
 import { GiSoundWaves } from "react-icons/gi";
 import { motion } from "framer-motion";
 
@@ -43,8 +43,7 @@ const Home = () => {
 
         <Text
           size={"lg"}
-          fontSize={{ base: "24px", md: "24px", lg: "25px" }}
-          opacity="0.8"
+          fontSize={{ base: "24px", md: "24px", lg: "35px" }}
           fontWeight="normal"
           textAlign={["center", "center", "left", "left"]}
         >
@@ -79,9 +78,9 @@ const Home = () => {
                 base: "150px",
                 md: "250px",
                 lg: "310px",
-                xl: "330px",
+                xl: "400px",
               }}
-              color="primary"
+              color="secondary"
             >
               <GiSoundWaves />
             </Box>

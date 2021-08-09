@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -9,7 +9,7 @@ import { myNewTheme } from "./styles/theme.js"
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={myNewTheme}>
-      {/* <ColorModeScript initialColorMode={myNewTheme.config.initialColorMode} /> */}
+      <ColorModeScript initialColorMode={myNewTheme.config.initialColorMode} />
       <App />
     </ChakraProvider>
   </React.StrictMode>,
