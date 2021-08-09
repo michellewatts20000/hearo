@@ -7,8 +7,9 @@ export const TextStyles = {
     h3: (props) => ({
       fontFamily: "Roboto",
       fontWeight: "bold",
-      fontSize: "20px",
+      fontSize: "17px",
       lineHeight: "1.5",
+      
     }),
     h4: (props) => ({
       fontFamily: "Roboto",
@@ -21,7 +22,7 @@ export const TextStyles = {
       fontWeight: "bold",
       marginTop: "5px",
       lineHeight: "1.5",
-      color: "warning",
+     color: "secondary",
     }),
     lowkey: (props) => ({
       fontFamily: "Roboto",

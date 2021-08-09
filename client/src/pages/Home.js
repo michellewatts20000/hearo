@@ -47,7 +47,7 @@ const Home = () => {
           fontWeight="normal"
           textAlign={["center", "center", "left", "left"]}
         >
-          Find quiet places to socialise in Sydney.
+          Find quiet bars, restaurants and cafes in Sydney.
         </Text>
         <Center>
           <Link href="/search">

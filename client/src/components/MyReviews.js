@@ -28,7 +28,7 @@ const MyReviews = (user) => {
             }}
           >
         <Box p={"15px"} borderColor={"white"} border={"1px solid"} key={index}>
-          <Text variant="h4">{review.place.placeName}</Text>
+          <Text variant="h4" mb={1}>{review.place.placeName}</Text>
           <Text>'{review.rating}' loudness rating</Text>
           {review.comment === "" ? (
             <Text></Text>
@@ -36,7 +36,7 @@ const MyReviews = (user) => {
             <Text>Comment: {review.comment}</Text>
           )}
           <Text>{review.createdAt}</Text>
-          <Link variant={"highlight"} href={`/places/${review.place._id}`}>
+          <Link variant={"secondary"} href={`/places/${review.place._id}`}>
             Link to {review.place.placeName}
           </Link>
         </Box>
