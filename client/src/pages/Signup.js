@@ -62,7 +62,7 @@ const Signup = () => {
           <FormControl id="name" isRequired>
             <FormLabel>Name</FormLabel>
             <Input
-              placeholder="name"
+              placeholder="Name"
               className="form-input"
               name="username"
               type="text"
@@ -73,7 +73,7 @@ const Signup = () => {
           <FormControl mt={5} id="email" isRequired>
             <FormLabel>Email</FormLabel>
             <Input
-              placeholder="email"
+              placeholder="Email"
               className="form-input"
               name="email"
               type="email"

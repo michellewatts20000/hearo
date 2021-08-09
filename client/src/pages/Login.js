@@ -69,7 +69,7 @@ const Login = (props) => {
           <FormControl id="email" isRequired>
             <FormLabel>Email</FormLabel>
             <Input
-              placeholder="email"
+              placeholder="Email"
               name="email"
               className="form-input"
               type="email"
@@ -80,7 +80,7 @@ const Login = (props) => {
           <FormControl mt={5} mb={7} id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <Input
-              placeholder="password"
+              placeholder="Password"
               className="form-input"
               name="password"
               type="password"

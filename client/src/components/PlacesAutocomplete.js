@@ -62,6 +62,8 @@ function PlacesAutocomplete(props) {
   const [query, setQuery] = useState("");
   const autoCompleteRef = useRef(null);
 
+
+
   useEffect(() => {
     loadScript(
       `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places&type=restaurant`,

@@ -9,7 +9,8 @@ import {
   Center,
   Text,
 } from "@chakra-ui/react";
-import { FaWaveSquare } from "react-icons/fa";
+import { FaWaveSquare, FaWave } from "react-icons/fa";
+import { GiSoundWaves } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -68,8 +69,8 @@ const Home = () => {
             animate={{ rotate: 180, scale: 1 }}
             transition={{
               type: "spring",
-              stiffness: 260,
-              damping: 20,
+              stiffness: 90,
+              damping: 10,
             }}
           >
             <Box
@@ -82,7 +83,7 @@ const Home = () => {
               }}
               color="primary"
             >
-              <FaWaveSquare />
+              <GiSoundWaves />
             </Box>
           </motion.div>
         </Center>

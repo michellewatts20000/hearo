@@ -14,11 +14,11 @@ import Signup from "./pages/Signup";
 import SearchPage from "./pages/SearchPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Recorder from "./components/Recorder";
 import Profile from "./pages/Profile";
 import SinglePlace from "./pages/SinglePlace";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -43,7 +43,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App({ cookies }) {
+
+
+function App() {
+
   return (
     <ApolloProvider client={client}>
       <Flex direction="column" maxW={{ xl: "1400px" }} px={{ base: "10", sm: "20", md: "20" }} m="0 auto">
@@ -52,13 +55,13 @@ function App({ cookies }) {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/recorder" component={Recorder} />
             <Route exact path="/me" component={Profile} />
             <Route exact path="/about" component={About} />
             <Route exact path="/places/:placeId" component={SinglePlace} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/404" component={NotFound} />
-              
           </Switch>
         </Router>
         <Footer />

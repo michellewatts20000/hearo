@@ -2,21 +2,42 @@
 
 ## What?
 
-An app built with graphQL and the apollo server.
+Find quiet places to socialise in Sydney. An app that let's you search for quiet places and review places for their loudness.
 
-## Links
+## Table of Contents
 
-### Link to deployed app is [here](https://still-bayou-61713.herokuapp.com/)
+- [Installation](#installation)
+- [User Story](#user-story)
+- [Technologies used](#tech)
+- [Screenshot](#screenshot)
+- [Links to deployed app](#link)
+- [License](#license)
+- [Questions and how to contribute](#contact)
 
-### Link to its GitHub repo lives [here](https://github.com/michellewatts20000/hearo)
+## Installation
 
-## Technologies used
+npm install + npm run develop
+
+## Link
+
+Link to deployed app is [here](https://still-bayou-61713.herokuapp.com/)
+
+## Tech
 
 MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API.
 
-## Screenshots of app
+## User Story
+
+When I open the app I can search for a place. When I search I am presented with a number of options. If I want to review a place I must login. When I login I can go to my profile page and make an entry.
+
+## Screenshot
 
 ![screenshot](./client/public/screenshot.png)
+
+## License
+
+<a href="https://opensource.org/licenses/MIT">
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 
 ## Contact
 

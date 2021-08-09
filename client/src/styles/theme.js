@@ -5,7 +5,6 @@ import { HeadingStyles as Heading } from "./components/HeadingStyles";
 import { AlertStyles as Alert } from "./components/AlertStyles";
 import { TextStyles as Text } from "./components/TextStyles";
 
-
 export const myNewTheme = extendTheme({
   colors: {
     primary: "#7FE6D1",
@@ -19,22 +18,22 @@ export const myNewTheme = extendTheme({
     Link,
     Heading,
     Alert,
-    Text
+    Text,
   },
   config: {
     // initialColorMode: "dark",
-useSystemColorMode: false,
+    useSystemColorMode: false,
   },
 
-   styles: {
+  styles: {
     global: {
       // styles for the `body`
       body: {
-        bg: "gray.800",
+        bg: "gray.900",
         color: "white",
         fontFamily: "body",
       },
-      
+    
       // styles for the `a`
       a: {
         color: "black",

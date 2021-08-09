@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FormLabel, FormControl, Input } from "@chakra-ui/react";
 
 let autoComplete;
-// let address1Field;
-// let address2Field;
-// let postalField;
+
 
 const loadScript = (url, callback) => {
   let script = document.createElement("script");

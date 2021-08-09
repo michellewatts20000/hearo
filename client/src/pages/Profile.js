@@ -12,13 +12,16 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-import { Redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import PlaceForm from "../components/PlaceForm";
 import MyReviews from "../components/MyReviews";
 
+
 const Profile = () => {
+
+
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -31,33 +34,33 @@ const Profile = () => {
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return (
+      <>
+      
+        <Stack direction={["column", "column", "column", "row"]} spacing="24px">
+          <Box w={["100%", "100%", "100%", "40%"]} mr="10">
+            <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
+            <Text mb={5} variant="h3">
+              Add a loudness review below:
+            </Text>
+            <PlaceForm />
+          </Box>
 
-     <>
-      <Stack direction={["column","column","column", "row"]} spacing="24px">
-        <Box w={["100%", "100%", "100%", "40%"]} mr="10">
-          <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
-          <Text mb={5} variant="h3">
-            Add a loudness review below:
-          </Text>
-          <PlaceForm />
-        </Box>
+          <Box w={["100%", "100%", "100%", "60%"]}>
+            <Text mb={5} variant="h3">
+              Your reviews.
+            </Text>
 
-        <Box w={["100%", "100%", "100%", "60%"]}>
-          <Text mb={5} variant="h3">
-            Your reviews.
-          </Text>
-
-          <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
-            <MyReviews user={user} />
-          </SimpleGrid>
-        </Box>
-      </Stack>
-    </>
-    )
+            <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
+              <MyReviews user={user} />
+            </SimpleGrid>
+          </Box>
+        </Stack>
+      </>
+    );
   }
 
   if (loading) {
-    return <Spinner color="primary" />
+    return <Spinner color="primary" />;
   }
 
   if (!user?.username) {
@@ -88,7 +91,7 @@ const Profile = () => {
             Your reviews.
           </Text>
 
-          <SimpleGrid columns={[1, 1, 1,2, 3]} spacing="40px">
+          <SimpleGrid columns={[1, 1, 1, 2, 3]} spacing="40px">
             <MyReviews user={user} />
           </SimpleGrid>
         </Box>

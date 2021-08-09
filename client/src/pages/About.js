@@ -1,6 +1,5 @@
 import React from "react";
-import { Text, Heading, SimpleGrid, Box, Center } from "@chakra-ui/react";
-import Bar from "react-meter-bar";
+import { Text, Heading, SimpleGrid} from "@chakra-ui/react";
 import {
   GiAppleCore,
   GiBookCover,
@@ -57,17 +56,6 @@ const About = () => {
         <DbLevel title="Fireworks" icon={<GiJetFighter />} db="140db" />
       </SimpleGrid>
 
-      <Box mt={"20"}>
-        {/* <Bar
-          labels={[
-            0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140,
-          ]}
-          labelColor="#fff"
-          progress={40}
-          barColor="#7FE6D1"
-          seperatorColor="white"
-        /> */}
-      </Box>
     </>
   );
 };

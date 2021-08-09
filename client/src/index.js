@@ -6,17 +6,17 @@ import { ChakraProvider, ColorModeScript} from "@chakra-ui/react";
 import { myNewTheme } from "./styles/theme.js"
 
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={myNewTheme}>
-      <ColorModeScript initialColorMode={myNewTheme.config.initialColorMode} />
+      {/* <ColorModeScript initialColorMode={myNewTheme.config.initialColorMode} /> */}
       <App />
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

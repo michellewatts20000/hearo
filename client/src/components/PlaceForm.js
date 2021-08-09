@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import PlacesAutocomplete from "../components/PlacesAutocomplete";
 import {
-  Heading,
   FormLabel,
   FormControl,
   Input,
@@ -120,7 +119,6 @@ const PlaceForm = () => {
             <option>Bit Loud</option>
             <option>Loud</option>
             <option>Very Loud</option>
-            <option>Very Very Loud</option>
           </Select>
         </FormControl>
         <FormControl mt={5} mb={7} id="comment">
