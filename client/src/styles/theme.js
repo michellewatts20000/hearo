@@ -21,6 +21,10 @@ export const myNewTheme = extendTheme({
     Alert,
     Text
   },
+  config: {
+    // initialColorMode: "dark",
+useSystemColorMode: false,
+  },
 
    styles: {
     global: {
