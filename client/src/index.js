@@ -6,18 +6,13 @@ import { ChakraProvider, ColorModeScript} from "@chakra-ui/react";
 import { myNewTheme } from "./styles/theme.js"
 
 
-//  useEffect(() => {
-//     setMounted(true);
-//   }, []);
+
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={myNewTheme}>
-
       <ColorModeScript initialColorMode={myNewTheme.config.initialColorMode} />
-      
       <App />
-    
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")

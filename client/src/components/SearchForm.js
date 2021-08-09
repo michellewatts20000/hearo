@@ -52,7 +52,7 @@ const SearchForm = () => {
     <>
       
        <Stack direction={["column","column","column", "row"]} spacing="24px">
-         <Box w={["100%", "100%", "30%", "40%"]} mr="10">
+         <Box w={["100%", "100%", "100%", "40%"]} mr="10">
           <Heading mb={5}>Search for a quiet place in Sydney</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
@@ -97,8 +97,8 @@ const SearchForm = () => {
         )}
       </form>
       </Box>
- <Box w={["100%", "100%", "70%", "60%"]}>
-       <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px">
+ <Box w={["100%", "100%", "100%", "60%"]}>
+       <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
         {data && reviews.length === 0 && (
 <Text> There are no entries for this combination, please try another search.</Text>
     )}
