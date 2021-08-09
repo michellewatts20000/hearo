@@ -23,12 +23,18 @@ const Home = () => {
       mb={10}
     >
       <Stack
-        w={{ base: "100%", sm: "100%", md: "70%" }}
+        w={{ base: "100%", sm: "100%", md: "50%", lg: "50%" }}
         align={["center", "center", "flex-start", "flex-start"]}
       >
         <Heading
           variant="hero"
-          fontSize={{ base: "70px", md: "80px", lg: "135px" }}
+          fontSize={{
+            base: "70px",
+            sm: "70px",
+            md: "70px",
+            lg: "115px",
+            xl: "135px",
+          }}
           textAlign={["center", "center", "left", "left"]}
         >
           HEARO
@@ -52,7 +58,10 @@ const Home = () => {
         </Center>
       </Stack>
 
-      <Box w={{ base: "60%", sm: "40%", md: "40%" }} mb={{ base: 5, md: 0 }}>
+      <Box
+        w={{ base: "60%", sm: "40%", md: "50%", lg: "50%" }}
+        mb={{ base: 5, md: 0 }}
+      >
         <Center>
           <motion.div
             initial={{ scale: 0 }}
@@ -64,7 +73,13 @@ const Home = () => {
             }}
           >
             <Box
-              fontSize={{ base: "150px", md: "250px", lg: "350px" }}
+              mt={{ base: "0px", md: "20px", lg: "20px", xl: "20px" }}
+              fontSize={{
+                base: "150px",
+                md: "250px",
+                lg: "310px",
+                xl: "330px",
+              }}
               color="primary"
             >
               <FaWaveSquare />

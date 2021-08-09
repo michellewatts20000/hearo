@@ -30,6 +30,7 @@ export const myNewTheme = extendTheme({
         color: "white",
         fontFamily: "body",
       },
+      
       // styles for the `a`
       a: {
         color: "black",

@@ -2,15 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import { ChakraProvider, CSSReset, ColorModeScript} from "@chakra-ui/react";
 import { myNewTheme } from "./styles/theme.js"
 import  boom  from "./styles/config.js"
+
+//  useEffect(() => {
+//     setMounted(true);
+//   }, []);
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={myNewTheme}>
+      <CSSReset />
       <ColorModeScript initialColorMode={boom.config.initialColorMode} />
+      
       <App />
+    
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")

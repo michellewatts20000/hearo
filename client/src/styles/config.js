@@ -1,10 +1,10 @@
-// theme.ts
+// theme.js
 // 1. import `extendTheme` function
-import { extendTheme, ThemeConfig } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react"
 // 2. Add your color mode config
-const config : ThemeConfig = {
-  initialColorMode: "dark",
-  useSystemColorMode: false,
+const config = {
+  initialColorMode: "system",
+  useSystemColorMode: true,
 }
 // 3. extend the theme
 const boom = extendTheme({ config })

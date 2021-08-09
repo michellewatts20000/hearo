@@ -9,10 +9,7 @@ import {
   Stack,
   Spinner,
   Text,
-  Grid,
   SimpleGrid,
-  GridItem,
-  VStack,
 } from "@chakra-ui/react";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { Redirect, useParams } from "react-router-dom";
@@ -33,11 +30,34 @@ const Profile = () => {
   console.log("user", user);
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Redirect to="/me" />;
+    return (
+
+     <>
+      <Stack direction={["column", "column", "row", "row"]} spacing="24px">
+        <Box w={["100%", "100%", "30%", "40%"]} mr="10">
+          <Heading mb={5}>Hi {Auth.getProfile().data.username}! </Heading>
+          <Text mb={5} variant="h3">
+            Add a loudness review below:
+          </Text>
+          <PlaceForm />
+        </Box>
+
+        <Box w={["100%", "100%", "70%", "60%"]}>
+          <Text mb={5} variant="h3">
+            Your reviews.
+          </Text>
+
+          <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px">
+            <MyReviews user={user} />
+          </SimpleGrid>
+        </Box>
+      </Stack>
+    </>
+    )
   }
 
   if (loading) {
-    return <Spinner color="primary" />;
+    return <Spinner color="primary" />
   }
 
   if (!user?.username) {
