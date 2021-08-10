@@ -48,6 +48,15 @@ export default function Header() {
             <Link variant={"highlight"} href="/search">
               Search
             </Link>
+            {Auth.loggedIn() ? (
+             <Link variant={"highlight"} href="/me">
+              Add Place
+            </Link>
+             ) : (
+ <Link variant={"highlight"} href="/signup">
+              Add Place
+            </Link>
+             )}
           </HStack>
 
           <Flex alignItems={"center"}>
@@ -87,7 +96,15 @@ export default function Header() {
               <Link variant="highlight" href="/search">
                 Search
               </Link>
-              
+               {Auth.loggedIn() ? (
+             <Link variant={"highlight"} href="/me">
+              Add Place
+            </Link>
+             ) : (
+ <Link variant={"highlight"} href="/signup">
+              Add Place
+            </Link>
+             )}
             </Stack>
           </Box>
         ) : null}
