@@ -4,6 +4,7 @@ import {
   GiAppleCore,
   GiBookCover,
   GiCarSeat,
+  GiElectricalSocket,
   GiFireworkRocket,
   GiHairStrands,
   GiHelicopter,
@@ -43,7 +44,7 @@ const About = () => {
         <DbLevel title="Breathing" icon={<GiPerson />} db="10db" />
         <DbLevel title="Leaves" icon={<GiThreeLeaves />} db="20db" />
         <DbLevel title="Whisper" icon={<GiBookCover />} db="30db" />
-        <DbLevel title="Refrigerator" icon={<GiAppleCore />} db="40db" />
+        <DbLevel title="Refrigerator" icon={<GiElectricalSocket />} db="40db" />
         <DbLevel title="Rainfall" icon={<GiRaining />} db="50db" />
         <DbLevel title="Conversation" icon={<GiTalk />} db="60db" />
         <DbLevel title="Traffic" icon={<GiCarSeat />} db="70db" />
@@ -52,8 +53,8 @@ const About = () => {
         <DbLevel title="Helicopter" icon={<GiHelicopter />} db="100db" />
         <DbLevel title="Trumpet" icon={<GiTrumpet />} db="110db" />
         <DbLevel title="Police Siren" icon={<GiPoliceCar />} db="120db" />
-        <DbLevel title="Jet Engine" icon={<GiFireworkRocket />} db="130db" />
-        <DbLevel title="Fireworks" icon={<GiJetFighter />} db="140db" />
+        <DbLevel title="Jet Engine" icon={<GiJetFighter />} db="130db" />
+        <DbLevel title="Fireworks" icon={<GiFireworkRocket />} db="140db" />
       </SimpleGrid>
 
     </>
