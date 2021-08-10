@@ -40,6 +40,10 @@ const About = () => {
         TripAdvisor or Google Review... but for sound.
       </Text>
 
+      <Text variant={"lowkey"} mt={5}>
+        Here is the decible scale for your own amusement.
+      </Text>
+
       <SimpleGrid columns={{ base: 2, sm: 3, md: 3, lg: 7 }} spacing={5}>
         <DbLevel title="Breathing" icon={<GiPerson />} db="10db" />
         <DbLevel title="Leaves" icon={<GiThreeLeaves />} db="20db" />
