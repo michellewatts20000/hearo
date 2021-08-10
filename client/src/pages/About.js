@@ -25,19 +25,19 @@ const About = () => {
       <Heading mb={7}>About HEARO</Heading>
 
       <Text variant={"lowkey"} mb={5}>
-        Ever wanted to go out with friends and not have to shout at them?
+        Ever wanted to go out with friends and not have to shout at them to be heard?
       </Text>
 
       <Text mb={5} fontFamily="Roboto">
-        A long, long time ago … before COVID, we could go out, and sometimes
+        A long, long time ago... before COVID, we could go out, and sometimes
         when we went out, the places we went to eat or drink were too loud.
       </Text>
 
       <Text fontFamily="Roboto">
-        This app will allow you to search for places that are quiet or not too
+        This app will allow you to search for venues that are quiet or not too
         loud based on what you feel like. It will also allow you to rate and
-        review the places you go to, for how loud they are. It’s like
-        TripAdvisor or Google Review for sound.
+        review the venues you go to, for how loud they are. It’s like
+        TripAdvisor or Google Review... but for sound.
       </Text>
 
       <SimpleGrid columns={{ base: 2, sm: 3, md: 3, lg: 7 }} spacing={5}>

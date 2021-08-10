@@ -54,16 +54,16 @@ const SearchForm = () => {
     <>
        <Stack direction={["column","column","column", "row"]} spacing="24px">
          <Box w={["100%", "100%", "100%", "40%"]} mr="10">
-          <Heading mb={5}>Search for a quiet place</Heading>
+          <Heading mb={5}>Search for a quiet venue</Heading>
 <form onSubmit={handleFormSubmit}>
           <FormControl isRequired id="place" mt={5}>
-            <FormLabel>Type of place</FormLabel>
+            <FormLabel>Type of venue</FormLabel>
             <Select
             variant="regular"
               onChange={handleChange}
               name="placeType"
               value={formState.placeType}
-              placeholder="Select type of place"
+              placeholder="Select type of venue"
             >
               <option>Restaurant</option>
               <option>Bar</option>
