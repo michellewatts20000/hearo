@@ -50,7 +50,7 @@ export default function Header() {
             </Link>
             {Auth.loggedIn() ? (
              <Link variant={"highlight"} href="/me">
-              Add Place
+              Add Venue
             </Link>
              ) : (
  <Link variant={"highlight"} href="/signup">
@@ -102,7 +102,7 @@ export default function Header() {
             </Link>
              ) : (
  <Link variant={"highlight"} href="/signup">
-              Add Place
+              Add Venue
             </Link>
              )}
             </Stack>
