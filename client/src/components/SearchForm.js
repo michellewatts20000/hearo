@@ -151,8 +151,8 @@ const SearchForm = () => {
              )}
             <Text>{review.place.placeLocation}</Text>
           
-             {review.place.review.length === 1 ? (   <Link variant={"highlight"} href={`/places/${review.place._id}`}>See {review.place.placeName} review</Link>) : (
-  <Link variant={"highlight"} href={`/places/${review.place._id}`}>See {review.place.placeName} reviews</Link>
+             {review.place.review.length === 1 ? (   <Link variant={"secondary"} href={`/places/${review.place._id}`}>See {review.place.placeName} review</Link>) : (
+  <Link variant={"secondary"} href={`/places/${review.place._id}`}>See {review.place.placeName} reviews</Link>
              )}
           </Box>
           </motion.div>
