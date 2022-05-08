@@ -14,7 +14,7 @@ import {
   Spinner
 } from "@chakra-ui/react";
 import { QUERY_SEARCH } from "../utils/queries";
-import { GiMagnifyingGlass, GiSoundOn, GiSoundWaves, GiUltrasound } from "react-icons/gi";
+import { GiMagnifyingGlass } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const SearchForm = () => {
@@ -26,7 +26,6 @@ const SearchForm = () => {
   const [placeSearch, { data, loading }] = useLazyQuery(QUERY_SEARCH);
 
   const reviews = data?.placeSearch || [];
-  console.log("data", data);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -39,7 +38,6 @@ const SearchForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       await placeSearch({
         variables: { ...formState },
@@ -47,7 +45,6 @@ const SearchForm = () => {
     } catch (e) {
       console.error(e);
     }
-    console.log("46", formState);
   };
 
   return (

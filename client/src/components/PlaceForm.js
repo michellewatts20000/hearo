@@ -30,7 +30,6 @@ const PlaceForm = () => {
     update(cache, { data: { addPlace } }) {
       try {
         const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
-        console.log("reviews", reviews);
         cache.writeQuery({
           query: QUERY_REVIEWS,
           data: { reviews: [addPlace, ...reviews] },
@@ -59,7 +58,6 @@ const PlaceForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       await addPlace({
         variables: { ...formState },

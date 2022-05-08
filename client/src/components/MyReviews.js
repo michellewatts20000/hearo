@@ -3,7 +3,6 @@ import { Text, Link, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 const MyReviews = (user) => {
   const reviews = user.user.review;
-  console.log("reviews", reviews);
 
   if (reviews.length === 0) {
     return (

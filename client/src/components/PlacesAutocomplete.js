@@ -49,11 +49,8 @@ function handleScriptLoad(updateQuery, autoCompleteRef) {
 }
 
 async function handlePlaceSelect(updateQuery) {
-  const addressObject = autoComplete.getPlace();
-  const query = addressObject.address_component;
-  console.log("query", query);
+  const addressObject = autoComplete.getPlace()
 
-  console.log("addressobject", addressObject);
   updateQuery(addressObject);
 }
 
