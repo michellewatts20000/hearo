@@ -78,7 +78,6 @@ placeLocation: query.formatted_address
  }) 
    
   }, [query]);
-console.log("query", query)
   return (
     <>
       <FormControl isRequired>

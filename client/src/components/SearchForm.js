@@ -128,9 +128,6 @@ const SearchForm = () => {
 <Text variant="lowkey"> There are no entries for this combination, please try another search.</Text>
     )}
        <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
-
-
-    {console.log(reviews)}
         {reviews.map((review, index) => (
            <motion.div
             initial={{ scale: 0 }}
