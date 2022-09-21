@@ -48,9 +48,6 @@ const resolvers = {
       { placeName, placeLocation, placeType, rating, comment },
       context
     ) => {
-      console.log("placeName", placeName);
-      console.log("rating", rating);
-      console.log("comment", comment);
       if (context.user) {
         let place = await Place.findOne({ placeName });
         console.log("place", place);

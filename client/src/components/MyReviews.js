@@ -2,7 +2,7 @@ import React from "react";
 import { Text, Link, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 const MyReviews = (user) => {
-  const reviews = user.user.review;
+const reviews = user.user.review;
 
   if (reviews.length === 0) {
     return (
@@ -18,6 +18,7 @@ const MyReviews = (user) => {
     <>
       {reviews.map((review, index) => (
          <motion.div
+            key={review._id}
             initial={{ scale: 0 }}
             animate={{ rotate: 0, scale: 1 }}
             transition={{
@@ -26,7 +27,7 @@ const MyReviews = (user) => {
               damping: 10,
             }}
           >
-        <Box p={"15px"} borderColor={"white"} border={"1px solid"} key={index}>
+        <Box key={review._id} p={"15px"} borderColor={"white"} border={"1px solid"}>
           <Text variant="h4" mb={1}>{review.place.placeName}</Text>
           <Text>'{review.rating}' loudness rating</Text>
           {review.comment === "" ? (

@@ -46,11 +46,11 @@ const Profile = () => {
 
           <Box w={["100%", "100%", "100%", "60%"]}>
             <Text mb={5} variant="h3">
-              Your reviews.
+              Your reviews:
             </Text>
 
             <SimpleGrid columns={[1, 1, 3, 3]} spacing="40px">
-              <MyReviews user={user} />
+              <MyReviews key={Date.now()} user={user} />
             </SimpleGrid>
           </Box>
         </Stack>
@@ -87,7 +87,7 @@ const Profile = () => {
 
         <Box w={["100%", "100%", "100%", "60%"]}>
           <Text mb={5} variant="h3">
-            Your reviews.
+            Your reviews:
           </Text>
 
           <SimpleGrid columns={[1, 1, 1, 2, 3]} spacing="40px">

@@ -12,11 +12,9 @@ import {
   AlertTitle,
   AlertDescription,
   Spinner,
-  Stack,
-  Link,
+  Stack
 } from "@chakra-ui/react";
 
-// import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -43,8 +41,8 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
-
       Auth.login(data.login.token);
+
     } catch (e) {
       console.error(e);
     }
@@ -53,7 +51,7 @@ const Login = (props) => {
     setFormState({
       email: "",
       password: "",
-    });
+    })
   };
 
   return (

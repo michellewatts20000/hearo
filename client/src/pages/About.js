@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, Heading, SimpleGrid} from "@chakra-ui/react";
 import {
-  GiAppleCore,
   GiBookCover,
   GiCarSeat,
   GiElectricalSocket,

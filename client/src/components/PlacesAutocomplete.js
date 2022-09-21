@@ -68,14 +68,14 @@ function PlacesAutocomplete(props) {
     );
   }, []);
 
-    useEffect(() => {
- props.setFormState((formstate)=>{
-  return {
-...formstate, 
-placeName: query.name,
-placeLocation: query.formatted_address
-  }
- }) 
+  useEffect(() => {
+    props.setFormState((formstate)=>{
+      return {
+        ...formstate, 
+        placeName: query.name,
+        placeLocation: query.formatted_address
+    }
+  }) 
    
   }, [query]);
   return (
@@ -83,8 +83,7 @@ placeLocation: query.formatted_address
       <FormControl isRequired>
         <FormLabel>Where are you?</FormLabel>
         <Input
-       
-        variant="regular"
+          variant="regular"
           ref={autoCompleteRef}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Enter Venue"
