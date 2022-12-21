@@ -26,5 +26,8 @@
     "framer-motion": "^4.1.17",
     "react-audio-analyser": "^0.3.1",
     "react-icons": "^4.2.0"
+  },
+    "engines": {
+    "node": "14.17.1"
   }
 }
