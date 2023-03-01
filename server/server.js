@@ -14,7 +14,7 @@ app.use(
     origin: 'https://celadon-quokka-9e13dd.netlify.app/'
   })
 );
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 9000;
 
 
 const server = new ApolloServer({
