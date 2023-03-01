@@ -27,7 +27,7 @@
     "react-audio-analyser": "^0.3.1",
     "react-icons": "^4.2.0"
   },
-    "engines": {
-    "node": "14.17.1"
+  "engines": {
+    "node": "16.19.1"
   }
 }
