@@ -68,16 +68,17 @@ function PlacesAutocomplete(props) {
     );
   }, []);
 
+  const { setFormState } = props;
+
   useEffect(() => {
-    props.setFormState((formstate)=>{
+    setFormState((formstate) => {
       return {
         ...formstate, 
         placeName: query.name,
         placeLocation: query.formatted_address
-    }
-  }) 
-   
-  }, [query]);
+      }
+    });
+  }, [setFormState, query]);
   return (
     <>
       <FormControl isRequired>
