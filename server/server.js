@@ -14,7 +14,7 @@ app.use(
     origin: 'https://celadon-quokka-9e13dd.netlify.app/'
   })
 );
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3001;
 
 
 const server = new ApolloServer({
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
+app.get('*', (res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
