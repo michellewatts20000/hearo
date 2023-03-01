@@ -11,7 +11,7 @@ const db = require('./config/connection');
 const app = express();
 app.use(
   cors({
-    origin: 'https://celadon-quokka-9e13dd.netlify.app/'
+    origin: 'https://celadon-quokka-9e13dd.netlify.app/graphql'
   })
 );
 const PORT = process.env.PORT || 3001;
