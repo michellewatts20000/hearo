@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -51,7 +51,7 @@ function App() {
     <ApolloProvider client={client}>
       <Flex direction="column" maxW={{ xl: "1400px" }} px={{ base: "10", sm: "20", md: "20" }} m="0 auto">
         <Header />
-        <BrowserRouter>
+        <Router>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={SearchPage} />
@@ -63,7 +63,7 @@ function App() {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/404" component={NotFound} />
           </Switch>
-        </BrowserRouter>
+        </Router>
         <Footer />
       </Flex>
     </ApolloProvider>
