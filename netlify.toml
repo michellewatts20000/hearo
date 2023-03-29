@@ -4,3 +4,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[start]
+  command = "node server/server.js --openssl-legacy-provider"
