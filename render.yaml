@@ -1,5 +1,6 @@
 services:
-  - name: my-node-app
+  - type: web
+    name: my-node-app
     github:
       branch: main
     env:
