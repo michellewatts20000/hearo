@@ -1,6 +1,6 @@
 services:
-  - type: web
-    name: my-node-app
+  - name: hearo
+    type: web
     github:
       branch: main
     env:
