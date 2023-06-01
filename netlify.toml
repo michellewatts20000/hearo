@@ -7,3 +7,8 @@
 
 [start]
   command = "node server/server.js --openssl-legacy-provider"
+
+[build]
+  command = "yarn"
+  functions = "functions"
+  publish = "static"
