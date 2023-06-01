@@ -22,7 +22,7 @@ import About from "./pages/About";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: ".netlify/functions/graphql",
+  uri: "/graphql",
 });
 
 console.log(httpLink)
