@@ -22,8 +22,10 @@ import About from "./pages/About";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: ".netlify/functions/graphql",
 });
+
+console.log(httpLink)
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -42,6 +44,8 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+console.log(client)
 
 
 
