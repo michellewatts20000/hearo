@@ -20,7 +20,7 @@ npm install + npm run develop
 
 ## Link
 
-Link to deployed app is [here](https://still-bayou-61713.herokuapp.com/)
+Link to deployed app is [here](https://mern-deploy-o7jn.onrender.com/)
 
 ## Tech
 

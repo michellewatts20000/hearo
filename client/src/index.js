@@ -6,6 +6,7 @@ import { ChakraProvider, ColorModeScript} from "@chakra-ui/react";
 import { myNewTheme } from "./styles/theme.js"
 
 
+
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={myNewTheme}>
